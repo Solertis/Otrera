@@ -7,7 +7,7 @@ Tabletop RPG.
 
 Mythology consists of a set of core rules and stat systems.
 These can easily be adapted into original RPG's for personal
-or private use. The software modules are all in Python and
+or commercial use. The software modules are all in Python and
 JSON, making them fairly easy to develop. There are also
 a set of docs that lay out the entire game system.
 
@@ -21,4 +21,5 @@ imagination.
 Mythology does not include the specific skills or equipment
 from the Daughters of Ares game; those elements, as well as
 the scenario and other story elements remain under the
-author's copyright.
+author's copyright. The docs will include some generic
+example elements (spells, weapons, etc.) eventually.
