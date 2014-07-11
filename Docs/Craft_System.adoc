@@ -1,0 +1,74 @@
+Chemistry
+==========
+
+== Types
+
+There are four basic types of chemical arts characters can use: +
+
+*Ingestion* +
+
+Liquids and powders can be ingested for strong effect. In theory +
+this can be used on enemies, but it is very difficult to force an +
+enemy to drink something (requires skill). Generally this class is +
+for healing items and buffs. +
+
+*Dousing Liquids* +
+
+These must touch the object they intend to affect. This class +
+includes acids and poisons, the latter of which can be applied to +
+weapons to make them extra nasty. Use of these requires Ranged-Hit, +
+meaning accuracy. If you throw and miss, there is zero effect. +
+
+*Explosives* +
+
+These are AOE tools that explode and spread an element in a defined +
+area. This includes things like frag grenades and powder bombs, as +
+well as cryo / napalm explosives and flashbangs. +
+
+*Gas Bombs* +
+
+These are also AOE tools only unlike explosives, there effect can +
+linger for some time. So long as a target is within the AOE, they +
+will be effected. Things like healing mists and poison gas bombs fall +
+into this category. +
+
+*Notes* +
+
+Dousing: Armor reduces damage + 
+Gasses: Resistance score reduces damage +
+Explosives: Armor reduces damage +
+Ingestion: Zero defense +
+
+== Chemistry in Battle
+
+1. Chemists cannot prepare skill potions before battle. The only potions that can be pre-equipped +
+are powder bombs and healing vials. All others must be made during battle using the Craft skill. +
+
+2. 'Craft Time' is the amount of time it takes to create a potion or mixture. It is a function of +
+INT, DEX, and ART. If the character's Craft skill is higher than a potion's Craft Time score, then +
+the potion can be completed in that turn as a standard action (meaning the player could also do a +
+move action). +
+
+3. If the character's Craft skill is more than double the Craft Time score, then the character can +
+create two or more potions in one turn. If the Craft skill is lower, than it will take the number +
+of turns equal to dividing the craft score into the craft time score and rounding up. +
+
+4. Chemists are assumed to have infinite empty viles and powder enclosures. Potions are created +
+by using mix kits, solution, and powder. Use of created potions does not reduce weight. +
+
+5. Chemists must make a successful ranged hit attack in order for dousing chemicals to work. For +
+gasses and explosives, chemists need only throw in the target's AOE. There is no change in effect +
+for targets closer to 'ground zero.' All targets within the AOE are affected equally. +
+
+6. All craft creations have a standard and an exquisite version. Exquisite versions are anywhere +
+from 1.5 to 3x more potent than standard versions. If the character's Craft score is lower than  +
+or equal to the recipe difficulty, than the character needs to use 2x the time to create the +
+exquisite version AND must do a skill check. +
+
+7. If the character's craft score is greater than the recipe difficulty, they can guarantee +
+successful creation of an exquisite product by using 2x the creation time (2 turns) or they can +
+attempt a skill check that, should it fail, will result in a standard product. +
+
+8. If the character's craft score is greater than or equal to double the recipe difficulty, they +
+can guarantee exquisite versions within one turn. The recipe difficulty is still doubled, +
+however, so this reduces the character's ability to prepare multiple potions. +
