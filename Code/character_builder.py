@@ -2,7 +2,7 @@
 
 from attStats import *
 
-def character_builder():
+def level_zero_character_builder():
 	print "Give me some stats, bro\n"
 	DEX = int(raw_input("Dexterity: "))
 	ART = int(raw_input("Artistry: "))
@@ -29,8 +29,26 @@ def character_builder():
 	print "--------------------------------------------------\n\n"
 	print "Enjoy your character!"
 
+def custom_level_character_builder():
+	print "Coming soon!"
+	return
+
+def choose_program():
+	print "Welcome to the Mythology Character Builder!\n"
+	print "---------------------------------------------------"
+	print "Press '1' to build a level 0 character"
+	print "Press '2' to build a custom level character"
+	print "Press any other key to exit"
+	user_input = raw_input("Enter a number and press 'enter': ")
+	if user_input == "1":
+		level_zero_character_builder()
+	elif user_input == "2":
+		custom_level_character_builder()
+	else:
+		return
+
 def main():
-	character_builder()
+	choose_program()
 
 if __name__=="__main__":
 	main()
