@@ -72,7 +72,7 @@ def dex_to_hit(DEX):
 	else:
 		return diff/3
 
-def dex_to_rhit(dex):
+def dex_to_accuracy(dex):
 	diff = dex - 10
 	if diff < -5:
 		return -2

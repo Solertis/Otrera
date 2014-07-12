@@ -1,20 +1,20 @@
 {
-"soldier" : {
+"base" : {
 	"0" : "", "1" : "PLR2", "2" : "PLR2", "3" : "PLR2"
 },
-"warrior" : {
+"fighter" : {
 	"4" : "MGT1 PLR1", "5" : "MGT1 PLR1", "6" : "CON1 PLR1", 
 	"7" : "MGT1 PLR1", "8" : "CON1 PLR1"
 },
-"rogue" : {
+"archer" : {
 	"4" : "DEX1 PLR1", "5" : "DEX1 PLR1", "6" : "MGT1 PLR1", 
 	"7" : "DEX1 PLR1", "8" : "DEX1 PLR1"
 },
-"chemist" : {
+"craftsman" : {
 	"4" : "INT1 PLR1", "5" : "INT1 PLR1", "6" : "DEX1 PLR1", 
 	"7" : "INT1 PLR1", "8" : "DEX1 PLR1"
 },
-"priestess" : {
+"mage" : {
 	"4" : "DIV1 PLR1", "5" : "DIV1 PLR1", "6" : "ART1 PLR1", 
 	"7" : "DIV1 PLR1", "8" : "ART1 PLR1"
 }	

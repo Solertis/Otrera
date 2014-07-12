@@ -42,8 +42,8 @@ def get_hit(DEX,ART):
 	total = dex_bonus + art_bonus
 	return total
 
-def get_rhit(DEX):
-	rhit = dex_to_rhit(DEX)
+def get_accuracy(DEX):
+	rhit = dex_to_accuracy(DEX)
 	return rhit
 
 def get_spell_memory(INT):
@@ -72,3 +72,21 @@ def get_craft(INT,ART,DEX):
 	dex_art_bonus = dex_art_to_craft(DEX,ART)
 	total = int_bonus+dex_art_bonus
 	return total
+
+def get_stats(DEX,ART,MGT,DIV,INT,CON):
+	stats = {}
+	stats["maxHP"] = get_maxHP(CON)
+	stats["Evade"] = get_evade(DEX,ART)
+	stats["Hit"] = get_hit(DEX,ART)
+	stats["Accuracy"] = get_accuracy(DEX)
+	stats["Physical Defense"] = get_physical_defense(MGT,CON)
+	stats["Physical Attack"] = get_physical_attack(MGT)
+	stats["Magical Defense"] = get_magic_defense(DIV,ART)
+	stats["Magical Attack"] = get_magic_attack(DIV)
+	stats["Resistance"] = get_resistance(CON)
+	stats["Carry Strength"] = get_carry_strength(MGT)
+	stats["Casting Speed"] = get_casting_speed(ART)
+	stats["Spell Memory"] = get_spell_memory(INT)
+	stats["Spell Failure"] = get_spell_failure(INT,ART)
+	stats["Craft"] = get_craft(INT,ART,DEX)
+	return stats
