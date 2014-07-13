@@ -2,39 +2,44 @@
 
 from attStats import *
 from levels import *
+from character import Character
 
 def level_zero_character_builder():
+	zero_character = Character()
 	print "Give me some stats, bro\n"
-	a = get_base_attributes()
+	base_character = get_base_attributes(zero_character)
 	print "\nOK! Let's get those stats!\n"
 	print "---------------------------------------------------\n"
-	stats = get_stats(a["DEX"],a["ART"],a["MGT"],a["DIV"],a["INT"],a["CON"])
-	publish_stats(stats)
+	base_character.stats = get_stats(base_character.attributes)
+	publish_character(base_character.stats)
 
 def custom_level_character_builder():
+	charac = Character()
 	print "Ok, lets make a custom level character.\n"
-	level = raw_input("What is the character's level?: ")
-	Class = raw_input("What is the character's class?: ")
+	charac.level = int(raw_input("What is the character's level?: "))
+	charac.character_class = raw_input("What is the character's class?: ").lower().strip()
 	print "OK! Let's get some base stats.\n"
-	a = get_base_attributes()
-	level_mods = get_level_mods(Class, level)
-	for key in a:
-		a[key] = a[key] + int(level_mods[key])
-	stats = get_stats(a["DEX"],a["ART"],a["MGT"],a["DIV"],a["INT"],a["CON"])
+	full_charac =  get_base_attributes(charac)
+	level_mods = get_level_mods(full_charac.character_class, full_charac.level)
+	for key in full_charac.attributes.keys():
+		full_charac.attributes[key] = full_charac.attributes[key] + int(level_mods[key])
+	full_charac.stats = get_stats(full_charac.attributes)
 	print "---------------------------------------------------\n"
-	publish_stats(stats)
+	publish_character(full_charac.stats)
 
-def get_base_attributes():
+def get_base_attributes(charac):
 	DEX = int(raw_input("Dexterity: "))
 	ART = int(raw_input("Artistry: "))
 	MGT = int(raw_input("Might: "))
 	DIV = int(raw_input("Divine: "))
 	INT = int(raw_input("Intelligence: "))
 	CON = int(raw_input("Constitution: "))
-	atts = {"DEX":DEX,"ART":ART,"MGT":MGT,"DIV":DIV,"INT":INT,"CON":CON}
-	return atts
+	charac.attributes = {
+			"DEX":DEX,"ART":ART,"MGT":MGT,"DIV":DIV,"INT":INT,"CON":CON
+			}
+	return charac
 
-def publish_stats(stats):
+def publish_character(stats):
 	print "MaxHP = %s" % str(stats["maxHP"])
 	print "Evade = %s" % str(stats["Evade"])
 	print "Hit = %s" % str(stats["Hit"])

@@ -73,20 +73,20 @@ def get_craft(INT,ART,DEX):
 	total = int_bonus+dex_art_bonus
 	return total
 
-def get_stats(DEX,ART,MGT,DIV,INT,CON):
+def get_stats(atts):
 	stats = {}
-	stats["maxHP"] = get_maxHP(CON)
-	stats["Evade"] = get_evade(DEX,ART)
-	stats["Hit"] = get_hit(DEX,ART)
-	stats["Accuracy"] = get_accuracy(DEX)
-	stats["Physical Defense"] = get_physical_defense(MGT,CON)
-	stats["Physical Attack"] = get_physical_attack(MGT)
-	stats["Magical Defense"] = get_magic_defense(DIV,ART)
-	stats["Magical Attack"] = get_magic_attack(DIV)
-	stats["Resistance"] = get_resistance(CON)
-	stats["Carry Strength"] = get_carry_strength(MGT)
-	stats["Casting Speed"] = get_casting_speed(ART)
-	stats["Spell Memory"] = get_spell_memory(INT)
-	stats["Spell Failure"] = get_spell_failure(INT,ART)
-	stats["Craft"] = get_craft(INT,ART,DEX)
+	stats["maxHP"] = get_maxHP(atts["CON"])
+	stats["Evade"] = get_evade(atts["DEX"],atts["ART"])
+	stats["Hit"] = get_hit(atts["DEX"],atts["ART"])
+	stats["Accuracy"] = get_accuracy(atts["DEX"])
+	stats["Physical Defense"] = get_physical_defense(atts["MGT"],atts["CON"])
+	stats["Physical Attack"] = get_physical_attack(atts["MGT"])
+	stats["Magical Defense"] = get_magic_defense(atts["DIV"],atts["ART"])
+	stats["Magical Attack"] = get_magic_attack(atts["DIV"])
+	stats["Resistance"] = get_resistance(atts["CON"])
+	stats["Carry Strength"] = get_carry_strength(atts["MGT"])
+	stats["Casting Speed"] = get_casting_speed(atts["ART"])
+	stats["Spell Memory"] = get_spell_memory(atts["INT"])
+	stats["Spell Failure"] = get_spell_failure(atts["INT"],atts["ART"])
+	stats["Craft"] = get_craft(atts["INT"],atts["ART"],atts["DEX"])
 	return stats
