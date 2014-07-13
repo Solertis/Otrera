@@ -1,0 +1,24 @@
+{
+	"cloth" : {
+
+		"defense dice" : "1d6",
+		"instances" : {
+
+			"simple clothes" : {
+				"kind" : "cloth",
+				"weight" : "3",
+				"spec_mods" : [],
+				"durability" : "5"
+			}
+		}
+	},
+
+	"leather" : {
+	},
+
+	"metal" : {
+	},
+
+	"robes" : {
+	}
+}
