@@ -2,7 +2,7 @@
 
 import json
 
-o = open("levels.json","r").read()
+o = open("data/levels.json","r").read()
 l = json.loads(o)
 
 def get_player_points(character_class, level):

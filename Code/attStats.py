@@ -73,6 +73,12 @@ def get_craft(INT,ART,DEX):
 	total = int_bonus+dex_art_bonus
 	return total
 
+def get_weight_penalty(weight):
+	if weight < 10:
+		return 0
+	else:
+		return  weight/5
+
 def get_stats(atts):
 	stats = {}
 	stats["maxHP"] = get_maxHP(atts["CON"])

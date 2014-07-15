@@ -16,9 +16,16 @@ class Character(object):
 
 		self.spells = {}
 
-		self.equipment = {}
+		self.equipment = {
+				"RH" : "none",
+				"LH" : "none",
+				"armor" : "naked"
+				"mods" : get_equipment_mods(self.equipment)
+				}
 
 		self.inventory = []
+
+		self.carry_weight = set_carry_weight(self)
 
 		self.attributes = {
 				"DEX":0,"ART":0,"MGT":0,
@@ -42,3 +49,26 @@ class Character(object):
 
 	def set_name(self, name):
 		self.name = name
+
+	def equip_armor(self, armor):
+		if armor not in self.inventory:
+			return "Armor not in inventory"
+		else:
+			self.equipment["armor"] = armor
+
+	def equip_weapon(self, weapon):
+		if weapon not in self.inventory:
+			return "Weapon not in inventory"
+		else:
+			self.equipment["RH"] = weapon
+
+	def set_carry_weight(self):
+		weight = 0
+		for item in inventory:
+			weight += int(item.weight)
+		self.carry_weight = weight
+
+	def get_equipment_mods(eqp):
+		mods = []
+		if eqp["RH"] is not "none":
+			mods.extend(eqp["RH"].spec_mods
