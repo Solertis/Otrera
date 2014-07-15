@@ -1,3 +1,19 @@
 {
-
+"wooden sword" : {
+	"weight" : "5",
+	"base_pwr" : "2",
+	"durability" : "5",
+	"kind" : "sword",
+	"spec_mods" : []
+},
+"leather armor" : {
+	"weight" : "8",
+	"durability" : "10",
+	"kind" : "leather",
+	"spec_mods" : []
+},
+"healing potion" : {
+},
+"grenade" : {
+}
 }
