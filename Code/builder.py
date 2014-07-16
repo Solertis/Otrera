@@ -2,6 +2,7 @@
 
 from attStats import *
 from levels import *
+from items import *
 from character import Character
 
 def level_zero_character_builder():
@@ -14,35 +15,36 @@ def level_zero_character_builder():
 	return base_character
 
 def custom_level_naked_character_builder():
-	charac = Character()
-	print "Ok, lets make a custom level character.\n"
+	charac = level_zero_character_builder()
 	charac.level = int(raw_input("What is the character's level?: "))
 	charac.character_class = raw_input("What is the character's class?: ").lower().strip()
-	print "OK! Let's get some base stats.\n"
-	full_charac =  get_base_attributes(charac)
-	level_mods = get_level_mods(full_charac.character_class, full_charac.level)
-	for key in full_charac.attributes.keys():
-		full_charac.attributes[key] = full_charac.attributes[key] + int(level_mods[key])
-	full_charac.stats = get_stats(full_charac.attributes)
-	return full_charac
+	level_mods = get_level_mods(charac.character_class, charac.level)
+	for key in charac.attributes.keys():
+		charac.attributes[key] = charac.attributes[key] + int(level_mods[key])
+	charac.stats = get_stats(charac.attributes)
+	return charac
 
 def fully_equipped_character_builder():
-	charac = Character()
-	print "OK! A fully equipped character! Awesome sauce!"
-	charac.level = int(raw_input("What is the character's level?: "))
-	charac.character_class = raw_input("What is the character's class?: ").lower().strip()
-	print "OK! Let's get some base stats.\n"
-	full_charac = get_base_attributes(charac)
-	level_mods = get_level_mods(full_charac.character_class, full_charac.level)
-	for key in full_charac.attributes.keys():
-		full_charac.attributes[key] = full_charac.attributes[key] + int(level_mods[key])
-	full_charac.stats = get_stats(full_charac.attributes)
+	full_charac = custom_level_naked_character_builder()
 	print "Cool! Lets add some equipment"
-	inventory_list = raw_input("Give me a list of inventory separated by commas")
+	inventory_list = raw_input("Give me a list of inventory separated by commas: ")
 	inv_list = inventory_list.split(",")
 	full_charac.inventory = get_inventory_from_string_list(inv_list)
-	final_charac = apply_equipment_effects(full_charac)
+	full_charac.adjust_evade()
+	final_charac = user_sets_equipment(full_charac, full_charac.inventory)
 	return final_charac
+
+def user_sets_equipment(charac, inventory):
+	print "Here is your inventory: "
+	for item in inventory:
+		print item.name
+	print "Name the item you wish to equip"
+	w = raw_input("Select your weapon: ").lower()
+	a = raw_input("Select your armor: ").lower()
+	charac.equip_weapon_from_string(w)
+	charac.equip_armor_from_string(a)
+	charac.get_equipment_mods()
+	return charac
 
 def get_base_attributes(charac):
 	DEX = int(raw_input("Dexterity: "))
@@ -77,11 +79,12 @@ def publish_character(stats):
 def publish_charac_combat_stats(charac):
 	print "Here is your character's combat profile:"
 	print "-------------------------------------------------\n"
-	print "PHY PWR = %s %s" % (charac.equipment["RH"].base_pwr, charac.stats["Physical Attack"])
-	print "Armor Durability = %s" % str(charac.equipment.armor.durability)
-	print "Armor Defense = %s" % charac.equipment.armor.defense_dice
+	print "PWR = %s %s" % (charac.equipment["weapon"].base_pwr, charac.stats["Physical Attack"])
+	print "Armor Durability = %s" % str(charac.equipment["armor"].durability)
+	print "Armor Defense = %s" % charac.equipment["armor"].defense
 	print "Carry Weight = %s" % str(charac.carry_weight)
 	print "Equipment Bonuses = %s" % (charac.equipment["mods"])
+	print "NOTE: Evade score now accounts for Carry Weight penalty (adjusted for strength)"
 
 def choose_program():
 	print "Welcome to the Mythology Character Builder!\n"
@@ -95,13 +98,12 @@ def choose_program():
 		character = level_zero_character_builder()
 		publish_character(character.stats)
 	elif user_input == "2":
-		custom_level_naked_character_builder()
-		character = custom_level_naked_character()
+		character = custom_level_naked_character_builder()
 		publish_character(character.stats)
 	elif user_input == "3":
 		character = fully_equipped_character_builder()
 		publish_character(character.stats)
-		publish_charac.combat_stats(character)
+		publish_charac_combat_stats(character)
 	else:
 		return
 

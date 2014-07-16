@@ -1,6 +1,10 @@
 from attStats import *
 from levels import *
 from attMappings import *
+import json
+
+b = open("data/everything.json","r").read()
+e = json.loads(b)
 
 class Character(object):
 
@@ -17,15 +21,14 @@ class Character(object):
 		self.spells = {}
 
 		self.equipment = {
-				"RH" : "none",
-				"LH" : "none",
-				"armor" : "naked"
-				"mods" : get_equipment_mods(self.equipment)
+				"weapon" : "naked",
+				"armor" : "naked",
+				"mods" : []
 				}
 
 		self.inventory = []
 
-		self.carry_weight = set_carry_weight(self)
+		self.carry_weight = 0
 
 		self.attributes = {
 				"DEX":0,"ART":0,"MGT":0,
@@ -60,15 +63,40 @@ class Character(object):
 		if weapon not in self.inventory:
 			return "Weapon not in inventory"
 		else:
-			self.equipment["RH"] = weapon
+			self.equipment["weapon"] = weapon
+
+	def equip_weapon_from_string(self, weapon_string):
+		for item in self.inventory:
+			if item.name == weapon_string:
+				print "Equipping weapon"
+				self.equip_weapon(item)
+		return "Weapon not found."
+
+	def equip_armor_from_string(self, armor_string):
+		for item in self.inventory:
+			if item.name == armor_string:
+				print "Equipping armor"
+				self.equip_armor(item)
+		return "Armor not found."
 
 	def set_carry_weight(self):
 		weight = 0
-		for item in inventory:
+		for item in self.inventory:
 			weight += int(item.weight)
 		self.carry_weight = weight
 
-	def get_equipment_mods(eqp):
+	def adjust_evade(self):
+		# Adjust for inventory weight and carry strength
+		self.set_carry_weight()
+		weight_penalty = self.carry_weight/10
+		mgt_adjusted = weight_penalty - int(self.stats["Carry Strength"])
+		evade = int(self.stats["Evade"]) - mgt_adjusted
+		self.stats["Evade"] = str(evade)
+
+	def get_equipment_mods(self):
 		mods = []
-		if eqp["RH"] is not "none":
-			mods.extend(eqp["RH"].spec_mods
+		if self.equipment["weapon"].name in e.keys():
+			mods.extend(self.equipment["weapon"].spec_mods)
+		elif self.equipment["armor"].name in e.keys():
+			mods.extend(self.equipment["armor"].spec_mods)
+		self.equipment["mods"] = mods
