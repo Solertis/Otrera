@@ -1,21 +1,18 @@
 {
-"base" : {
-	"0" : "", "1" : "PLR2", "2" : "PLR2", "3" : "PLR2"
-},
 "fighter" : {
-	"4" : "MGT1 PLR1", "5" : "MGT1 PLR1", "6" : "CON1 PLR1", 
-	"7" : "MGT1 PLR1", "8" : "CON1 PLR1"
+	"1" : "MGT1 PLR1", "2" : "MGT1 PLR1", "3" : "CON1 PLR1", 
+	"4" : "MGT1 PLR1", "5" : "CON1 PLR1"
 },
 "archer" : {
-	"4" : "DEX1 PLR1", "5" : "DEX1 PLR1", "6" : "MGT1 PLR1", 
-	"7" : "DEX1 PLR1", "8" : "DEX1 PLR1"
+	"1" : "DEX1 PLR1", "2" : "DEX1 PLR1", "3" : "MGT1 PLR1", 
+	"4" : "DEX1 PLR1", "5" : "DEX1 PLR1"
 },
 "craftsman" : {
-	"4" : "INT1 PLR1", "5" : "INT1 PLR1", "6" : "DEX1 PLR1", 
-	"7" : "INT1 PLR1", "8" : "DEX1 PLR1"
+	"1" : "INT1 PLR1", "2" : "INT1 PLR1", "3" : "DEX1 PLR1", 
+	"4" : "INT1 PLR1", "5" : "DEX1 PLR1"
 },
 "mage" : {
-	"4" : "DIV1 PLR1", "5" : "DIV1 PLR1", "6" : "ART1 PLR1", 
-	"7" : "DIV1 PLR1", "8" : "ART1 PLR1"
+	"1" : "DIV1 PLR1", "2" : "DIV1 PLR1", "3" : "ART1 PLR1", 
+	"4" : "DIV1 PLR1", "5" : "ART1 PLR1"
 }	
 }

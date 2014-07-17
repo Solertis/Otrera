@@ -11,12 +11,8 @@ def get_player_points(character_class, level):
 	points afforded a character based on their
 	level and class"""
 	level = int(level)
-	if level >= 3:
-		player_points = 8
-		key = 4
-	else:
-		player_points = 0
-		key = 1
+	player_points = 0
+	key = 1
 	while level >= key:
 		player_points += int(l[character_class][str(key)][-1])
 		key+=1
@@ -37,19 +33,16 @@ def get_class_mods(character_class, level):
 	level = int(level)
 	class_dict = l[character_class]
 	final = {"DEX":0,"ART":0,"MGT":0,"DIV":0,"INT":0,"CON":0}
-	if level <= 3:
-		return {}
-	else:
-		key = 4
-		while level >= key:
-			# We do this weird split / list thing to account for
-			# more complex classes in the future and the fact that
-			# the last item will always be a player point (PLR#)
-			mod_list = class_dict[str(key)].split()[:-1]
-			for mod in mod_list:
-				final[mod[:3]] = final[mod[:3]] + int(mod[-1])
-			key += 1
-		return final
+	key = 1
+	while level >= key:
+		# We do this weird split / list thing to account for
+		# more complex classes in the future and the fact that
+		# the last item will always be a player point (PLR#)
+		mod_list = class_dict[str(key)].split()[:-1]
+		for mod in mod_list:
+			final[mod[:3]] = final[mod[:3]] + int(mod[-1])
+		key += 1
+	return final
 
 def allocate_player_points(player_points, class_mods):
 	"""This method should take in the initial output
