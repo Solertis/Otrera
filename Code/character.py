@@ -18,9 +18,7 @@ class Character(object):
 
 		self.level = 0
 
-		self.skills = {}
-
-		self.spells = {}
+		self.skills = []
 
 		self.equipment = {
 				"weapon" : "naked",
