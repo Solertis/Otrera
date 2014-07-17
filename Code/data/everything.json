@@ -54,5 +54,25 @@
 "healing potion" : {
 },
 "grenade" : {
+},
+"flame blast" : {
+	"category" : "class",
+	"flavor" : "MAGATK",
+	"rank" : "1",
+	"requirements" : {
+		"Class" : "mage",
+		"Attributes" : "DIV10",
+		"Level" : "5"
+	},
+	"effect" : {
+		"Description" : "Launch a wave of fire in a straight line",
+		"Dice" : "1d12",
+		"Element" : "FIRE",
+		"Status" : "BURN, 10",
+		"AOE" : "LINE, 5",
+		"Range" : "3",
+		"Time" : "2"
+	},
+	"uses" : "2"
 }
 }
