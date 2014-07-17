@@ -12,6 +12,45 @@
 	"kind" : "leather",
 	"spec_mods" : []
 },
+"mage staff" : {
+	"weight" : "3",
+	"base_pwr" : "1",
+	"durability" : "3",
+	"kind" : "staff",
+	"spec_mods" : ["DIV+1"]
+},
+"leather glove" : {
+	"weight" : "5",
+	"base_pwr" : "2",
+	"durability" : "5",
+	"kind" : "glove",
+	"spec_mods" : []
+},
+"wooden bow" : {
+	"weight" : "4",
+	"base_pwr" : "1",
+	"durability" : "3",
+	"kind" : "bow",
+	"spec_mods" : []
+},
+"mage robes" : {
+	"weight" : "2",
+	"durability" : "5",
+	"kind" : "robes",
+	"spec_mods" : ["maxHP+5"]
+},
+"iron armor" : {
+	"weight" : "20",
+	"durability" : "20",
+	"kind" : "metal",
+	"spec_mods" : []
+},
+"light clothes" : {
+	"weight" : "4",
+	"durability" : "5",
+	"kind" : "cloth",
+	"spec_mods" : ["DEX+1"]
+},
 "healing potion" : {
 },
 "grenade" : {

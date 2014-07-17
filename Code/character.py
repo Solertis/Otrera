@@ -5,6 +5,8 @@ import json
 
 b = open("data/everything.json","r").read()
 e = json.loads(b)
+r = open("data/types.json","r").read()
+t = json.loads(r)
 
 class Character(object):
 
@@ -56,26 +58,28 @@ class Character(object):
 	def equip_armor(self, armor):
 		if armor not in self.inventory:
 			return "Armor not in inventory"
+		elif self.character_class not in t[armor.kind]["classes"]:
+			print "%s class cannot equip %s armor type" % (self.character_class, armor.kind)
 		else:
 			self.equipment["armor"] = armor
 
 	def equip_weapon(self, weapon):
 		if weapon not in self.inventory:
 			return "Weapon not in inventory"
+		elif self.character_class not in t[weapon.kind]["classes"]:
+			print "%s class cannot equip %s weapon type" % (self.character_class, weapon.kind)
 		else:
 			self.equipment["weapon"] = weapon
 
 	def equip_weapon_from_string(self, weapon_string):
 		for item in self.inventory:
 			if item.name == weapon_string:
-				print "Equipping weapon"
 				self.equip_weapon(item)
 		return "Weapon not found."
 
 	def equip_armor_from_string(self, armor_string):
 		for item in self.inventory:
 			if item.name == armor_string:
-				print "Equipping armor"
 				self.equip_armor(item)
 		return "Armor not found."
 
