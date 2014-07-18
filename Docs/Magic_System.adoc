@@ -1,42 +1,7 @@
 *Magic System*
 ===============
 
-_Casting Spells_
---------------------
-
-1. There are two basic ways to cast a spell: Recitation and Invocation. 
-Recitation means casting a spell from memory. Invocation means casting 
-a spell from a written source.
-
-2. Characters can only have a small number of spells memorized at any 
-given time. In battle, a mage typically has access to between 3 and 6 
-recitation spells (there are ways to increase this).
-
-3. The advantage of Recitation spells is that they are cast immediately; 
-that is, you don't have to worry about the target moving out of range or 
-your character being struck while casting.
-
-4. The disadvantage is that Recitation spells have a failure chance based 
-on INT. Without high intelligence to perfectly recite complex spell 
-language, there will be a high chance the spell either fails to cast, or 
-has some random effect.
-
-5. Invocation spells do not have a failure chance. The tradeoff is that 
-they have a casting time attribute, meaning they may take a long time 
-to complete.
-
-6. Invocation spells can be interrupted by an enemy attack. Targets may 
-also move out of the area of effect if it is not a TARGET type spell.
-
-7. The number of Invocation spells you can bring into battle is limited 
-only by medium. Spell books, spell tombs, and flesh runes all have 
-different capacities for spells.
-
-8. Invocation spells can be supercharged (specific skill) increasing their 
-power in exchange for more casting time.
-
-Spell Attack Power (SPW) = Casting Roll + Spell Base DMG. The die used for 
-the casting roll is determined by the character's DIV score.
+Spells are a subset of Skills.
 
 Spell Cast Example - Firebolt:
 

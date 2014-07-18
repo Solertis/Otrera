@@ -58,14 +58,11 @@ When fighting naked (armor destroyed or intentionally) you rely solely on your d
 
 *Intelligence*
 
-Intelligence is a key attribute for craftsmen and mages. It influences the potency of chemistry techniques as well as spell casting speed and spell memory. Neither magic nor craft classes can do their jobs particularly well without intelligence.
+Intelligence is a key attribute for craftsmen and mages. It influences the potency of chemistry techniques as well as spell casting speed. Neither magic nor craft classes can do their jobs particularly well without intelligence.
 
 Intelligence scores reduce casting time as follows:
 	INT 0-5: +2 // INT 6-8: +1 // INT 9-11: 0 // INT 12-13: -1 // INT 14-15: -2
 	INT 16-17: -3 // INT 18-19: -4 // INT 20-21: -5 // INT 22-23: -6 // INT>24: -7
-Intelligence also determines spell memory as follows:
-INT < 5: 0 // INT 5-7: 1 // INT 8-9: 2 // INT 10-11: 3 // INT 12-13: 4 // INT 14-15: 5
-INT 16-17: 6 // INT 18-19: 7 // INT 20-21: 8 // INT 22-23: 9 // INT>24: 10
 
 *Divine*
 

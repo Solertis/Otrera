@@ -70,7 +70,6 @@ def publish_character(stats):
 	print "Resistance = %s" % str(stats["Resistance"])
 	print "Carry Strength = %s" % str(stats["Carry Strength"])
 	print "Casting Speed = %s" % str(stats["Casting Speed"])
-	print "Spell Memory = %s" % str(stats["Spell Memory"])
 	print "Spell Failure = %s" % str(stats["Spell Failure"])
 	print "Craft = %s" % str(stats["Craft"])
 	print "--------------------------------------------------\n\n"

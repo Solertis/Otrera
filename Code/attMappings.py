@@ -107,13 +107,6 @@ def int_to_spell_fail(INT):
 def int_to_craft(INT):
 	return INT/2
 
-def int_to_spell_memory(INT):
-	if INT <= 4:
-		return 0
-	else:
-		diff = INT-3
-		return diff/2
-
 def dex_art_to_craft(DEX,ART):
 	total = DEX+ART
 	return total/5

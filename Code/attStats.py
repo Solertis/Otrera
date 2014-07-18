@@ -5,7 +5,7 @@ relevant_attributes = {
 	"Evade" : ["DEX","ART"], "Physical Defense" : ["MGT","CON"],
 	"MaxHP" : ["CON"], "Magical Defense" : ["DIV","INT"],
 	"Resistance" : ["CON"], "Hit" : ["DEX","ART"], "RHIT" : ["DEX"],
-	"Spell Memory" : ["INT"], "Magic Attack" : ["DIV"], "Craft" : ["DEX","INT","ART"],
+	"Magic Attack" : ["DIV"], "Craft" : ["DEX","INT","ART"],
 	"Physical Attack" : ["MGT"], "Carry Strength" : ["MGT"],
 	"Casting Speed" : ["ART"], "Spell Failure" : ["INT","ART"]
 	}
@@ -46,10 +46,6 @@ def get_accuracy(DEX):
 	rhit = dex_to_accuracy(DEX)
 	return rhit
 
-def get_spell_memory(INT):
-	spell_memory = int_to_spell_memory(INT)
-	return spell_memory
-
 def get_magic_attack(DIV):
 	dice = div_to_magic_attack(DIV)
 	return dice
@@ -86,7 +82,6 @@ def get_stats(atts):
 	stats["Resistance"] = get_resistance(atts["CON"])
 	stats["Carry Strength"] = get_carry_strength(atts["MGT"])
 	stats["Casting Speed"] = get_casting_speed(atts["ART"])
-	stats["Spell Memory"] = get_spell_memory(atts["INT"])
 	stats["Spell Failure"] = get_spell_failure(atts["INT"],atts["ART"])
 	stats["Craft"] = get_craft(atts["INT"],atts["ART"],atts["DEX"])
 	return stats
