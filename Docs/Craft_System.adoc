@@ -1,4 +1,0 @@
-Craft
-==========
-
-Craft techniques are a subset of Skills
