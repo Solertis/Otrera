@@ -54,6 +54,29 @@
 "healing potion" : {
 },
 "grenade" : {
+	"category" : "class",
+	"flavor" : "PHYATK",
+	"rank" : "1",
+	"requirements" : {
+		"Class" : "craftsman",
+		"Attributes" : "INT8",
+		"Level" : "0"
+	},
+	"restrictions" : {
+		"Equipment" : [],
+		"Status" : [],
+		"Stats" : []
+	},
+	"effect" : {
+		"Description" : "Throw a frag grenade that does physical damage",
+		"Power" : "1d10",
+		"Element" : "PHYS",
+		"Status" : "BLEED, 12",
+		"AOE" : "BOX, 4",
+		"Range" : "4",
+		"Time" : "0"
+	},
+	"uses" : "3"
 },
 "flame blast" : {
 	"category" : "class",
@@ -64,9 +87,14 @@
 		"Attributes" : "DIV10",
 		"Level" : "5"
 	},
+	"restrictions" : {
+		"Equipment" : [],
+		"Status" : ["SILENCE"],
+		"Stats" : []
+	},
 	"effect" : {
 		"Description" : "Launch a wave of fire in a straight line",
-		"Dice" : "1d12",
+		"Power" : "1d12",
 		"Element" : "FIRE",
 		"Status" : "BURN, 10",
 		"AOE" : "LINE, 5",
@@ -74,5 +102,55 @@
 		"Time" : "2"
 	},
 	"uses" : "2"
+},
+"spin attack" : {
+	"category" : "class",
+	"flavor" : "PHYATK",
+	"rank" : "1",
+	"requirements" : {
+		"Class" : "warrior",
+		"Attributes" : "MGT8",
+		"Level" : "0"
+	},
+	"restrictions" : {
+		"Equipment" : ["sword","glove"],
+		"Status" : [],
+		"Stats" : []
+	},
+	"effect" : {
+		"Description" : "360 degree attack on surrounding enemies",
+		"Power" : "SCALE",
+		"Element" : "PHYS",
+		"Status" : "",
+		"AOE" : "SURROUND",
+		"Range" : "1",
+		"Time" : "0"
+	},
+	"uses" : "9999"
+},
+"focus shot" : {
+	"category" : "class",
+	"flavor" : "PHYATK",
+	"rank" : "1",
+	"requirements" : {
+		"Class" : "archer",
+		"Attributes" : "DEX7",
+		"Level" : "2"
+	},
+	"restrictions" : {
+		"Equipment" : ["bow"],
+		"Status" : [],
+		"Stats" : ["BLIND"]
+	},
+	"effect" : {
+		"Description" : "Focused shot using a bow and arrow",
+		"Power" : "SCALE, 1d6",
+		"Element" : "PHYS",
+		"Status" : "",
+		"AOE" : "SINGLE",
+		"Range" : "10",
+		"Time" : "0"
+	},
+	"uses" : "9999"
 }
 }

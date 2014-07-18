@@ -25,9 +25,15 @@ class Skill(object):
 				"Level" : "1" #Minimum character level
 				}
 
+		self.restrictions = {
+				"Equipment" : [], # Types of weapons or armor or even specific things
+				"Status" : [], # Status ailments that prevent use of skill
+				"Stats" : [] # HP > 10 for example
+				}
+
 		self.effect = { 
 				"Description" : "Text description of skill",
-				"Dice" : "1d6", # If no dice, this will be a '0'
+				"Power" : "1d6", # May be fixed int, dice roll, 'scaling', or some combination
 				"Base" : "3", # Minimum effect
 				"Element" : "",
 				"Status" : "POISON, 10", #Status ailment, skill check against d20 to inflict

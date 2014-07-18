@@ -14,13 +14,13 @@ Goals for project.
 
 7. Add more sample data to JSON files
 
-8. Cleanup code
+8. Cleanup code, Improve docs -- NEVER DONE
 
 9. Add tests
 
-10. Improve docs
+10. Create JSON builder scripts to expedite skill, weapon etc. creation
 
-11. Add concept of skills to characters
+11. Add concept of skills to characters -- DONE
 
 12. Make complete character builder print well-designed character sheets
 
