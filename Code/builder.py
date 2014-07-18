@@ -34,6 +34,10 @@ def fully_equipped_character_builder():
 	final_charac = user_sets_equipment(full_charac, full_charac.inventory)
 	return final_charac
 
+def complete_character_builder():
+	charac = fully_equipped_character_builder()
+	print "Score! Lets complete the character by choosing skills"
+
 def user_sets_equipment(charac, inventory):
 	print "Here is your inventory: "
 	for item in inventory:
@@ -85,6 +89,14 @@ def publish_charac_combat_stats(charac):
 	print "Equipment Bonuses = %s" % (charac.equipment["mods"])
 	print "NOTE: Evade score now accounts for Carry Weight penalty (adjusted for strength)"
 
+def publish_charac_skils(charac):
+	pass
+
+def publish complete_charac(charac):
+	publish_character(charac.stats)
+	publish_charac_combat_stats(charac)
+	publish_charac_skills(charac.skills)
+
 def choose_program():
 	print "Welcome to the Mythology Character Builder!\n"
 	print "---------------------------------------------------"
@@ -103,6 +115,9 @@ def choose_program():
 		character = fully_equipped_character_builder()
 		publish_character(character.stats)
 		publish_charac_combat_stats(character)
+	elif user_input == "4":
+		charac = complete_character_builder()
+		publish_complete_character(charac)
 	else:
 		return
 
