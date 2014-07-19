@@ -36,7 +36,7 @@ class Skill(object):
 				"Power" : "1d6", # May be fixed int, dice roll, 'scaling', or some combination
 				"Base" : "3", # Minimum effect
 				"Element" : "",
-				"Status" : "POISON, 10", #Status ailment, skill check against d20 to inflict
+				"Inflicts" : "POISON, 10", #Status ailment, skill check against d20 to inflict
 				"AOE" : "Touch, 1", #Shape / size of area affected by skill
 				"Range" : 1, #How far from the user can I set the skill
 				"Time" : 0 #How long does skill take to occur. Most are 0, magic will be more
