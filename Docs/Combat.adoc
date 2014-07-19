@@ -1,0 +1,84 @@
+Melee Combat
+============
+
+== Terms:
+	DEF: Defensive Score for a given attacked
+	HIT: Accuracy of a melee attacked
+	EVD: Evasive ability
+	DMG: Damage inflicted by an attack that has successfully hit
+	ATK: Weapon's minimum attack power → Base Attack + Scaling Mod
+	DRB: Armor durability. Absorbs DMG from all non-devestating attacks. Buffs can add DRB to 		unarmored characters
+
+1. Characters roll for initiative, GM manages turns. On any given turn, a character can move and act once.
+2. Physical attacks (both ranged and melee) require successful HIT and ATK rolls.
+3. The HIT roll compares your HIT score (roll + modifier) to the target's EVD (roll + modifier). If your HIT equals or surpasses the threshold, then you can roll damage.
+4. Damage to an enemy's armor and HP depends on the attacking character's ATK score and the victim's DEF score.
+5. DMG (Damage) = Attack Power + Roll
+6. Attack Power = Weapon Base Damage + Scaling Bonus (See Equipment section)
+
+7. Armor helps characters to either avoid or reduce HP damage. It does this in two ways. Firstly, the die employed for the defense roll will depend on your armor class. A good enough roll, and you can take 0 HP damage or at least reduce the impact. Secondly, each armor has its own durability score. This is the amount of damage the armor can take before it is useless.
+8. DEF (defense against particular attack) is equal to the armor roll plus any modifiers from skills or buffs.
+9. To inflict HP damage, the DMG score must be higher than the DEF score. If it is lower, then it only reduces armor durability (DRB). If it is less than half of the DEF score, then it does zero damage.
+10. If the DMG score is greater than the DEF score, than damage works as follows:
+	Armor DRB goes down by the amount of the DEF score
+	HP is reduced by an amount equal to the difference between DMG and DEF
+
+== Example
+	In other words:
+If DMG > DEF:
+	Durability = Durability – DEF
+	HP = HP – (DMG-DEF)
+If DMG == DEF:
+	Durability = Durability - ATK
+If DMG < DEF:
+	If DMG*2 <= DEF:
+		No effect
+	Else:
+		Durability = Durability – DMG +
+
+Justification: In essence, what is happening is that the armor is reducing the amount of damage to your HP. Strong armor and good rolls will allow you to take zero HP damage or even zero damage to armor. Weak armor is destroyed more quickly and armor of the weaker classes will provide a lower DEF score, allowing for more HP damage.
+
+Characters who fight naked or use light, weak armor have three options if they wish to survive:
+	1. Avoid being attacked
+	2. Maintain very high evade so that attacks don't hit you
+	3. Use skills and buffs to increase your DEF, HP, or DRB.
+
+Another example:
+
+Physical Attack Formula:
+	DMG = WPN PWR + Roll
+	WPN PWR = Weapon Base DMG + Scaling Mod
+	Example: Knife
+		Base DMG = 1
+		MGT Scale = 2
+		DEX Scale = 3
+		At Base 10 attributes, DEX mod = 3x10, MGT mod = 2x10
+		Scaling mod = Sum(mods)/10, therefore:
+		Scaling mod = 5, Base DMG = 1, Weapon DMG = 6
+		Therefore, if player rolls 4, total DMG = 4+6 = 10
+ 		If target's PHYS DEF = 3, total DMG = 10-3 = 7
+		Subtract 7 HP from target and 3 from target's armor DRB
+
+NOTE: By default, 'unarmed' has no modifier. Must learn skill
+
+ROLL=20 + SCALING=18 + BASE DMG=10 == Total DMG: 48
+
+TSF = Total Scaling Factor
+
+***THIS IS UNRESOLVED. WE WILL NEED EXTENSIVE TESTING TO DECIDE ON DAMAGE FORMULA***
+Assumes: ROll = 20, Weapon Base DMG = 20, TSF=8
+
+MaxDamage == 60 --> CRIT: 85 --> Buff: 70-100 --> Buff+CRIT+SKILL: ~200
+1/2Formula Version: 30 // 45 // 40-55 // ~120
+1/2Weapon DMG Version: 40 // 60 // 50-65 // ~150
+
+In cases where DMG formula produces decimals, use percent die
+
+	Example: MGT mod = 22, DEX mod = 33, Scaling mod = 5.5
+	Roll %die to try to get to 100 from .50. If you hit '50' or higher, round up scaling mod
+
+EVASION
+
+Character evade is calculated as follows:
+
+Evade = Sum(ART_mod, DEX_mod, other_mod) - Weight_Penalty

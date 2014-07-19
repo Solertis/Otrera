@@ -1,0 +1,20 @@
+{
+	"usable" : {
+
+		"instances" : {
+
+			"healing potion" : {
+				"kind" : "usable",
+				"weight" : "1",
+				"effect" : "HP+10",
+				"special" : {}
+				"durability" : "1"
+			}
+		}
+	},
+
+	"equipment" : {
+	}
+
+
+}

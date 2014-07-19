@@ -1,0 +1,217 @@
+{
+    "amazing sword": {
+        "base_pwr": "5", 
+        "durability": "8", 
+        "kind": "sword", 
+        "spec_mods": [
+            "HIT+1", 
+            "HP+5"
+        ], 
+        "weight": "4"
+    }, 
+    "flame blast": {
+        "category": "class", 
+        "effect": {
+            "AOE": "LINE, 5", 
+            "Description": "Launch a wave of fire in a straight line", 
+            "Element": "FIRE", 
+            "Inflicts": "BURN, 10", 
+            "Power": "1d12", 
+            "Range": "3", 
+            "Time": "2"
+        }, 
+        "flavor": "MAGATK", 
+        "rank": "1", 
+        "requirements": {
+            "Attributes": "DIV10", 
+            "Class": "mage", 
+            "Level": "5"
+        }, 
+        "restrictions": {
+            "Equipment": [], 
+            "Stats": [], 
+            "Status": [
+                "SILENCE"
+            ]
+        }, 
+        "uses": "2"
+    }, 
+    "focus shot": {
+        "category": "class", 
+        "effect": {
+            "AOE": "SINGLE", 
+            "Description": "Focused shot using a bow and arrow", 
+            "Element": "PHYS", 
+            "Inflicts": "", 
+            "Power": "SCALE, 1d6", 
+            "Range": "10", 
+            "Time": "0"
+        }, 
+        "flavor": "PHYATK", 
+        "rank": "1", 
+        "requirements": {
+            "Attributes": "DEX7", 
+            "Class": "archer", 
+            "Level": "2"
+        }, 
+        "restrictions": {
+            "Equipment": [
+                "bow"
+            ], 
+            "Stats": [
+                "BLIND"
+            ], 
+            "Status": []
+        }, 
+        "uses": "9999"
+    }, 
+    "grenade": {
+        "category": "class", 
+        "effect": {
+            "AOE": "BOX, 4", 
+            "Description": "Throw a frag grenade that does physical damage", 
+            "Element": "PHYS", 
+            "Inflicts": "BLEED, 12", 
+            "Power": "1d10", 
+            "Range": "4", 
+            "Time": "0"
+        }, 
+        "flavor": "PHYATK", 
+        "rank": "1", 
+        "requirements": {
+            "Attributes": "INT8", 
+            "Class": "craftsman", 
+            "Level": "0"
+        }, 
+        "restrictions": {
+            "Equipment": [], 
+            "Stats": [], 
+            "Status": []
+        }, 
+        "uses": "3"
+    }, 
+    "healing potion": {}, 
+    "ice storm": {
+        "category": "class", 
+        "effect": {
+            "AOE": "SQUARE, 9", 
+            "Description": "Creates a localized storm of ice and hail", 
+            "Element": "ICE", 
+            "Inflicts": "FREEZE, 10", 
+            "Power": "1d10", 
+            "Range": "10", 
+            "Time": "2"
+        }, 
+        "flavor": "MAGATK", 
+        "rank": "2", 
+        "requirements": {
+            "Attributes": "DIV8", 
+            "Class": "mage", 
+            "Level": "4"
+        }, 
+        "restrictions": {
+            "Equipment": [
+            ], 
+            "Stats": [
+            ], 
+            "Status": [
+                "SILENCE", 
+                "BURN"
+            ]
+        }, 
+        "uses": "3"
+    }, 
+    "iron armor": {
+        "durability": "20", 
+        "kind": "metal", 
+        "spec_mods": [], 
+        "weight": "20"
+    }, 
+    "laser sword": {
+        "base_pwr": "1", 
+        "durability": "1", 
+        "kind": "sword", 
+        "spec_mods": [], 
+        "weight": "1"
+    }, 
+    "leather armor": {
+        "durability": "10", 
+        "kind": "leather", 
+        "spec_mods": [], 
+        "weight": "8"
+    }, 
+    "leather glove": {
+        "base_pwr": "2", 
+        "durability": "5", 
+        "kind": "glove", 
+        "spec_mods": [], 
+        "weight": "5"
+    }, 
+    "light clothes": {
+        "durability": "5", 
+        "kind": "cloth", 
+        "spec_mods": [
+            "DEX+1"
+        ], 
+        "weight": "4"
+    }, 
+    "mage robes": {
+        "durability": "5", 
+        "kind": "robes", 
+        "spec_mods": [
+            "maxHP+5"
+        ], 
+        "weight": "2"
+    }, 
+    "mage staff": {
+        "base_pwr": "1", 
+        "durability": "3", 
+        "kind": "staff", 
+        "spec_mods": [
+            "DIV+1"
+        ], 
+        "weight": "3"
+    }, 
+    "spin attack": {
+        "category": "class", 
+        "effect": {
+            "AOE": "SURROUND", 
+            "Description": "360 degree attack on surrounding enemies", 
+            "Element": "PHYS", 
+            "Inflicts": "", 
+            "Power": "SCALE", 
+            "Range": "1", 
+            "Time": "0"
+        }, 
+        "flavor": "PHYATK", 
+        "rank": "1", 
+        "requirements": {
+            "Attributes": "MGT8", 
+            "Class": "warrior", 
+            "Level": "0"
+        }, 
+        "restrictions": {
+            "Equipment": [
+                "sword", 
+                "glove"
+            ], 
+            "Stats": [], 
+            "Status": []
+        }, 
+        "uses": "9999"
+    }, 
+    "wooden bow": {
+        "base_pwr": "1", 
+        "durability": "3", 
+        "kind": "bow", 
+        "spec_mods": [], 
+        "weight": "4"
+    }, 
+    "wooden sword": {
+        "base_pwr": "2", 
+        "durability": "5", 
+        "kind": "sword", 
+        "spec_mods": [], 
+        "weight": "5"
+    }
+}
