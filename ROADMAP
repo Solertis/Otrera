@@ -45,45 +45,33 @@ SPECIFIC TODO's
 	
 TODO
 
-1. Create basic level 0 naked character builder -- DONE
+1. Add more sample data to JSON files -- NEXT PRIORITY
 
-2. Allow for custom level characters -- DONE
+2. Create content editor program (JSON tweaker)
 
-3. Add concept of class to character builder -- DONE
+3. Create tests for your code (Debugging is slow and shitty now)
 
-4. Define 'Character' Python object -- DONE
+4. Cleanup code, add comments, error-handling, etc. -- Will do after game publishing milestone
 
-5. Add concept of inventory and equipment to characters -- DONE
+5. Improve your documentation!
 
-6. Create fully-equipped character builder -- DONE
+6. Make complete character builder print well-designed character sheets
 
-7. Add more sample data to JSON files
+7. Find a way to quantify a character's combat efficacy
 
-8. Cleanup code, Improve docs -- NEVER DONE
+8. Make a random and class-based character generator
 
-9. Add tests
+9. Create methods for generating teams of characters with a team combat efficacy
 
-10. Create JSON builder scripts to expedite skill, weapon etc. creation -- DONE
+10. Rebalance attributes and stats after analyzing thousands of characters
 
-11. Add concept of skills to characters -- DONE
+11. Add concept of enemies (Tagged character objects? New object?)
 
-12. Make complete character builder print well-designed character sheets
+12. Make a simple frontend for the different builder programs
 
-13. Find a way to quantify a character's combat efficacy
+13. Create game builder
 
-14. Make a random and class-based character generator
-
-15. Create methods for generating teams of characters with a team combat efficacy
-
-16. Rebalance attributes and stats after analyzing thousands of characters
-
-17. Add concept of enemies (Tagged character objects? New object?)
-
-18. Make a simple frontend for the different builder programs
-
-19. Create game builder
-
-20. Host everything somewhere. Improve GUI / website design. Monetize "point and click" services.
+14. Host everything somewhere. Improve GUI / website design. Monetize "point and click" services.
 
 The repo and source code will always remain free (as in freedom) and open.
 The 'Daughters of Ares' game (among other projects) will remain a proprietary fork.
