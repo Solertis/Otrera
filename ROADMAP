@@ -15,6 +15,33 @@ The Otrera WebApp, which will include paid features, should do the following:
 	Users can define enemies
 	Users can print out character sheets and game manuals
 	Users can host games and scenarios for private use / kickstarter / whatever
+
+HIGH-LEVEL NOTES
+
+	Otrera needs the ability to publish full games. Each game directory should
+	have its own data directory with files for skills, gear (everything.json)
+	as well as scenario and characters. Essentially a game built from the
+	Otrera engine should just be a set of JSON files utilized by the Python
+	modules.
+
+	The degree to which non-developers will be able to change the engine is
+	unclear at this point. While anyone who knows Python can easily fork and
+	tweak the code to their heart's content, there is only so much users of
+	the web GUI will be able to do without the ability to alter the source code.
+
+	I would be satisfied if users were at least able to change attribute and
+	stat names. The ability to remove class skills, class attribute bonuses,
+	or classes altogether, would also be cool I think, and probably not overly
+	complex. Letting users change attribute --> stat mappings however is where
+	things get hairy. Not only would that screw with game balance (do we want
+	to let users make unbalanced games?) but it would require substantial
+	refactoring of code, as those mappings are currently in a Python module.
+	
+	There is no reason why attribute --> stat mappings cannot be encoded in
+	JSON and made editable. Nevertheless, this is not an immediate priority.
+
+SPECIFIC TODO's
+=======
 	
 TODO
 
