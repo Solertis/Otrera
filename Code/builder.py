@@ -43,7 +43,6 @@ def complete_character_builder():
 	print "Score! Lets complete the character by choosing skills"
 	eligible_skills = get_class_skills(charac)
 	eligible_skills.extend(get_attribute_skills(charac))
-	print eligible_skills
 	charac = user_picks_skills(charac, eligible_skills)
 	return charac
 
@@ -64,12 +63,15 @@ def user_picks_skills(charac, eligible_skills):
 	for thing in eligible_skills:
 		print thing.name
 	print "You may select %s skills (character level)\n" % str(charac.level)
-	selected = raw_input("Enter a comma-separated list (no spaces): ")
-	skill_names = selected.split(",")
+	selected = raw_input("Enter a comma-separated list: ")
+	list_names = selected.split(",")
+	skill_names = []
+	for item in list_names:
+		item = item.lstrip()
+		skill_names.append(item)
 	print skill_names
 	for item in eligible_skills:
 		if item.name in skill_names:
-			print item.name + " is in da list"
 			charac.add_skill(item)
 	return charac
 

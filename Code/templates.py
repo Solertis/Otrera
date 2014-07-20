@@ -18,13 +18,17 @@ templates = {
 		},
 	"item" : {
 		"Item Name" : {
-			} #Work in progress
+			"weight" : "1",
+			"kind" : "usable",
+			"effect" : "none",
+			"special" : {},
+			"durability" : "1"
+			} 
 		},
 	"skill" : {
 		"Skill Name" : {
 			"category" : "none",
 			"flavor" : "vanilla",
-			"rank" : "1",
 			"uses" : "1",
 			"effect" : {
 				"AOE" : "none",
@@ -36,9 +40,9 @@ templates = {
 				"Time" : "0"
 				},
 			"requirements" : {
-				"Attributes" : "none",
-				"Class" : "none",
-				"Level" : "none"
+				"Attributes" : [],
+				"Class" : [],
+				"Level" : "1"
 				},
 			"restrictions" : {
 				"Equipment" : [],

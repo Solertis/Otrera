@@ -22,7 +22,9 @@
         }, 
         "flavor": "PHYSDEF", 
         "requirements": {
-            "Attributes": ["DEX10"], 
+            "Attributes": [
+                "DEX10"
+            ], 
             "Class": [], 
             "Level": "0"
         }, 
@@ -46,7 +48,9 @@
         }, 
         "flavor": "MAGATK", 
         "requirements": {
-            "Attributes": ["DIV10"], 
+            "Attributes": [
+                "DIV10"
+            ], 
             "Class": [], 
             "Level": "5"
         }, 
@@ -72,7 +76,9 @@
         }, 
         "flavor": "PHYATK", 
         "requirements": {
-            "Attributes": ["DEX7"], 
+            "Attributes": [
+                "DEX7"
+            ], 
             "Class": [], 
             "Level": "2"
         }, 
@@ -100,7 +106,9 @@
         }, 
         "flavor": "PHYATK", 
         "requirements": {
-            "Attributes": ["INT8"], 
+            "Attributes": [
+                "INT8"
+            ], 
             "Class": [], 
             "Level": "0"
         }, 
@@ -111,7 +119,20 @@
         }, 
         "uses": "3"
     }, 
-    "healing potion": {}, 
+    "healing potion": {
+        "durability": "1", 
+        "effect": "HP+10", 
+        "kind": "usable", 
+        "special": {}, 
+        "weight": "2"
+    }, 
+    "heavy spear": {
+        "base_pwr": "5", 
+        "durability": "15", 
+        "kind": "spear", 
+        "spec_mods": [], 
+        "weight": "10"
+    }, 
     "ice storm": {
         "category": "class", 
         "effect": {
@@ -125,7 +146,9 @@
         }, 
         "flavor": "MAGATK", 
         "requirements": {
-            "Attributes": ["DIV8"], 
+            "Attributes": [
+                "DIV8"
+            ], 
             "Class": [], 
             "Level": "4"
         }, 
@@ -203,7 +226,9 @@
         }, 
         "flavor": "PHYSATK", 
         "requirements": {
-            "Attributes": ["DEX5"], 
+            "Attributes": [
+                "DEX5"
+            ], 
             "Class": [], 
             "Level": "0"
         }, 
@@ -227,8 +252,12 @@
         }, 
         "flavor": "PHYATK", 
         "requirements": {
-            "Attributes": ["MGT8"], 
-            "Class": ["warrior"], 
+            "Attributes": [
+                "MGT8"
+            ], 
+            "Class": [
+                "warrior"
+            ], 
             "Level": "0"
         }, 
         "restrictions": {
