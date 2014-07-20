@@ -21,10 +21,9 @@
             "Time": "0"
         }, 
         "flavor": "PHYSDEF", 
-        "rank": "2", 
         "requirements": {
             "Attributes": ["DEX10"], 
-            "Class": "", 
+            "Class": [], 
             "Level": "0"
         }, 
         "restrictions": {
@@ -46,10 +45,9 @@
             "Time": "2"
         }, 
         "flavor": "MAGATK", 
-        "rank": "1", 
         "requirements": {
             "Attributes": ["DIV10"], 
-            "Class": "mage", 
+            "Class": [], 
             "Level": "5"
         }, 
         "restrictions": {
@@ -73,10 +71,9 @@
             "Time": "0"
         }, 
         "flavor": "PHYATK", 
-        "rank": "1", 
         "requirements": {
-            "Attributes": "DEX7", 
-            "Class": "archer", 
+            "Attributes": ["DEX7"], 
+            "Class": [], 
             "Level": "2"
         }, 
         "restrictions": {
@@ -102,10 +99,9 @@
             "Time": "0"
         }, 
         "flavor": "PHYATK", 
-        "rank": "1", 
         "requirements": {
-            "Attributes": "INT8", 
-            "Class": "craftsman", 
+            "Attributes": ["INT8"], 
+            "Class": [], 
             "Level": "0"
         }, 
         "restrictions": {
@@ -128,10 +124,9 @@
             "Time": "2"
         }, 
         "flavor": "MAGATK", 
-        "rank": "2", 
         "requirements": {
-            "Attributes": "DIV8", 
-            "Class": "mage", 
+            "Attributes": ["DIV8"], 
+            "Class": [], 
             "Level": "4"
         }, 
         "restrictions": {
@@ -207,10 +202,9 @@
             "Time": "0"
         }, 
         "flavor": "PHYSATK", 
-        "rank": "1", 
         "requirements": {
             "Attributes": ["DEX5"], 
-            "Class": "", 
+            "Class": [], 
             "Level": "0"
         }, 
         "restrictions": {
@@ -232,10 +226,9 @@
             "Time": "0"
         }, 
         "flavor": "PHYATK", 
-        "rank": "1", 
         "requirements": {
-            "Attributes": "MGT8", 
-            "Class": "warrior", 
+            "Attributes": ["MGT8"], 
+            "Class": ["warrior"], 
             "Level": "0"
         }, 
         "restrictions": {

@@ -85,7 +85,7 @@ class Character(object):
 		req = skill_obj.requirements
 		if int(req["Level"]) > self.level:
 			return "Character level too low to acquire this skill"
-		elif req["Class"] != "":
+		elif req["Class"] != []:
 			if self.character_class not in req["Class"]:
 				return "Character is the wrong class to acquire this skill"
 		elif req["Attributes"] != []:
