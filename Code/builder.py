@@ -92,7 +92,7 @@ def publish_charac_combat_stats(charac):
 def publish_charac_skils(charac):
 	pass
 
-def publish complete_charac(charac):
+def publish_complete_charac(charac):
 	publish_character(charac.stats)
 	publish_charac_combat_stats(charac)
 	publish_charac_skills(charac.skills)
