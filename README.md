@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Otrera
 =========
 
@@ -32,9 +31,3 @@ use the docs to put together a simple pen and paperadventure,
 or use the software to power a computer game. Building skills 
 and equipment on top of the game engine is very straightforward. 
 Your only limit should be your imagination.
-=======
-Mythology
-=========
-
-Mythology Game System
->>>>>>> 1d7e86b... Initial commit
