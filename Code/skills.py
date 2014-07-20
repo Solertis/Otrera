@@ -47,6 +47,7 @@ class Skill(object):
 			self.load(make)
 
 	def load(self, skill):
+		skill = skill.lower()
 		k = e[skill]
 		self.name = skill
 		self.category = k["category"]

@@ -9,6 +9,31 @@
         ], 
         "weight": "4"
     }, 
+    "catch arrow": {
+        "category": "attribute", 
+        "effect": {
+            "AOE": "Single", 
+            "Description": "Catch projectile", 
+            "Element": "", 
+            "Inflicts": "", 
+            "Power": "0", 
+            "Range": "10", 
+            "Time": "0"
+        }, 
+        "flavor": "PHYSDEF", 
+        "rank": "2", 
+        "requirements": {
+            "Attributes": ["DEX10"], 
+            "Class": "", 
+            "Level": "0"
+        }, 
+        "restrictions": {
+            "Equipment": [], 
+            "Stats": [], 
+            "Status": []
+        }, 
+        "uses": "5"
+    }, 
     "flame blast": {
         "category": "class", 
         "effect": {
@@ -23,7 +48,7 @@
         "flavor": "MAGATK", 
         "rank": "1", 
         "requirements": {
-            "Attributes": "DIV10", 
+            "Attributes": ["DIV10"], 
             "Class": "mage", 
             "Level": "5"
         }, 
@@ -110,10 +135,8 @@
             "Level": "4"
         }, 
         "restrictions": {
-            "Equipment": [
-            ], 
-            "Stats": [
-            ], 
+            "Equipment": [], 
+            "Stats": [], 
             "Status": [
                 "SILENCE", 
                 "BURN"
@@ -171,6 +194,31 @@
             "DIV+1"
         ], 
         "weight": "3"
+    }, 
+    "quick attack": {
+        "category": "attribute", 
+        "effect": {
+            "AOE": "Single", 
+            "Description": "Instant light attack", 
+            "Element": "PHYS", 
+            "Inflicts": "", 
+            "Power": ".5STD", 
+            "Range": "1", 
+            "Time": "0"
+        }, 
+        "flavor": "PHYSATK", 
+        "rank": "1", 
+        "requirements": {
+            "Attributes": ["DEX5"], 
+            "Class": "", 
+            "Level": "0"
+        }, 
+        "restrictions": {
+            "Equipment": [], 
+            "Stats": [], 
+            "Status": []
+        }, 
+        "uses": "3"
     }, 
     "spin attack": {
         "category": "class", 

@@ -81,6 +81,19 @@ class Character(object):
 				self.equip_armor(item)
 		return "Armor not found."
 
+	def add_skill(self, skill_obj):
+		req = skill_obj.requirements
+		if int(req["Level"]) > self.level:
+			return "Character level too low to acquire this skill"
+		elif req["Class"] != "":
+			if self.character_class not in req["Class"]:
+				return "Character is the wrong class to acquire this skill"
+		elif req["Attributes"] != []:
+			for att in req["Attributes"]:
+				if self.attributes[att[:3]] < int(att[3:]):
+					return "Character does not meet attribute requirement for skill"
+		self.skills.append(skill_obj)
+
 	def set_carry_weight(self):
 		weight = 0
 		for item in self.inventory:

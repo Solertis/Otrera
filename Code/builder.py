@@ -4,6 +4,10 @@ from attStats import *
 from levels import *
 from items import *
 from character import Character
+import json
+
+a = open("data/class_skills.json","r").read()
+c = json.loads(a)
 
 def level_zero_character_builder():
 	zero_character = Character()
@@ -37,6 +41,11 @@ def fully_equipped_character_builder():
 def complete_character_builder():
 	charac = fully_equipped_character_builder()
 	print "Score! Lets complete the character by choosing skills"
+	eligible_skills = get_class_skills(charac)
+	eligible_skills.extend(get_attribute_skills(charac))
+	print eligible_skills
+	charac = user_picks_skills(charac, eligible_skills)
+	return charac
 
 def user_sets_equipment(charac, inventory):
 	print "Here is your inventory: "
@@ -48,6 +57,20 @@ def user_sets_equipment(charac, inventory):
 	charac.equip_weapon_from_string(w)
 	charac.equip_armor_from_string(a)
 	charac.get_equipment_mods()
+	return charac
+
+def user_picks_skills(charac, eligible_skills):
+	print "Here are your eligible skills:"
+	for thing in eligible_skills:
+		print thing.name
+	print "You may select %s skills (character level)\n" % str(charac.level)
+	selected = raw_input("Enter a comma-separated list (no spaces): ")
+	skill_names = selected.split(",")
+	print skill_names
+	for item in eligible_skills:
+		if item.name in skill_names:
+			print item.name + " is in da list"
+			charac.add_skill(item)
 	return charac
 
 def get_base_attributes(charac):
@@ -76,8 +99,6 @@ def publish_character(stats):
 	print "Casting Speed = %s" % str(stats["Casting Speed"])
 	print "Spell Failure = %s" % str(stats["Spell Failure"])
 	print "Craft = %s" % str(stats["Craft"])
-	print "--------------------------------------------------\n\n"
-	print "Enjoy your character!\n"
 
 def publish_charac_combat_stats(charac):
 	print "Here is your character's combat profile:"
@@ -89,13 +110,17 @@ def publish_charac_combat_stats(charac):
 	print "Equipment Bonuses = %s" % (charac.equipment["mods"])
 	print "NOTE: Evade score now accounts for Carry Weight penalty (adjusted for strength)"
 
-def publish_charac_skils(charac):
-	pass
+def publish_charac_skills(charac):
+	print "--------------------------------------------------\n"
+	print "Here is a list of your character's skills: "
+	for item in charac.skills:
+		print item.name
+	return
 
-def publish_complete_charac(charac):
+def publish_complete_character(charac):
 	publish_character(charac.stats)
 	publish_charac_combat_stats(charac)
-	publish_charac_skills(charac.skills)
+	publish_charac_skills(charac)
 
 def choose_program():
 	print "Welcome to the Mythology Character Builder!\n"
@@ -103,6 +128,7 @@ def choose_program():
 	print "Press '1' to build a level 0 character"
 	print "Press '2' to build a custom level character"
 	print "Press '3' to build a custom level character with equipment"
+	print "Press '4' to build a complete character with skills and equipment"
 	print "Press any other key to exit"
 	user_input = raw_input("Enter a number and press 'enter': ")
 	if user_input == "1":

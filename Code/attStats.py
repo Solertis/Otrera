@@ -1,5 +1,8 @@
-# Data file with info on how attributes influence stats
+# Methods for defining a character's stats and skills
+
 from attMappings import *
+from skills import *
+import json
 
 relevant_attributes = {
 	"Evade" : ["DEX","ART"], "Physical Defense" : ["MGT","CON"],
@@ -9,6 +12,12 @@ relevant_attributes = {
 	"Physical Attack" : ["MGT"], "Carry Strength" : ["MGT"],
 	"Casting Speed" : ["ART"], "Spell Failure" : ["INT","ART"]
 	}
+
+k = open("data/class_skills.json","r").read()
+c = json.loads(k)
+
+b = open("data/attribute_skills.json","r").read()
+a = json.loads(b)
 
 def get_evade(DEX, ART):
 	dex_modifier = dex_to_evade(DEX)
@@ -85,3 +94,23 @@ def get_stats(atts):
 	stats["Spell Failure"] = get_spell_failure(atts["INT"],atts["ART"])
 	stats["Craft"] = get_craft(atts["INT"],atts["ART"],atts["DEX"])
 	return stats
+
+def get_class_skills(charac):
+	class_skills = c[charac.character_class]
+	skill_object_list = []
+	for thing in class_skills:
+		skill_object = Skill(make=thing)
+		skill_object_list.append(skill_object)
+	return skill_object_list
+
+def get_attribute_skills(charac):
+	skill_list = []
+	skill_object_list = []
+	for k, v in a.iteritems():
+		for score in v.keys():
+			if int(score) <= charac.attributes[k]:
+				skill_list.extend(v[score])
+	for thing in skill_list:
+		obj = Skill(make=thing)
+		skill_object_list.append(obj)
+	return skill_object_list
