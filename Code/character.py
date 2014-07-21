@@ -6,8 +6,6 @@ import sys
 
 b = open("data/everything.json","r").read()
 e = json.loads(b)
-r = open("data/types.json","r").read()
-t = json.loads(r)
 
 class Character(object):
 
@@ -57,7 +55,7 @@ class Character(object):
 	def equip_armor(self, armor):
 		if armor not in self.inventory:
 			return "Armor not in inventory"
-		elif self.character_class not in t[armor.kind]["classes"]:
+		elif self.character_class not in e[armor.kind]["classes"]:
 			print "%s class cannot equip %s armor type" % (self.character_class, armor.kind)
 		else:
 			self.equipment["armor"] = armor
@@ -65,7 +63,7 @@ class Character(object):
 	def equip_weapon(self, weapon):
 		if weapon not in self.inventory:
 			return "Weapon not in inventory"
-		elif self.character_class not in t[weapon.kind]["classes"]:
+		elif self.character_class not in e[weapon.kind]["classes"]:
 			print "%s class cannot equip %s weapon type" % (self.character_class, weapon.kind)
 		else:
 			self.equipment["weapon"] = weapon

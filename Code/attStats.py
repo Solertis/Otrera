@@ -19,6 +19,9 @@ c = json.loads(k)
 b = open("data/attribute_skills.json","r").read()
 a = json.loads(b)
 
+n = open("data/everything.json","r").read()
+e = json.loads(n)
+
 def get_evade(DEX, ART):
 	dex_modifier = dex_to_evade(DEX)
 	art_modifier = art_to_evade(ART)
@@ -96,7 +99,7 @@ def get_stats(atts):
 	return stats
 
 def get_class_skills(charac):
-	class_skills = c[charac.character_class]
+	class_skills = e[charac.character_class]
 	skill_object_list = []
 	for thing in class_skills:
 		skill_object = Skill(make=thing)
@@ -104,13 +107,15 @@ def get_class_skills(charac):
 	return skill_object_list
 
 def get_attribute_skills(charac):
-	skill_list = []
-	skill_object_list = []
-	for k, v in a.iteritems():
-		for score in v.keys():
-			if int(score) <= charac.attributes[k]:
-				skill_list.extend(v[score])
-	for thing in skill_list:
-		obj = Skill(make=thing)
-		skill_object_list.append(obj)
-	return skill_object_list
+	skill_names = []
+	skill_objects = []
+	atts = charac.attributes.keys()
+	for att in atts:
+		att_dict = e[att]
+		for key in att_dict.keys():
+			if int(key) <= int(charac.attributes[att]):
+				skill_names.extend(att_dict[key])
+	for name in skill_names:
+		obj = Skill(make=name)
+		skill_objects.append(obj)
+	return skill_objects
