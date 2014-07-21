@@ -22,20 +22,23 @@ Might influences physical attack scores in three specific ways:
 	Example: Weapon has MGT scaling of 2 and your character's MGT = 14
 	Scaling Mod = (2x14)/10 = 2.4 (Roll percent die for round up chance)
 
-Might also reduces weight penalties from carrying a lot of gear. This enables you to maintain decent evade and hit stats even while fully armored. Weight penalty is reduced by 1 for every three levels above 9.
+Might also reduces weight penalties from carrying a lot of gear. This enables you to maintain decent evade and hit stats even while fully armored. 
 
 Finally, might also impacts your physical defense score along with constituion. See the Constitution section for details.
 
 *Dexterity*
 
-Dexterity is a key attribute for rogues and archers. It influences character  movement range, evade, and hit stats. Several weapon's also scale with dexterity. As with might above, a few weapons have dexterity score prerequisites:
+Dexterity is a key attribute for rogues and archers. It influences character  movement range, evade, and hit stats. Several weapon's also scale with dexterity. 
+
+As with might above, a few weapons have dexterity score prerequisites:
 Spear: DEX 10 // Bow: DEX 12 // Longbow: DEX 14 // Greatbow: DEX 14
 Reaper: DEX 14 // Cannon: DEX 12 // Dagger: DEX 8
 
 Dexterity scores add to a character's evade, melee and ranged hit score as follows:
 	DEX 0-5: -1 // DEX 6-10: 0 // DEX 11-13: +1 // DEX 14-16: +2
 	DEX 17-19: +3 // DEX 20-22: +4 // DEX 23-25: +5 // DEX>25: +6
-Dexterity also influences agility and movement scores. At every four levels above 8, move goes up by 1, while agility goes up by 2.
+
+Dexterity also influences agility and movement scores.
 
 *Constitution*
 
@@ -58,16 +61,16 @@ When fighting naked (armor destroyed or intentionally) you rely solely on your d
 
 *Intelligence*
 
-Intelligence is a key attribute for craftsmen and mages. It influences the potency of chemistry techniques as well as spell casting speed. Neither magic nor craft classes can do their jobs particularly well without intelligence.
+Intelligence is a key attribute for craftsmen and mages. It influences the potency of chemistry techniques as well as spell casting success rate. Neither magic nor craft classes 
+can do their jobs particularly well without intelligence.
 
-Intelligence scores reduce casting time as follows:
-	INT 0-5: +2 // INT 6-8: +1 // INT 9-11: 0 // INT 12-13: -1 // INT 14-15: -2
-	INT 16-17: -3 // INT 18-19: -4 // INT 20-21: -5 // INT 22-23: -6 // INT>24: -7
+Specific numbers for how intelligence influences stats are currently only in the attMappings module. Exact formulae will be posted here after more testing work is done.
 
 *Divine*
 
 Divine is another simple attribute that only influences two things: magic attack power, and magic defense. The latter stat is also used for determining elemental resistance.
-Like MGT, DIV stat determines both which spells you can learn, and which dice you roll when casting a spell. For all spells that influence HP (healing and attack spells) the total power is simply roll + spell base damage. Each spell as a unique base damage score.
+Like MGT, DIV stat determines both which spells you can learn, and which dice you roll when casting a spell. For all spells that influence HP (healing and attack spells) the
+ total power is simply roll + spell base damage. Each spell as a unique base damage score.
 
 Divine score determines which die you use when casting a spell as follows:
 	DIV 0 – 4: d2 // DIV 5 – 8: d4 // MGT 9 – 10: d6 // DIV 11 – 12: d8
@@ -78,27 +81,8 @@ Divine score determines Magic Defense roll in the same way as above.
 
 *Artistry*
 
-Artistry is a curious attribute, helpeful to all classes for varying reasons. It influences several stats. For one, melee HIT chance and evade both get modifiers from having sufficient artistry. This is useful for Might and Finesse characters. Artistry also influence mix and casting speed, which is useful for chemists and mages respectively. Finally, artistry adds a modifier to improve success chance and efficacy of all skills, as well as critical hit chance.
-Artistry scores boost critical chance as follows:
-	ART < 5: 0 // ART 5-7: 1 // ART 8-9: 2 // ART 10-11: 3 // ART 12-13: 4 // ART 14-15: 5
-	ART 16-17: 6 // ART 18-19: 7 // ART 20-21: 8 // ART 22-23: 9 // ART>24: 10
-Artistry scores add to a character's melee hit score as follows:
-	ART 0-3: -2 // ART 4-7: -1 // ART 8-9: 0 // ART 10-11: +1 
-	ART 12-13: +2 // ART 14-15: +3 ART 16-17: +4 // ART 18-19: +5
-	ART 20-21: +6 // ART 22-23: +7 // ART 24-25: +8 ART>25: +9
+Artistry is a curious attribute, helpeful to all classes for varying reasons. It influences several stats. For one, melee HIT chance and evade both get modifiers from having 
+sufficient artistry. This is useful for Might and Finesse characters. Artistry also influence craft and casting speed, which is useful for craftsmen and mages respectively. 
+Finally, artistry adds a modifier to improve success chance and efficacy of all skills, as well as critical hit chance.
 
-Artistry scores add to a character's evade score as follows:
-
-	ART 0-5: -1 // ART 6-10: 0 // ART 11-14: +1 // ART 15-18: +2
-	ART 19-22: +3 // ART 23-25: +4 // ART>25: +5 
-
-Artistry scores reduce spell failure as follows:
-
-	ART 0-5: +2 // ART 6-8: +1 // ART 9-11: 0 // ART 12-15: -1
-	ART 16-19: -2 // ART 20-23: -3 // ART>24: -4
-
-Artistry scores reduce casting time as follows:
-
-	ART 0-5: +2 // ART 6-8: +1 // ART 9-11: 0 // ART 12-15: -1
-	ART 16-19: -2 // ART 20-23: -3 // ART>24: -4
-
+Specific numbers for how aritstry influences stats are currently only in the attMappings module. Exact formulae will be posted here after more testing work is done.
