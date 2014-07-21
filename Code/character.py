@@ -2,6 +2,7 @@ from attStats import *
 from levels import *
 from attMappings import *
 import json
+import sys
 
 b = open("data/everything.json","r").read()
 e = json.loads(b)
@@ -84,14 +85,17 @@ class Character(object):
 	def add_skill(self, skill_obj):
 		req = skill_obj.requirements
 		if int(req["Level"]) > self.level:
-			return "Character level too low to acquire this skill"
+			print "Character level too low to acquire this skill"
+			exit()
 		elif req["Class"] != []:
 			if self.character_class not in req["Class"]:
-				return "Character is the wrong class to acquire this skill"
+				print "Character is the wrong class to acquire this skill"
+				exit()
 		elif req["Attributes"] != []:
 			for att in req["Attributes"]:
 				if self.attributes[att[:3]] < int(att[3:]):
-					return "Character does not meet attribute requirement for skill"
+					print "Character does not meet attribute requirement for skill"
+					exit()
 		self.skills.append(skill_obj)
 
 	def set_carry_weight(self):
