@@ -1,24 +1,35 @@
-Melee Combat
+Combat
 ============
 
-== Terms:
-	DEF: Defensive Score for a given attacked
-	HIT: Accuracy of a melee attacked
+== General
+
+Otrera engine combat is turn-based and comprised of various dice rolls, much like D&D and other RPG systems. Battles take place on a grid where movement and
+attack range are premised on square panels. 'Final Fantasy Tactics' is a good video game analogy, though Otrera does not include a similar concept of height
+and depth.
+
+== Terms
+	DEF: Defensive Score for a given target suffering an attack
+	HIT: Accuracy of a melee attack
 	EVD: Evasive ability
 	DMG: Damage inflicted by an attack that has successfully hit
 	ATK: Weapon's minimum attack power → Base Attack + Scaling Mod
 	DRB: Armor durability. Absorbs DMG from all non-devestating attacks. Buffs can add DRB to 		unarmored characters
 
+== Procedure
+
 1. Characters roll for initiative, GM manages turns. On any given turn, a character can move and act once.
 2. Physical attacks (both ranged and melee) require successful HIT and ATK rolls.
 3. The HIT roll compares your HIT score (roll + modifier) to the target's EVD (roll + modifier). If your HIT equals or surpasses the threshold, then you can roll damage.
 4. Damage to an enemy's armor and HP depends on the attacking character's ATK score and the victim's DEF score.
-5. DMG (Damage) = Attack Power + Roll
-6. Attack Power = Weapon Base Damage + Scaling Bonus (See Equipment section)
+5. DMG (Damage) = ATK + Roll
+6. ATK (Attack Power) = Weapon Base Damage + Scaling Bonus (See Equipment section)
 
-7. Armor helps characters to either avoid or reduce HP damage. It does this in two ways. Firstly, the die employed for the defense roll will depend on your armor class. A good enough roll, and you can take 0 HP damage or at least reduce the impact. Secondly, each armor has its own durability score. This is the amount of damage the armor can take before it is useless.
+7. Armor helps characters to either avoid or reduce HP damage. It does this in two ways: 
+	Firstly, the die employed for the defense roll will depend on your armor type. A good enough roll, and you can take 0 HP damage or at least reduce the impact. 
+	Secondly, each armor has its own durability score. This is the amount of damage the armor can take before it is useless.
 8. DEF (defense against particular attack) is equal to the armor roll plus any modifiers from skills or buffs.
-9. To inflict HP damage, the DMG score must be higher than the DEF score. If it is lower, then it only reduces armor durability (DRB). If it is less than half of the DEF score, then it does zero damage.
+9. To inflict HP damage, the DMG score must be higher than the DEF score. If it is lower, then it only reduces armor durability (DRB). 
+	If it is less than half of the DEF score, then it does zero damage.
 10. If the DMG score is greater than the DEF score, than damage works as follows:
 	Armor DRB goes down by the amount of the DEF score
 	HP is reduced by an amount equal to the difference between DMG and DEF
@@ -36,18 +47,30 @@ If DMG < DEF:
 	Else:
 		Durability = Durability – DMG +
 
-Justification: In essence, what is happening is that the armor is reducing the amount of damage to your HP. Strong armor and good rolls will allow you to take zero HP damage or even zero damage to armor. Weak armor is destroyed more quickly and armor of the weaker classes will provide a lower DEF score, allowing for more HP damage.
+Justification: In essence, what is happening is that the armor is reducing the amount of damage to your HP. Strong armor and good rolls will allow you to take zero HP damage 
+or even zero damage to armor. Weak armor is destroyed more quickly and armor of the weaker classes will provide a lower DEF score, allowing for more HP damage.
 
 Characters who fight naked or use light, weak armor have three options if they wish to survive:
 	1. Avoid being attacked
 	2. Maintain very high evade so that attacks don't hit you
 	3. Use skills and buffs to increase your DEF, HP, or DRB.
 
-Another example:
+== Weapon Scaling
+
+All weapons scale with certain attributes. 'Dark Souls' is a good video game analogy. Big heavy swords scale with Might. Bows scale with Dexterity. etc. etc.
+Weapons vary in their base damage, weight, and bonus attributes, however all weapons of the same type have the same scaling. Armor is similar in that all armor of the same
+type have the same defense dice. Armors of the same type still differ in terms of durability (how long they will protect you), weight, carrying capacity, and bonuses.
+
+Justification: One thing I liked about 'Dark Souls' was the fact that almost all weapons and armor are viable. In most RPG's, new gear becomes junk very quickly. I wanted
+my game to allow players to use what they want. What's more, with weapons like swords in the real world, the bulk of the damage is going to come from the user's skill, not
+the weapon itself. In most RPG's, the early game steel sword does 5 DMG, while the late game Crystal Sacred Sword of Justice does 9999 DMG. In reality, the difference in
+damage between a guy using a machete and a guy using some big jewel-encrusted royal sabre, would not be that huge.
+
+== Another example:
 
 Physical Attack Formula:
-	DMG = WPN PWR + Roll
-	WPN PWR = Weapon Base DMG + Scaling Mod
+	DMG = ATK + Roll
+	ATK = Weapon Base DMG + Scaling Mod
 	Example: Knife
 		Base DMG = 1
 		MGT Scale = 2
@@ -61,24 +84,14 @@ Physical Attack Formula:
 
 NOTE: By default, 'unarmed' has no modifier. Must learn skill
 
-ROLL=20 + SCALING=18 + BASE DMG=10 == Total DMG: 48
-
-TSF = Total Scaling Factor
-
-***THIS IS UNRESOLVED. WE WILL NEED EXTENSIVE TESTING TO DECIDE ON DAMAGE FORMULA***
-Assumes: ROll = 20, Weapon Base DMG = 20, TSF=8
-
-MaxDamage == 60 --> CRIT: 85 --> Buff: 70-100 --> Buff+CRIT+SKILL: ~200
-1/2Formula Version: 30 // 45 // 40-55 // ~120
-1/2Weapon DMG Version: 40 // 60 // 50-65 // ~150
-
-In cases where DMG formula produces decimals, use percent die
-
-	Example: MGT mod = 22, DEX mod = 33, Scaling mod = 5.5
-	Roll %die to try to get to 100 from .50. If you hit '50' or higher, round up scaling mod
-
-EVASION
+== HIT and EVD
 
 Character evade is calculated as follows:
 
 Evade = Sum(ART_mod, DEX_mod, other_mod) - Weight_Penalty
+
+1. By default, a d20 roll of 10 or greater is needed to hit a target. Your character's HIT score is added to that roll. Therefore if you roll a 7 but have a HIT of 5, your
+total HIT roll is 12 and in the base case you would inflict damage.
+
+2. A character's evade score subtracts from an attacking character's HIT score. This means that if the target in the above example had an EVD score of 3, he would dodge the
+attack as the total HIT roll would only be 9
