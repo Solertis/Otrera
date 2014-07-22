@@ -49,6 +49,8 @@ TODO
 
 2. Create content editor program (JSON tweaker)
 
+	-- Batch creation of content from CSVs -- look into it
+
 3. Create tests for your code (Debugging is slow and shitty now)
 
 4. Cleanup code, add comments, error-handling, etc. -- Will do after game publishing milestone
