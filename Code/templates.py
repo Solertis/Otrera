@@ -13,6 +13,7 @@ templates = {
 			"weight" : "1",
 			"durability" : "1",
 			"kind" : "leather",
+			"capacity" : "1",
 			"spec_mods" : []
 			}
 		},

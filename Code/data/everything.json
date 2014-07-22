@@ -100,7 +100,8 @@
         "defense": "1d6", 
         "list": [
             "light clothes", 
-            "ninja suit"
+            "ninja suit", 
+            "rags"
         ]
     }, 
     "craftsman": [
@@ -208,6 +209,16 @@
         "range": "1", 
         "scaling": "MGT3"
     }, 
+    "golden armor": {
+        "capacity": "50", 
+        "durability": "30", 
+        "kind": "metal", 
+        "spec_mods": [
+            "FIRE-3", 
+            "PHYSDEF+5"
+        ], 
+        "weight": "30"
+    }, 
     "grand staff": {
         "base_pwr": "3", 
         "durability": "20", 
@@ -288,6 +299,7 @@
         "uses": "3"
     }, 
     "iron armor": {
+        "capacity": "45", 
         "durability": "20", 
         "kind": "metal", 
         "spec_mods": [], 
@@ -311,6 +323,7 @@
         ]
     }, 
     "leather armor": {
+        "capacity": "20", 
         "durability": "10", 
         "kind": "leather", 
         "spec_mods": [], 
@@ -324,6 +337,7 @@
         "weight": "5"
     }, 
     "light clothes": {
+        "capacity": "10", 
         "durability": "5", 
         "kind": "cloth", 
         "spec_mods": [
@@ -336,6 +350,7 @@
         "flame blast"
     ], 
     "mage robes": {
+        "capacity": "15", 
         "durability": "5", 
         "kind": "robes", 
         "spec_mods": [
@@ -396,7 +411,9 @@
         ], 
         "defense": "2d8", 
         "list": [
-            "iron armor"
+            "iron armor", 
+            "steel armor", 
+            "golden armor"
         ]
     }, 
     "ninja suit": {
@@ -434,13 +451,21 @@
         }, 
         "uses": "3"
     }, 
+    "rags": {
+        "capacity": "5", 
+        "durability": "4", 
+        "kind": "cloth", 
+        "spec_mods": [], 
+        "weight": "3"
+    }, 
     "robes": {
         "classes": [
             "mage"
         ], 
         "defense": "1d6", 
         "list": [
-            "mage robes"
+            "mage robes", 
+            "wizard robes"
         ]
     }, 
     "smoke bomb": {
@@ -494,6 +519,13 @@
         "range": "2", 
         "scaling": "DIV5"
     }, 
+    "steel armor": {
+        "capacity": "35", 
+        "durability": "25", 
+        "kind": "metal", 
+        "spec_mods": [], 
+        "weight": "20"
+    }, 
     "sword": {
         "classes": [
             "fighter"
@@ -511,6 +543,15 @@
             "healing potion", 
             "smoke bomb"
         ]
+    }, 
+    "wizard robes": {
+        "capacity": "15", 
+        "durability": "10", 
+        "kind": "robes", 
+        "spec_mods": [
+            "INT+2"
+        ], 
+        "weight": "5"
     }, 
     "wooden bow": {
         "base_pwr": "1", 
