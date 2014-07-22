@@ -1,9 +1,8 @@
 # Weapon objects
 
 import json
-
-o = open("data/everything.json","r").read()
-e = json.loads(o)
+from content import Content
+e = Content().data
 
 types = ["sword","bow","staff","glove"]
 

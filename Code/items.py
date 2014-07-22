@@ -3,13 +3,13 @@
 import json
 from weapons import Weapon as w
 from armors import Armor as a
+from content import Content
+
+e = Content().data
 
 weapon_types = ["sword","bow","glove","staff"]
 armor_types = ["leather","cloth","robes","metal"]
 item_types = ["usable","gear"]
-
-o = open("data/everything.json","r").read()
-e = json.loads(o)
 
 class Item(object):
 

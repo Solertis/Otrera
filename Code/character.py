@@ -1,11 +1,11 @@
 from attStats import *
 from levels import *
 from attMappings import *
+from content import Content
 import json
 import sys
 
-b = open("data/everything.json","r").read()
-e = json.loads(b)
+e = Content().data
 
 class Character(object):
 
