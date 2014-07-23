@@ -1,12 +1,12 @@
 Otrera
 =========
 
-Otrera is an open source role-playing game system. It
-began as a toolkit for the "Daughtersof Ares" table top RPG 
-(still under development) and evolved into a bigger and more
-general RPG engine. Otrera was the mother of Hippolyta,
-Antiope, Penthesilea, and Melanippe, thus the her name suits
-the project that is the foundation of the original game.
+Otrera is an open source role-playing game development system. 
+It began as a toolkit for another RPG before evoling into a
+general purpose engine and engine builder. It is named after
+the Amazon Matriarch and concubine of Ares who plays a key
+role in the "Daughters of Ares" books and games (still in
+development) which inspired the creation of this software.
 
 Otrera provides the following tools:
 
@@ -26,8 +26,15 @@ can also be copied or adapted.
 6. The ability to publish character / skill / story / equipment
 sheets and full game manuals. (In Development)
 
-Otrera is designed to be both simple and complex. You can 
-use the docs to put together a simple pen and paperadventure,
-or use the software to power a computer game. Building skills 
-and equipment on top of the game engine is very straightforward. 
-Your only limit should be your imagination.
+7. Full-fledged engine builder to allow for creation of original
+combat and character development systems.
+
+The goal of Otrera is to help table top RPG and board game makers
+to create rich, complex, and balanced game systems. Whether you
+want to make a simple one-off adventure on top of the default
+engine or whether you want to create a completely original
+system from scratch - Otrera will let you focus on your ideas and
+content while handling the difficult mathematical challenges.
+
+Building games with Otrera is easy. Your only limit should be
+your imagination.
