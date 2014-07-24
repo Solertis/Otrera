@@ -66,13 +66,13 @@ def user_picks_skills(charac, eligible_skills):
 	for item in list_names:
 		item = item.lstrip()
 		skill_names.append(item)
-	print skill_names
 	for item in eligible_skills:
 		if item.name in skill_names:
 			charac.add_skill(item)
 	return charac
 
 def get_base_attributes(charac):
+	charac.name = raw_input("Name your character: ")
 	DEX = int(raw_input("Dexterity: "))
 	ART = int(raw_input("Artistry: "))
 	MGT = int(raw_input("Might: "))
@@ -84,7 +84,9 @@ def get_base_attributes(charac):
 			}
 	return charac
 
-def publish_character(stats):
+def publish_character(charac):
+	stats = charac.stats
+	print "Character Name: %s" % charac.name
 	print "MaxHP = %s" % str(stats["maxHP"])
 	print "Evade = %s" % str(stats["Evade"])
 	print "Hit = %s" % str(stats["Hit"])
@@ -117,7 +119,7 @@ def publish_charac_skills(charac):
 	return
 
 def publish_complete_character(charac):
-	publish_character(charac.stats)
+	publish_character(charac)
 	publish_charac_combat_stats(charac)
 	publish_charac_skills(charac)
 
@@ -132,13 +134,13 @@ def choose_program():
 	user_input = raw_input("Enter a number and press 'enter': ")
 	if user_input == "1":
 		character = level_zero_character_builder()
-		publish_character(character.stats)
+		publish_character(character)
 	elif user_input == "2":
 		character = custom_level_naked_character_builder()
-		publish_character(character.stats)
+		publish_character(character)
 	elif user_input == "3":
 		character = fully_equipped_character_builder()
-		publish_character(character.stats)
+		publish_character(character)
 		publish_charac_combat_stats(character)
 	elif user_input == "4":
 		charac = complete_character_builder()
