@@ -6,9 +6,6 @@ from items import *
 from character import Character
 import json
 
-a = open("data/class_skills.json","r").read()
-c = json.loads(a)
-
 def level_zero_character_builder():
 	zero_character = Character()
 	print "Give me some stats, bro\n"

@@ -1,6 +1,7 @@
 # Functionality for working with levels.json and other character level code
 
 import json
+import random
 
 o = open("data/levels.json","r").read()
 l = json.loads(o)
@@ -71,18 +72,21 @@ def allocate_player_points(player_points, class_mods):
 
 def allocate_randomly(player_points, class_mods):
 	"""Randomly add points to attributes"""
-	print "LOL THIS METHOD ISN'T READY YET"
+	random_mods = {"DEX":0,"ART":0,"MGT":0,"DIV":0,"CON":0,"INT":0}
+	for num in range(0,player_points):
+		key = random.choice(random_mods.keys())
+		random_mods[key] = random_mods[key] + 1
 	if class_mods == {}:
 		return random_mods
 	else:
 		complete_mods = combine_mods(random_mods, class_mods)
-		return
+		return complete_mods
 
 def combine_mods(mods1, mods2):
 	final = {"DEX":0,"ART":0,"MGT":0,"DIV":0,"INT":0,"CON":0}
-	for key in final:
+	for key in final.keys():
 		if key in mods1.keys():
-			final[key] = final[key] + int(mods1[key])
+			final[key] = final[key] + mods1[key]
 		if key in mods2.keys():
-			final[key] = final[key] + int(mods2[key])
+			final[key] = final[key] + mods2[key]
 	return final

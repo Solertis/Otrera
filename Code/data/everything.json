@@ -137,7 +137,7 @@
                 "ART10"
             ], 
             "Class": [], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 
@@ -225,7 +225,7 @@
             "Class": [
                 "fighter"
             ], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 
@@ -364,7 +364,7 @@
                 "DEX20"
             ], 
             "Class": [], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 
@@ -517,7 +517,7 @@
                 "ART20"
             ], 
             "Class": [], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 
@@ -576,7 +576,7 @@
                 "ART15"
             ], 
             "Class": [], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 
@@ -612,7 +612,7 @@
                 "ART5"
             ], 
             "Class": [], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 
@@ -690,7 +690,7 @@
                 "DEX15"
             ], 
             "Class": [], 
-            "Level": ""
+            "Level": "0"
         }, 
         "restrictions": {
             "Equipment": [], 

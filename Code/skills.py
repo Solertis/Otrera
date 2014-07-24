@@ -4,8 +4,6 @@ import json
 
 b = open("data/everything.json","r").read()
 e = json.loads(b)
-r = open("data/types.json","r").read()
-t = json.loads(r)
 
 class Skill(object):
 

@@ -13,12 +13,6 @@ relevant_attributes = {
 	"Casting Speed" : ["ART"], "Spell Failure" : ["INT","ART"]
 	}
 
-k = open("data/class_skills.json","r").read()
-c = json.loads(k)
-
-b = open("data/attribute_skills.json","r").read()
-a = json.loads(b)
-
 n = open("data/everything.json","r").read()
 e = json.loads(n)
 
