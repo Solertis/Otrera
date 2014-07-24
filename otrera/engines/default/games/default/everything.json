@@ -63,7 +63,7 @@
         ], 
         "weight": "4"
     }, 
-    "archer": [
+    "archer_skills": [
         "focus shot"
     ], 
     "bow": {
@@ -117,7 +117,7 @@
             "rags"
         ]
     }, 
-    "craftsman": [
+    "craftsman_skills": [
         "grenade"
     ], 
     "deft strike": {
@@ -146,7 +146,7 @@
         }, 
         "uses": "3"
     }, 
-    "fighter": [
+    "fighter_skills": [
         "spin attack", 
         "fury"
     ], 
@@ -420,7 +420,7 @@
         ], 
         "weight": "4"
     }, 
-    "mage": [
+    "mage_skills": [
         "ice storm", 
         "flame blast"
     ], 
@@ -772,5 +772,25 @@
             "INT+1"
         ], 
         "weight": "5"
-    }
+    },
+"fighter" : {
+"1" : "MGT1 PLR1", "2" : "MGT1 PLR1", "3" : "CON1 PLR1", "4" : "MGT1 PLR1", 
+"5" : "CON1 PLR1", "6" : "MGT1 PLR1", "7" : "ART1 PLR1", "8" : "CON1 PLR1", 
+"9" : "MGT1 PLR1", "10" : "MGT1 PLR1"
+},
+"archer" : {
+"1" : "DEX1 PLR1", "2" : "DEX1 PLR1", "3" : "MGT1 PLR1", "4" : "DEX1 PLR1", 
+"5" : "DEX1 PLR1", "6" : "ART1 PLR1", "7" : "DEX1 PLR1", "8" : "ART1 PLR1",
+"9" : "MGT1 PLR1", "10" : "DEX1 PLR1"
+},
+"craftsman" : {
+"1" : "INT1 PLR1", "2" : "INT1 PLR1", "3" : "DEX1 PLR1", "4" : "INT1 PLR1", 
+"5" : "DEX1 PLR1", "6" : "CON1 PLR1", "7" : "INT1 PLR1", "8" : "CON1 PLR1",
+"9" : "DEX1 PLR1", "10" : "ART1 PLR1"
+},
+"mage" : {
+"1" : "DIV1 PLR1", "2" : "DIV1 PLR1", "3" : "ART1 PLR1", "4" : "DIV1 PLR1", 
+"5" : "ART1 PLR1", "6" : "INT1 PLR1", "7" : "DIV1 PLR1", "8" : "INT1 PLR1",
+"9" : "ART1 PLR1", "10" : "DIV1 PLR1"
+}
 }
