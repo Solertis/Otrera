@@ -6,16 +6,13 @@ from addContent import get_list
 path = Content().path
 e = Content().data
 
-def get_input(prompt):
-	return raw_input(prompt)
-
 def pick_function():
 	print "Welcome to the Otrera Content Editor!\n"
 	print "Press '1' to edit a specific content item"
 	# Will add search / list functions later
-	response = get_input("What would you like to do?: ")
+	response = raw_input("What would you like to do?: ")
 	if response == '1':
-		content_item = get_input("What piece of content do you want to edit?: ")
+		content_item = raw_input("What piece of content do you want to edit?: ")
 		arg = content_item.lower()
 		cont = e[arg]
 		update = edit_item(cont)
@@ -32,7 +29,7 @@ def print_content(cont):
 
 def edit_item(cont):
 	print_content(cont)
-	key = get_input("What would you like to change? (top level key): ")
+	key = raw_input("What would you like to change? (top level key): ")
 	if isinstance(cont[key], dict):
 		edit_item(cont[key])
 	elif isinstance(cont[key], list):
@@ -41,7 +38,7 @@ def edit_item(cont):
 		e.update(cont)
 		return e
 	else:
-		new_val = get_input("What is your desired new value?: ")
+		new_val = raw_input("What is your desired new value?: ")
 		cont[key] = new_val
 		e.update(cont)
 		return e
