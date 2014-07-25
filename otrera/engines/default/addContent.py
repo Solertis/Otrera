@@ -2,11 +2,14 @@
 
 import json
 from templates import *
+from content import Content
+
+path = Content().path
 
 def pick_content_type():
-	types = ["skill","weapon","armor","item"]
+	types = ["skill","weapon","armor","item","character","class"]
 	print "Hi there fella. What sorta content would you like to make?\n"
-	content_type = raw_input("Enter 'skill', 'weapon', 'armor', or 'item': ")
+	content_type = raw_input("Enter 'skill', 'weapon', 'armor', class, character, or 'item': ")
 	if content_type not in types:
 		return "Are you funnin' me son?"
 	else:
@@ -41,12 +44,12 @@ def get_content_info(data_dict, content_type):
 	return data_dict
 
 def make_content(content_type, thing_name):
-	with open("data/everything.json") as f:
+	with open(path) as f:
 		data = json.load(f)
 	update = get_update(content_type, thing_name)
 	data.update(update)
 	data = update_lists(content_type, data, update, thing_name)
-	with open("data/everything.json","w") as f:
+	with open(path,"w") as f:
 		json.dump(data, f, sort_keys=True, indent=4, ensure_ascii=False)
 
 def update_lists(content_type, data, update, thing_name):
@@ -59,6 +62,12 @@ def update_lists(content_type, data, update, thing_name):
 			att = req_key[:3]
 			req = req_key[3:]
 			data[att][req].append(thing_name)
+	elif content_type == "character":
+		key = "characters"
+		data[key].append(thing_name)
+	elif content_type == "class":
+		key = "classes"
+		data[key].append(thing_name)
 	else:
 		key = update[thing_name]["kind"]
 		data[key]["list"].append(thing_name)

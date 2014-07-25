@@ -9,11 +9,13 @@ e = Content().data
 
 class Character(object):
 
-	def __init__(self):
+	def __init__(self, make=None):
 
 		self.name = "John Smith"
 
 		self.character_class = "Base"
+
+		self.tag = ""
 
 		self.level = 0
 
@@ -40,8 +42,24 @@ class Character(object):
 				"Physical Attack":"0","Magical Defense":"0",
 				"Magical Attack":"0","Resistance":"0",
 				"Carry Strength":"0","Casting Speed":"0",
-				"Spell Memory":"0","Spell Failure":"0","Craft":"0"
+				"Spell Failure":"0","Craft":"0"
 				}
+
+		if make is not None:
+			self.load(make)
+
+	def load(self, charac):
+		k = e[charac]
+		self.name = charac
+		self.character_class = k["character_class"]
+		self.tag = k["tag"]
+		self.level = int(k["level"])
+		self.skills = k["skills"]
+		self.equipment = k["equipment"]
+		self.inventory = k["inventory"]
+		self.carry_weight = int(k["carry_weight"])
+		self.attributes = k["attributes"]
+		self.stats = k["stats"]
 
 	def set_attribute(self, attribute, value):
 		self.attributes[attribute] = int(value)

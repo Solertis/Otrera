@@ -51,5 +51,40 @@ templates = {
 				"Status" : []
 				}
 			}
-		}
+		},
+	"character" : {
+			"Character Name" : {
+				"character_class" : "",
+				"tag" : "",
+				"level" : "0",
+				"skills" : [],
+				"equipment" : {
+					"weapon" : "naked",
+					"armor" : "naked",
+					"mods" : []
+					},
+				"inventory" : [],
+				"carry_weight" : "0",
+				"attributes" : {
+					"DEX":0,"ART":0,"MGT":0,
+					"DIV":0,"INT":0,"CON":0
+					},
+				"stats" : {
+					"MaxHP":"1","Evade":"0","Hit":"0",
+					"Accuracy":"0","Physical Defense":"0",
+					"Physical Attack":"0","Magical Defense":"0",
+					"Magical Attack":"0","Resistance":"0",
+					"Carry Strength":"0","Casting Speed":"0",
+					"Spell Failure":"0","Craft":"0"
+					}
+				}
+			},
+	"class" : {
+			"Class Name" : {
+				"level_atts" : {
+					"1":"","2":"","3":"","4":"","5":"",
+					"6":"","7":"","8":"","9":"","10":""
+					}
+				}
+			}
 	}

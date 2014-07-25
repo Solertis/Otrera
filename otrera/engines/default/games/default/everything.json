@@ -63,6 +63,18 @@
         ], 
         "weight": "4"
     }, 
+    "archer": {
+        "1": "DEX1 PLR1", 
+        "10": "DEX1 PLR1", 
+        "2": "DEX1 PLR1", 
+        "3": "MGT1 PLR1", 
+        "4": "DEX1 PLR1", 
+        "5": "DEX1 PLR1", 
+        "6": "ART1 PLR1", 
+        "7": "DEX1 PLR1", 
+        "8": "ART1 PLR1", 
+        "9": "MGT1 PLR1"
+    }, 
     "archer_skills": [
         "focus shot"
     ], 
@@ -104,6 +116,16 @@
         }, 
         "uses": "5"
     }, 
+    "characters": [
+        "jim bob"
+    ], 
+    "classes": [
+        "fighter", 
+        "mage", 
+        "craftsman", 
+        "archer", 
+        "test class"
+    ], 
     "cloth": {
         "classes": [
             "fighter", 
@@ -116,6 +138,18 @@
             "ninja suit", 
             "rags"
         ]
+    }, 
+    "craftsman": {
+        "1": "INT1 PLR1", 
+        "10": "ART1 PLR1", 
+        "2": "INT1 PLR1", 
+        "3": "DEX1 PLR1", 
+        "4": "INT1 PLR1", 
+        "5": "DEX1 PLR1", 
+        "6": "CON1 PLR1", 
+        "7": "INT1 PLR1", 
+        "8": "CON1 PLR1", 
+        "9": "DEX1 PLR1"
     }, 
     "craftsman_skills": [
         "grenade"
@@ -145,6 +179,18 @@
             "Status": []
         }, 
         "uses": "3"
+    }, 
+    "fighter": {
+        "1": "MGT1 PLR1", 
+        "10": "MGT1 PLR1", 
+        "2": "MGT1 PLR1", 
+        "3": "CON1 PLR1", 
+        "4": "MGT1 PLR1", 
+        "5": "CON1 PLR1", 
+        "6": "MGT1 PLR1", 
+        "7": "ART1 PLR1", 
+        "8": "CON1 PLR1", 
+        "9": "MGT1 PLR1"
     }, 
     "fighter_skills": [
         "spin attack", 
@@ -380,6 +426,42 @@
         "spec_mods": [], 
         "weight": "20"
     }, 
+    "jim bob": {
+        "attributes": {
+            "ART": "", 
+            "CON": "", 
+            "DEX": "", 
+            "DIV": "", 
+            "INT": "", 
+            "MGT": ""
+        }, 
+        "carry_weight": "", 
+        "character_class": "", 
+        "equipment": {
+            "armor": "", 
+            "mods": [], 
+            "weapon": ""
+        }, 
+        "inventory": [], 
+        "level": "", 
+        "skills": [], 
+        "stats": {
+            "Accuracy": "", 
+            "Carry Strength": "", 
+            "Casting Speed": "", 
+            "Craft": "", 
+            "Evade": "", 
+            "Hit": "", 
+            "Magical Attack": "", 
+            "Magical Defense": "", 
+            "MaxHP": "", 
+            "Physical Attack": "", 
+            "Physical Defense": "", 
+            "Resistance": "", 
+            "Spell Failure": ""
+        }, 
+        "tag": ""
+    }, 
     "laser sword": {
         "base_pwr": "1", 
         "durability": "1", 
@@ -420,10 +502,18 @@
         ], 
         "weight": "4"
     }, 
-    "mage_skills": [
-        "ice storm", 
-        "flame blast"
-    ], 
+    "mage": {
+        "1": "DIV1 PLR1", 
+        "10": "DIV1 PLR1", 
+        "2": "DIV1 PLR1", 
+        "3": "ART1 PLR1", 
+        "4": "DIV1 PLR1", 
+        "5": "ART1 PLR1", 
+        "6": "INT1 PLR1", 
+        "7": "DIV1 PLR1", 
+        "8": "INT1 PLR1", 
+        "9": "ART1 PLR1"
+    }, 
     "mage robes": {
         "capacity": "15", 
         "durability": "5", 
@@ -442,6 +532,10 @@
         ], 
         "weight": "3"
     }, 
+    "mage_skills": [
+        "ice storm", 
+        "flame blast"
+    ], 
     "magic bow": {
         "base_pwr": "5", 
         "durability": "10", 
@@ -718,6 +812,20 @@
         "range": "1", 
         "scaling": "MGT2 DEX2"
     }, 
+    "test class": {
+        "level_atts": {
+            "1": "PLR1", 
+            "10": "PLR1", 
+            "2": "PLR1", 
+            "3": "PLR1", 
+            "4": "PLR1", 
+            "5": "PLR1", 
+            "6": "PLR1", 
+            "7": "PLR1", 
+            "8": "PLR1", 
+            "9": "PLR1"
+        }
+    }, 
     "usable": {
         "list": [
             "healing potion", 
@@ -772,25 +880,5 @@
             "INT+1"
         ], 
         "weight": "5"
-    },
-"fighter" : {
-"1" : "MGT1 PLR1", "2" : "MGT1 PLR1", "3" : "CON1 PLR1", "4" : "MGT1 PLR1", 
-"5" : "CON1 PLR1", "6" : "MGT1 PLR1", "7" : "ART1 PLR1", "8" : "CON1 PLR1", 
-"9" : "MGT1 PLR1", "10" : "MGT1 PLR1"
-},
-"archer" : {
-"1" : "DEX1 PLR1", "2" : "DEX1 PLR1", "3" : "MGT1 PLR1", "4" : "DEX1 PLR1", 
-"5" : "DEX1 PLR1", "6" : "ART1 PLR1", "7" : "DEX1 PLR1", "8" : "ART1 PLR1",
-"9" : "MGT1 PLR1", "10" : "DEX1 PLR1"
-},
-"craftsman" : {
-"1" : "INT1 PLR1", "2" : "INT1 PLR1", "3" : "DEX1 PLR1", "4" : "INT1 PLR1", 
-"5" : "DEX1 PLR1", "6" : "CON1 PLR1", "7" : "INT1 PLR1", "8" : "CON1 PLR1",
-"9" : "DEX1 PLR1", "10" : "ART1 PLR1"
-},
-"mage" : {
-"1" : "DIV1 PLR1", "2" : "DIV1 PLR1", "3" : "ART1 PLR1", "4" : "DIV1 PLR1", 
-"5" : "ART1 PLR1", "6" : "INT1 PLR1", "7" : "DIV1 PLR1", "8" : "INT1 PLR1",
-"9" : "ART1 PLR1", "10" : "DIV1 PLR1"
-}
+    }
 }
