@@ -16,6 +16,9 @@ relevant_attributes = {
 
 e = Content().data
 
+# Most of these methods just call functions in attMappings and
+# then return some total modifier as the stat. Fairly simple.
+
 def get_evade(DEX, ART):
 	dex_modifier = dex_to_evade(DEX)
 	art_modifier = art_to_evade(ART)
@@ -93,6 +96,8 @@ def get_stats(atts):
 	return stats
 
 def get_class_skills(charac):
+	# Find the list of class skills in everything.json and 
+	# make skill objects out of all of them
 	class_skills = e[charac.character_class+"_skills"]
 	skill_object_list = []
 	for thing in class_skills:
@@ -101,6 +106,8 @@ def get_class_skills(charac):
 	return skill_object_list
 
 def get_attribute_skills(charac):
+	# Find the list of skills for each attribute key at each
+	# requirement level and make skill objects from them
 	skill_names = []
 	skill_objects = []
 	atts = charac.attributes.keys()

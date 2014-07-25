@@ -1,5 +1,8 @@
 # Attribute --> Stat bonus/penalty mapping methods
 
+# This may all be converted to JSON for the purpose of making engines
+# more modular and creatable.
+
 def mgt_to_atk(mgt):
 	if mgt <= 4:
 		return "1d2"

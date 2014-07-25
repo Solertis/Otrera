@@ -79,6 +79,7 @@ class Character(object):
 			self.equipment["armor"] = armor
 
 	def equip_weapon(self, weapon):
+		# Equips a weapon object. Performs some validation to ensure weapon is equipable
 		if weapon not in self.inventory:
 			return "Weapon not in inventory"
 		elif self.character_class not in e[weapon.kind]["classes"]:
@@ -87,6 +88,7 @@ class Character(object):
 			self.equipment["weapon"] = weapon
 
 	def equip_weapon_from_string(self, weapon_string):
+		# Sometimes you want to equip a weapon knowing only the string name.
 		for item in self.inventory:
 			if item.name == weapon_string:
 				self.equip_weapon(item)
@@ -99,6 +101,7 @@ class Character(object):
 		return "Armor not found."
 
 	def add_skill(self, skill_obj):
+		# Add skill to skill list. Perform validation to make sure character can use it.
 		req = skill_obj.requirements
 		if int(req["Level"]) > self.level:
 			print "Character level too low to acquire this skill"

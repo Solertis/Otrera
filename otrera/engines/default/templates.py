@@ -1,3 +1,6 @@
+# addContent.py uses this module to create new content by loading templates.
+# The key "$THING Name" gets replaced with the object's actual name
+
 templates = {
 	"weapon" : { 
 		"Weapon Name" : {
