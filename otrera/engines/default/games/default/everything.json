@@ -78,6 +78,7 @@
     "archer_skills": [
         "focus shot"
     ], 
+    "base_pwr": "4", 
     "bow": {
         "classes": [
             "archer"
@@ -180,6 +181,7 @@
         }, 
         "uses": "3"
     }, 
+    "durability": "10", 
     "fighter": {
         "1": "MGT1 PLR1", 
         "10": "MGT1 PLR1", 
@@ -462,12 +464,13 @@
         }, 
         "tag": ""
     }, 
+    "kind": "sword", 
     "laser sword": {
-        "base_pwr": "1", 
-        "durability": "1", 
+        "base_pwr": "4", 
+        "durability": "10", 
         "kind": "sword", 
         "spec_mods": [], 
-        "weight": "1"
+        "weight": "3"
     }, 
     "leather": {
         "classes": [
@@ -722,6 +725,7 @@
         "special": {}, 
         "weight": "1"
     }, 
+    "spec_mods": [], 
     "spin attack": {
         "category": "class", 
         "effect": {
@@ -832,6 +836,7 @@
             "smoke bomb"
         ]
     }, 
+    "weight": "3", 
     "wizard robes": {
         "capacity": "15", 
         "durability": "10", 
