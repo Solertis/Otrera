@@ -1,5 +1,4 @@
-Otrera
-=========
+image:otrera-smaller.jpg[]
 
 Otrera is an open source role-playing game development system. 
 It began as a toolkit for another RPG before evoling into a
