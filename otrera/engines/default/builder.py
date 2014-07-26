@@ -1,3 +1,7 @@
+# Program for building characters
+# For now it just prints character info to the console
+# We need to give this script the ability to save characters as JSON blobs.
+
 #!/usr/bin/env python
 
 from attStats import *

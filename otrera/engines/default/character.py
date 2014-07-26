@@ -1,3 +1,7 @@
+# Character objects
+# This class covers player characters, NPC's, and enemies as well
+# The different types of characters can be denoted with the 'tag' attribute
+
 from attStats import *
 from levels import *
 from attMappings import *

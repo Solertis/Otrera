@@ -17,7 +17,9 @@
         "10": [], 
         "15": [], 
         "20": [], 
-        "5": []
+        "5": [
+            "fortify defense"
+        ]
     }, 
     "DEX": {
         "10": [
@@ -255,6 +257,32 @@
             "Status": []
         }, 
         "uses": "9999"
+    }, 
+    "fortify defense": {
+        "category": "attribute", 
+        "effect": {
+            "AOE": "SELF", 
+            "Description": "Temporarily boost PHYSDEF", 
+            "Element": "", 
+            "Inflicts": "PDEF+2", 
+            "Power": "2", 
+            "Range": "1", 
+            "Time": "0"
+        }, 
+        "flavor": "PHYSBOOST", 
+        "requirements": {
+            "Attributes": [
+                "CON5"
+            ], 
+            "Class": [], 
+            "Level": "0"
+        }, 
+        "restrictions": {
+            "Equipment": [], 
+            "Stats": [], 
+            "Status": []
+        }, 
+        "uses": "2"
     }, 
     "fury": {
         "category": "class", 

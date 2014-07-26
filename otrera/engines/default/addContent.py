@@ -37,7 +37,7 @@ def get_update(content_type, thing_name):
 	"""
 	template = templates[content_type]
 	template[thing_name] = template.pop(template.keys()[0])
-	update_data = get_content_info(template, content_type)
+	update_data = get_content_info(template)
 	return update_data
 
 def get_list(key):
@@ -82,21 +82,21 @@ def get_content_info(data_dict):
 			data_dict[k] = raw_input(k+": ")
 	return data_dict
 
-def make_content(content_type, thing_name):
+def make_content(content_type, update, thing_name):
 	"""
 	Method for actually writing to everything.json.
 	This method calls all of the other needed
 	methods.
 
 	Args:
-	  (str) content_type: Informs which template to use
+	  (str) content_type: Used by update_lists
+	  (dict) update: The new JSON
 	  (str) thing_name: The new key to create in the JSON
 	Returns:
 	  None
 	"""
 	with open(path) as f:
 		data = json.load(f)
-	update = get_update(content_type, thing_name)
 	data.update(update)
 	data = update_lists(content_type, data, update, thing_name)
 	with open(path,"w") as f:
@@ -137,4 +137,5 @@ def update_lists(content_type, data, update, thing_name):
 if __name__=="__main__":
 	content_type = pick_content_type()
 	thing_name = raw_input("Name your %s (lower case only): ")
-	make_content(content_type, thing_name)
+	update = get_update(content_type, thing_name)
+	make_content(content_type, update, thing_name)

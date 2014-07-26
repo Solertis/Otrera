@@ -1,4 +1,6 @@
 # Class for handling everything.json
+# The 'game' variable may be passed in by the user at runtime.
+# This allows an engine to load a specific game's everything.json
 
 import json
 
