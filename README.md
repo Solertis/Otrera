@@ -1,11 +1,8 @@
 ![alt tag](https://raw.github.com/AgathaTheWitch/Otrera/master/otrera-smaller.jpg)
 
 Otrera is an open source role-playing game development system. 
-It began as a toolkit for another RPG before evoling into a
-general purpose engine and engine builder. It is named after
-the Amazon Matriarch and concubine of Ares who plays a key
-role in the "Daughters of Ares" books and games (still in
-development) which inspired the creation of this software.
+With Otrera, you can design an original game engine from or
+make games for existing ones.
 
 Otrera operates with two axioms:
 
