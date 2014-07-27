@@ -7,26 +7,29 @@ the Amazon Matriarch and concubine of Ares who plays a key
 role in the "Daughters of Ares" books and games (still in
 development) which inspired the creation of this software.
 
+Otrera operates with two axioms:
+
+I. Engines are sets of rules and systems, while games are
+subsets of engines.
+
+II. Your RPG will have characters.
+
 Otrera provides the following tools:
 
-1. Set of core rules and stat systems that can be copied
-or adapated into original games for personal or commercial use.
+1. Full-fledged engine builder to allow for the creation of
+original character development and combat systems. Users can
+then publish, modify, and patent their unique game systems.
 
-2. Character builder tools to test out different classes and
-builds and simulate level progression.
+2. Character builder and content editing tools. Users can
+upload spreadsheets to quickly add hundreds of content items.
 
-3. Comprehensive documentation (In Development)
+3. A number of default engines (including Pathfinder) which can
+serve as the basis of new games and campaigns.
 
-4. Sample content (classes, skills, equipment, etc.) that
-can also be copied or adapted.
+4. A wealth of sample content (classes, skills, equipment, etc.) 
+that can also be copied or adapted.
 
 5. Analytical tools to help balance your game. (In Development)
-
-6. The ability to publish character / skill / story / equipment
-sheets and full game manuals. (In Development)
-
-7. Full-fledged engine builder to allow for creation of original
-combat and character development systems.
 
 The goal of Otrera is to help table top RPG and board game makers
 to create rich, complex, and balanced game systems. Whether you
