@@ -6,7 +6,7 @@ PROJECT MILESTONES
 	Users can create characters on top of the default engine and customize their
 	attributes, equipment, skills, class, and level, and see the resulting stats.
 
-2. Complete game publisher -- GOAL 7/27/2014
+2. Complete game publisher using default engine -- GOAL 7/31/2014
 
 	Users can create complete games as JSON blobs. When the user selects a game
 	(for character builder or content editor) the Python modules just take in
