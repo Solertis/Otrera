@@ -13,11 +13,33 @@ relevant_attributes = {
 	"Physical Attack" : ["MGT"], "Carry Strength" : ["MGT"],
 	"Casting Speed" : ["ART"], "Spell Failure" : ["INT","ART"]
 	}
-
 e = Content().data
+a = open("engine.json","r").read()
+b = json.loads(a)
 
 # Most of these methods just call functions in attMappings and
 # then return some total modifier as the stat. Fairly simple.
+
+def get_stat_modifier(charac, statname):
+	key = b[statname]
+	attMaps = key["attMaps"]
+	if len(attMaps) == 1:
+		return get_att_modifier(attMaps[0], statname, charac)
+	else:
+		vals = []
+		if "COMB" in attMaps:
+			attMaps.remove("COMB")
+			for att in attMaps:
+				vals.append(charac.attributes[att])
+			total = sum(vals)
+			return key['calc'][str(total)]
+		else:
+			for att in attMaps:
+				vals.append(get_att_modifier(att, statname, charac))
+		return sum(vals)
+
+def get_att_modifier(att, stat, charac):
+	return b[att]["StatMaps"][stat][str(charac.attributes[att])]
 
 def get_evade(DEX, ART):
 	dex_modifier = dex_to_evade(DEX)
