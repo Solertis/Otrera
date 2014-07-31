@@ -7,6 +7,8 @@ import json
 class Content(object):
 
 	def __init__(self, game=None):
+		r = open("engine.json","r").read()
+		self.engine=json.loads(r)
 		if game==None:
 			default_path = "games/default/everything.json"
 			f = open(default_path,"r").read()

@@ -3,15 +3,17 @@
 # For now it just prints character info to the console
 # We need to give this script the ability to save characters as JSON blobs.
 
-
+from content import Content
 from attStats import *
 from levels import *
 from items import *
 from character import Character
 import json
 
+engine = Content().engine
+
 def level_zero_character_builder():
-	zero_character = Character()
+	zero_character = engine["character"]
 	print "Give me some stats, bro\n"
 	base_character = get_base_attributes(zero_character)
 	print "\nOK! Let's get those stats!\n"
@@ -76,21 +78,21 @@ def user_picks_skills(charac, eligible_skills):
 	return charac
 
 def get_base_attributes(charac):
-	charac.name = raw_input("Name your character: ")
+	charac["name"] = raw_input("Name your character: ")
 	DEX = int(raw_input("Dexterity: "))
 	ART = int(raw_input("Artistry: "))
 	MGT = int(raw_input("Might: "))
 	DIV = int(raw_input("Divine: "))
 	INT = int(raw_input("Intelligence: "))
 	CON = int(raw_input("Constitution: "))
-	charac.attributes = {
+	charac["attributes"] = {
 			"DEX":DEX,"ART":ART,"MGT":MGT,"DIV":DIV,"INT":INT,"CON":CON
 			}
 	return charac
 
 def publish_character(charac):
-	stats = charac.stats
-	print "Character Name: %s" % charac.name
+	stats = charac["stats"]
+	print "Character Name: %s" % charac["name"]
 	print "MaxHP = %s" % str(stats["MaxHP"])
 	print "Evade = %s" % str(stats["Evade"])
 	print "Hit = %s" % str(stats["Hit"])

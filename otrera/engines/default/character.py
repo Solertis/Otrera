@@ -4,7 +4,6 @@
 
 from attStats import *
 from levels import *
-from attMappings import *
 from content import Content
 import json
 import sys

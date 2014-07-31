@@ -1,6 +1,5 @@
 # Methods for defining a character's stats and skills
 
-from attMappings import *
 from skills import *
 import json
 from content import Content
@@ -24,7 +23,7 @@ def get_stat_modifier(charac, statname):
 		if "COMB" in attMaps:
 			attMaps.remove("COMB")
 			for att in attMaps:
-				vals.append(charac.attributes[att])
+				vals.append(charac["attributes"][att])
 			total = sum(vals)
 			return key['calc'][str(total)]
 		else:
@@ -34,16 +33,16 @@ def get_stat_modifier(charac, statname):
 
 def get_att_modifier(att, stat, charac):
 	# Return the modifier mapped to a given attribute value
-	return b[att]["StatMaps"][stat][str(charac.attributes[att])]
+	return b[att]["StatMaps"][stat][str(charac["attributes"][att])]
 
 def apply_att_stats(charac):
 	# Apply all of the attribute-derived stat modifiers to the character
 	for stat in the_stats:
 		mod = get_stat_modifier(charac, stat)
 		if isinstance(mod,int):
-			charac.stats[stat] = charac.stats[stat]+mod
+			charac["stats"][stat] = charac["stats"][stat]+mod
 		else:
-			charac.stats[stat] = mod
+			charac["stats"][stat] = mod
 	return charac
 
 def get_class_skills(charac):
