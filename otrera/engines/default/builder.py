@@ -22,14 +22,22 @@ def level_zero_character_builder():
 	return level_zero_character
 
 def custom_level_naked_character_builder():
-	charac = level_zero_character_builder()
-	charac.level = int(raw_input("What is the character's level?: "))
-	charac.character_class = raw_input("What is the character's class?: ").lower().strip()
-	level_mods = get_level_mods(charac.character_class, charac.level)
-	for key in charac.attributes.keys():
-		charac.attributes[key] = charac.attributes[key] + int(level_mods[key])
-	charac.stats = get_stats(charac.attributes)
-	return charac
+	if engine.has_key("LEVELS"):
+		l = engine["LEVELS"]
+		charac = level_zero_character_builder()
+		charac["level"] = int(raw_input("What is the character's level?: "))
+		charac["class"] = raw_input("What is the character's class?: ").lower().strip()
+		char_lev = charac["level"]+1
+		for lev in range(l["list"], char_lev):
+			# Iterate over level objects from start to character level
+			# Apply mods based on constructs - static boosts, class, race, etc.
+	#level_mods = get_level_mods(charac["class"], charac["level"])
+	#for key in charac["attributes"].keys():
+	#charac["attributes"][key] = charac["attributes"][key] + int(level_mods[key])
+	#charac.stats = get_stats(charac.attributes)
+		return charac
+	else:
+		print "Engine has no concept of 'levels"
 
 def fully_equipped_character_builder():
 	full_charac = custom_level_naked_character_builder()
