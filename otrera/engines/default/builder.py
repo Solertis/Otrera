@@ -1,8 +1,8 @@
+#!/usr/bin/env python
 # Program for building characters
 # For now it just prints character info to the console
 # We need to give this script the ability to save characters as JSON blobs.
 
-#!/usr/bin/env python
 
 from attStats import *
 from levels import *
@@ -16,8 +16,8 @@ def level_zero_character_builder():
 	base_character = get_base_attributes(zero_character)
 	print "\nOK! Let's get those stats!\n"
 	print "---------------------------------------------------\n"
-	base_character.stats = get_stats(base_character.attributes)
-	return base_character
+	level_zero_character = apply_att_stats(base_character)
+	return level_zero_character
 
 def custom_level_naked_character_builder():
 	charac = level_zero_character_builder()
@@ -91,18 +91,16 @@ def get_base_attributes(charac):
 def publish_character(charac):
 	stats = charac.stats
 	print "Character Name: %s" % charac.name
-	print "MaxHP = %s" % str(stats["maxHP"])
+	print "MaxHP = %s" % str(stats["MaxHP"])
 	print "Evade = %s" % str(stats["Evade"])
 	print "Hit = %s" % str(stats["Hit"])
 	print "Accuracy = %s" %str(stats["Accuracy"])
-	print "Physical Defense = %s" % str(stats["Physical Defense"])
-	print "Physical Attack = %s" % str(stats["Physical Attack"])
-	print "Magical Defense = %s" % str(stats["Magical Defense"])
-	print "Magical Attack = %s" % str(stats["Magical Attack"])
+	print "Physical Defense = %s" % str(stats["PhyDef"])
+	print "Physical Attack = %s" % str(stats["PhyAtk"])
+	print "Magical Defense = %s" % str(stats["MagDef"])
+	print "Magical Attack = %s" % str(stats["MagAtk"])
 	print "Resistance = %s" % str(stats["Resistance"])
-	print "Carry Strength = %s" % str(stats["Carry Strength"])
-	print "Casting Speed = %s" % str(stats["Casting Speed"])
-	print "Spell Failure = %s" % str(stats["Spell Failure"])
+	print "Carry Strength = %s" % str(stats["CarryStrength"])
 	print "Craft = %s" % str(stats["Craft"])
 
 def publish_charac_combat_stats(charac):

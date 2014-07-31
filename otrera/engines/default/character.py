@@ -41,12 +41,11 @@ class Character(object):
 				}
 
 		self.stats = {
-				"MaxHP":"1","Evade":"0","Hit":"0",
-				"Accuracy":"0","Physical Defense":"0",
-				"Physical Attack":"0","Magical Defense":"0",
-				"Magical Attack":"0","Resistance":"0",
-				"Carry Strength":"0","Casting Speed":"0",
-				"Spell Failure":"0","Craft":"0"
+				"MaxHP":10,"Evade":0,"Hit":0,
+				"Accuracy":0,"PhyDef":"",
+				"PhyAtk":"","MagDef":0,
+				"MagAtk":0,"Resistance":0,
+				"CarryStrength":0,"Craft":0
 				}
 
 		if make is not None:
@@ -131,7 +130,7 @@ class Character(object):
 		# Adjust for inventory weight and carry strength
 		self.set_carry_weight()
 		weight_penalty = self.carry_weight/10
-		mgt_adjusted = weight_penalty - int(self.stats["Carry Strength"])
+		mgt_adjusted = weight_penalty - int(self.stats["CarryStrength"])
 		evade = int(self.stats["Evade"]) - mgt_adjusted
 		self.stats["Evade"] = str(evade)
 
