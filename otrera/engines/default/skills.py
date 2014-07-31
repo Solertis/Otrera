@@ -1,4 +1,3 @@
-from levels import *
 from attStats import *
 import json
 from content import Content

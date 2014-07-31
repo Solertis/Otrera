@@ -78,7 +78,7 @@ def apply_stat_mod(charac, mod):
 
 def get_stat_modifier(charac, statname):
 	# General method for determining a stat modifier given an attribute va;ie
-	key = b[statname]
+	key = b["STATS"][statname]
 	attMaps = key["attMaps"]
 	vals = []
 	if len(attMaps) == 1:
@@ -96,7 +96,7 @@ def get_stat_modifier(charac, statname):
 
 def get_att_modifier(att, stat, charac):
 	# Return the modifier mapped to a given attribute value
-	return b[att]["StatMaps"][stat][str(charac["attributes"][att])]
+	return b["ATTRIBUTES"][att]["StatMaps"][stat][str(charac["attributes"][att])]
 
 def apply_att_stats(charac):
 	# Apply all of the attribute-derived stat modifiers to the character
