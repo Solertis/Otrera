@@ -5,7 +5,6 @@
 
 from content import Content
 from attStats import *
-from levels import *
 from items import *
 from character import Character
 import json
@@ -13,7 +12,7 @@ import json
 engine = Content().engine
 
 def level_zero_character_builder():
-	zero_character = engine["character"]
+	zero_character = engine["CHARACTER"]
 	print "Give me some stats, bro\n"
 	base_character = get_base_attributes(zero_character)
 	print "\nOK! Let's get those stats!\n"
@@ -24,17 +23,19 @@ def level_zero_character_builder():
 def custom_level_naked_character_builder():
 	if engine.has_key("LEVELS"):
 		l = engine["LEVELS"]
+		mods = []
 		charac = level_zero_character_builder()
 		charac["level"] = int(raw_input("What is the character's level?: "))
 		charac["class"] = raw_input("What is the character's class?: ").lower().strip()
 		char_lev = charac["level"]+1
-		for lev in range(l["list"], char_lev):
+		charac = apply_level_mods(charac)
 			# Iterate over level objects from start to character level
 			# Apply mods based on constructs - static boosts, class, race, etc.
 	#level_mods = get_level_mods(charac["class"], charac["level"])
 	#for key in charac["attributes"].keys():
 	#charac["attributes"][key] = charac["attributes"][key] + int(level_mods[key])
 	#charac.stats = get_stats(charac.attributes)
+		charac = apply_att_stats(charac)
 		return charac
 	else:
 		print "Engine has no concept of 'levels"

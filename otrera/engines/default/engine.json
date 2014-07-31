@@ -1,12 +1,42 @@
 {
-	"ATTRIBUTES" : {},
-	"STATS" : {},
+	"ATTRIBUTES" : {
+		"list" : [ "DEX","ART","CON","MGT","DIV","INT" ]
+	},
+	"STATS" : {
+		"list" : ["MaxHP","Evade","Hit","Accuracy","CarryStrength",
+				"Craft","Resistance","MagAtk","MagDef","PhyAtk","PhyDef"],
+		"MaxHP" : {
+			"type" : "int"
+		}
+	},
 	"SKILLS" : {},
 	"CLASSES" : {},
 	"RACES" : {},
-	"LEVELS" : {},
+	"GENDER" : {},
+	"LEVELS" : {
+		"list" : [ 0,1 ],
+		"modifiers" : [ "base", "class" ],
+		"0" : { 
+			"base" : [],
+			"class" : {
+				"mage" : [],
+				"fighter" : [],
+				"craftsman" : [],
+				"archer" : []
+			}
+		},
+		"1" : {
+			"base" : [ "MaxHP5", "PLR8" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		}
+	},
 	"EQUIPMENT" : {},
-	"character" : {
+	"CHARACTER" : {
 		"name" : "",
 		"class" : "",
 		"gender" : "",
