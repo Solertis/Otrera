@@ -175,9 +175,46 @@
 		}
 	},
 	"SKILLS" : {},
-	"CLASSES" : {},
-	"RACES" : {},
-	"GENDER" : {},
+	"CLASSES" : {
+		"list" : ["mage","fighter","craftsman","archer"],
+		"mage" : {
+			"weapons" : [ "staff" ],
+			"armors" : [ "robes" ]
+		},
+		"fighter" : {
+			"weapons" : [ "sword", "glove" ],
+			"armors" : [ "leather", "cloth", "metal" ]
+		},
+		"craftsman" : {
+			"weapons" : [ "glove" ],
+			"armors" : [ "leather", "cloth" ]
+		},
+		"archer" : {
+			"weapons" : [ "bow" ],
+			"armors" : [ "leather" ]
+		}
+	},
+	"RACES" : {
+		"list" : [ "human", "lizard", "wolf" ],
+		"human" : {
+			"init" : [ "INT1" ]
+		},
+		"lizard" : {
+			"init" : [ "CON1" ]
+		},
+		"wolf" : {
+			"init" : [ "MGT1" ]
+		}
+	},
+	"GENDER" : {
+		"list" : [ "male", "female" ],
+		"male" : {
+			"init" : [ "MGT2" ]
+		},
+		"female" : {
+			"init" : [ "ART2" ]
+		}
+	},
 	"LEVELS" : {
 		"list" : [ 0,1 ],
 		"modifiers" : [ "base", "class" ],
@@ -191,7 +228,7 @@
 			}
 		},
 		"1" : {
-			"base" : [ "MaxHP5", "PLR8" ],
+			"base" : [ "MaxHP5", "PLR2" ],
 			"class" : {
 				"mage" : [ "DIV1" ],
 				"fighter" : [ "MGT1" ],
