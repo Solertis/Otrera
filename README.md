@@ -1,15 +1,21 @@
 ![alt tag](https://raw.github.com/AgathaTheWitch/Otrera/master/otrera-smaller.jpg)
 
 Otrera is an open source role-playing game development system. 
-With Otrera, you can design an original game engine from or
-make games for existing ones.
+With Otrera, you can design original table top game engines
+from scratch, or make new games on top of existing systems.
 
-Otrera operates with two axioms:
+The software defines an 'Engine' as a set of rules and constructs
+on top of which games are built. The 'Game' is then the set of
+content. For example, an Engine might define how classes work
+with character skills and stats while a specific game would
+define its own classes and fill in its own values.
 
-I. Engines are sets of rules and systems, while games are
-subsets of engines.
-
-II. Your RPG will have characters.
+The two concepts can be tightly coupled. Otrera users need not
+create general purpose engines. An engine can include all of
+the necessary content for a game, making the engine and game
+effectively one product. This is the ideal approach for people
+who want to make a unique game with unique rules that are not
+copied in any other system.
 
 Otrera provides the following tools:
 
@@ -25,8 +31,6 @@ serve as the basis of new games and campaigns.
 
 4. A wealth of sample content (classes, skills, equipment, etc.) 
 that can also be copied or adapted.
-
-5. Analytical tools to help balance your game. (In Development)
 
 The goal of Otrera is to help table top RPG and board game makers
 to create rich, complex, and balanced game systems. Whether you
