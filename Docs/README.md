@@ -21,7 +21,7 @@ Otrera provides the following tools:
 
 1. Full-fledged engine builder to allow for the creation of
 original character development and combat systems. Users can
-then publish, modify, and patent their unique game systems.
+then publish, modify, and sell their unique game systems.
 
 2. Character builder and content editing tools. Users can
 upload spreadsheets to quickly add hundreds of content items.
