@@ -3,10 +3,7 @@
 from skills import *
 import json
 from content import Content
-
-e = Content().data
-a = open("engine.json","r").read()
-b = json.loads(a)
+game = Content().data
 engine = Content().engine
 
 the_stats = ["Evade","PhyDef","PhyAtk","MagAtk","MagDef",
@@ -78,7 +75,7 @@ def apply_stat_mod(charac, mod):
 
 def get_stat_modifier(charac, statname):
 	# General method for determining a stat modifier given an attribute va;ie
-	key = b["STATS"][statname]
+	key = engine["STATS"][statname]
 	attMaps = key["attMaps"]
 	vals = []
 	if len(attMaps) == 1:
@@ -96,7 +93,7 @@ def get_stat_modifier(charac, statname):
 
 def get_att_modifier(att, stat, charac):
 	# Return the modifier mapped to a given attribute value
-	return b["ATTRIBUTES"][att]["StatMaps"][stat][str(charac["attributes"][att])]
+	return engine["ATTRIBUTES"][att]["StatMaps"][stat][str(charac["attributes"][att])]
 
 def apply_att_stats(charac):
 	# Apply all of the attribute-derived stat modifiers to the character
@@ -108,8 +105,13 @@ def apply_att_stats(charac):
 			charac["stats"][stat] = mod
 	return charac
 
+def get_inventory_from_strings(string_list):
+	# Need to think about some things with this method
+	inventory = []
+	pass
+
 def get_class_skills(charac):
-	# Find the list of class skills in everything.json and 
+	# Find the list of class skills in content.json and 
 	# make skill objects out of all of them
 	class_skills = e[charac.character_class+"_skills"]
 	skill_object_list = []

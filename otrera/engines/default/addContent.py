@@ -27,7 +27,7 @@ def pick_content_type():
 def get_update(content_type, thing_name):
 	"""
 	Top level method for actually getting the update
-	data to go into everything.json
+	data to go into content.json
 	
 	Args:
 	  (str) content_type: The type of content to create
@@ -84,7 +84,7 @@ def get_content_info(data_dict):
 
 def make_content(content_type, update, thing_name):
 	"""
-	Method for actually writing to everything.json.
+	Method for actually writing to content.json.
 	This method calls all of the other needed
 	methods.
 
@@ -104,13 +104,13 @@ def make_content(content_type, update, thing_name):
 
 def update_lists(content_type, data, update, thing_name):
 	"""
-	Content types have master lists in everything.json
+	Content types have master lists in content.json
 	This method adds the name to the relevant master
 	list as part of the content creation process.
 
 	Args:
 	  (str) content_type: Type of content
-	  (dict) data: The everything.json data in dict form
+	  (dict) data: The content.json data in dict form
 	  (dict) update: The new content data in dict form
 	  (thing_name): The name to append to the list
 	"""

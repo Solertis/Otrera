@@ -453,13 +453,44 @@
 			}
 		}
 	},
-	"EQUIPMENT" : {},
+	"EQUIPMENT" : {
+		"WEAPONS" : {
+			"WEAPON" : {
+				"category" : "WEAPONS",
+				"weight" : 1,
+				"base_dmg" : 1,
+				"spec_mods" : [],
+				"type" : "sword",
+				"durability" : 1,
+				"description" : "Description"
+			}
+		},
+		"ARMORS" : {
+			"ARMOR" : {
+				"category" : "ARMORS",
+				"weight" : 1,
+				"type" : "cloth",
+				"spec_mods" : [],
+				"durability" : 1,
+				"description" : "Description"
+			}
+		},
+		"ITEMS" : {
+			"ITEM" : {
+				"category" : "ITEMS",
+				"weight" : 1,
+				"type" : "usable",
+				"effect" : "HP+0",
+				"description" : "Description"
+			}
+		}
+	},
 	"CHARACTER" : {
-		"name" : "",
-		"class" : "",
-		"gender" : "",
-		"race" : "",
-		"tag" : "",
+		"name" : "John Doe",
+		"class" : "fighter",
+		"gender" : "male",
+		"race" : "human",
+		"tag" : "player",
 		"skills" : [],
 		"inventory" : [],
 		"stats" : {
@@ -474,5 +505,7 @@
 			"weapon" : "", "armor" : "", "eqp_mods" : []
 		},
 		"level" : 0
-	}	
+	},
+	"CONTENT" : {
+	}
 }

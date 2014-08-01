@@ -10,13 +10,13 @@ class Content(object):
 		r = open("engine.json","r").read()
 		self.engine=json.loads(r)
 		if game==None:
-			default_path = "games/default/everything.json"
+			default_path = "games/default/content.json"
 			f = open(default_path,"r").read()
 			data=json.loads(f)
 			self.data = data
 			self.path = default_path
 		else:
-			game_path = "games/"+game+"/everything.json"
+			game_path = "games/"+game+"/content.json"
 			f = open(game_path,"r").read()
 			data=json.loads(f)
 			self.data = data

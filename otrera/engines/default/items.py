@@ -1,8 +1,6 @@
 # Item objects
 
 import json
-from weapons import Weapon as w
-from armors import Armor as a
 from content import Content
 
 e = Content().data

@@ -4,7 +4,7 @@
 # We need to give this script the ability to save characters as JSON blobs.
 
 from content import Content
-from attStats import *
+from engine import *
 from items import *
 from character import Character
 import json
@@ -29,12 +29,6 @@ def custom_level_naked_character_builder():
 		charac["class"] = raw_input("What is the character's class?: ").lower().strip()
 		char_lev = charac["level"]+1
 		charac = apply_level_mods(charac)
-			# Iterate over level objects from start to character level
-			# Apply mods based on constructs - static boosts, class, race, etc.
-	#level_mods = get_level_mods(charac["class"], charac["level"])
-	#for key in charac["attributes"].keys():
-	#charac["attributes"][key] = charac["attributes"][key] + int(level_mods[key])
-	#charac.stats = get_stats(charac.attributes)
 		charac = apply_att_stats(charac)
 		return charac
 	else:
