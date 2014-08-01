@@ -235,6 +235,222 @@
 				"craftsman" : [ "INT1" ],
 				"archer" : [ "DEX1" ]
 			}
+		},
+		"2" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"3" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"4" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"5" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"6" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"7" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"8" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"9" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"10" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"11" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"12" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"13" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"14" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"15" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"16" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"17" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"18" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"19" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"20" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"21" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"22" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"23" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"24" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"25" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
 		}
 	},
 	"EQUIPMENT" : {},
