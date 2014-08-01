@@ -1,917 +1,246 @@
 {
-    "ART": {
-        "10": [
-            "deft strike"
-        ], 
-        "15": [
-            "retry"
-        ], 
-        "20": [
-            "punish"
-        ], 
-        "5": [
-            "sharp eyes"
-        ]
-    }, 
-    "CON": {
-        "10": [], 
-        "15": [], 
-        "20": [], 
-        "5": [
-            "fortify defense"
-        ]
-    }, 
-    "DEX": {
-        "10": [
-            "catch arrow"
-        ], 
-        "15": [
-            "steal weapon"
-        ], 
-        "20": [
-            "intuitive strike"
-        ], 
-        "5": [
-            "quick attack"
-        ]
-    }, 
-    "DIV": {
-        "10": [
-            "magical beam"
-        ], 
-        "15": [], 
-        "20": [], 
-        "5": []
-    }, 
-    "INT": {
-        "10": [], 
-        "15": [], 
-        "20": [], 
-        "5": []
-    }, 
-    "MGT": {
-        "10": [], 
-        "15": [], 
-        "20": [], 
-        "5": []
-    }, 
-    "amazing sword": {
-        "base_pwr": "5", 
-        "durability": "8", 
-        "kind": "sword", 
-        "spec_mods": [
-            "HIT+1", 
-            "HP+5"
-        ], 
-        "weight": "4"
-    }, 
-    "archer": {
-        "1": "DEX1 PLR1", 
-        "10": "DEX1 PLR1", 
-        "2": "DEX1 PLR1", 
-        "3": "MGT1 PLR1", 
-        "4": "DEX1 PLR1", 
-        "5": "DEX1 PLR1", 
-        "6": "ART1 PLR1", 
-        "7": "DEX1 PLR1", 
-        "8": "ART1 PLR1", 
-        "9": "MGT1 PLR1"
-    }, 
-    "archer_skills": [
-        "focus shot"
-    ], 
-    "base_pwr": "4", 
-    "bow": {
-        "classes": [
-            "archer"
-        ], 
-        "list": [
-            "wooden bow", 
-            "magic bow", 
-            "heavy bow"
-        ], 
-        "range": "10", 
-        "scaling": "DEX3"
-    }, 
-    "catch arrow": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "Single", 
-            "Description": "Catch projectile", 
-            "Element": "", 
-            "Inflicts": "", 
-            "Power": "0", 
-            "Range": "10", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSDEF", 
-        "requirements": {
-            "Attributes": [
-                "DEX10"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "5"
-    }, 
-    "characters": [
-        "jim bob"
-    ], 
-    "classes": [
-        "fighter", 
-        "mage", 
-        "craftsman", 
-        "archer", 
-        "test class"
-    ], 
-    "cloth": {
-        "classes": [
-            "fighter", 
-            "archer", 
-            "craftsman"
-        ], 
-        "defense": "1d6", 
-        "list": [
-            "light clothes", 
-            "ninja suit", 
-            "rags"
-        ]
-    }, 
-    "craftsman": {
-        "1": "INT1 PLR1", 
-        "10": "ART1 PLR1", 
-        "2": "INT1 PLR1", 
-        "3": "DEX1 PLR1", 
-        "4": "INT1 PLR1", 
-        "5": "DEX1 PLR1", 
-        "6": "CON1 PLR1", 
-        "7": "INT1 PLR1", 
-        "8": "CON1 PLR1", 
-        "9": "DEX1 PLR1"
-    }, 
-    "craftsman_skills": [
-        "grenade"
-    ], 
-    "deft strike": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SINGLE", 
-            "Description": "Increase hit for three turns", 
-            "Element": "", 
-            "Inflicts": "HIT+2, 3T", 
-            "Power": "", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSBOOST", 
-        "requirements": {
-            "Attributes": [
-                "ART10"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "3"
-    }, 
-    "durability": "10", 
-    "fighter": {
-        "1": "MGT1 PLR1", 
-        "10": "MGT1 PLR1", 
-        "2": "MGT1 PLR1", 
-        "3": "CON1 PLR1", 
-        "4": "MGT1 PLR1", 
-        "5": "CON1 PLR1", 
-        "6": "MGT1 PLR1", 
-        "7": "ART1 PLR1", 
-        "8": "CON1 PLR1", 
-        "9": "MGT1 PLR1"
-    }, 
-    "fighter_skills": [
-        "spin attack", 
-        "fury"
-    ], 
-    "flame blast": {
-        "category": "class", 
-        "effect": {
-            "AOE": "LINE, 5", 
-            "Description": "Launch a wave of fire in a straight line", 
-            "Element": "FIRE", 
-            "Inflicts": "BURN, 10", 
-            "Power": "1d12", 
-            "Range": "3", 
-            "Time": "2"
-        }, 
-        "flavor": "MAGATK", 
-        "requirements": {
-            "Attributes": [
-                "DIV10"
-            ], 
-            "Class": [], 
-            "Level": "5"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": [
-                "SILENCE"
-            ]
-        }, 
-        "uses": "2"
-    }, 
-    "focus shot": {
-        "category": "class", 
-        "effect": {
-            "AOE": "SINGLE", 
-            "Description": "Focused shot using a bow and arrow", 
-            "Element": "PHYS", 
-            "Inflicts": "", 
-            "Power": "SCALE, 1d6", 
-            "Range": "10", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYATK", 
-        "requirements": {
-            "Attributes": [
-                "DEX7"
-            ], 
-            "Class": [], 
-            "Level": "2"
-        }, 
-        "restrictions": {
-            "Equipment": [
-                "bow"
-            ], 
-            "Stats": [
-                "BLIND"
-            ], 
-            "Status": []
-        }, 
-        "uses": "9999"
-    }, 
-    "fortify defense": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SELF", 
-            "Description": "Temporarily boost PHYSDEF", 
-            "Element": "", 
-            "Inflicts": "PDEF+2", 
-            "Power": "2", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSBOOST", 
-        "requirements": {
-            "Attributes": [
-                "CON5"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "2"
-    }, 
-    "fury": {
-        "category": "class", 
-        "effect": {
-            "AOE": "INDIVIDUAL", 
-            "Description": "Boost ATK by 5 for 3 turns", 
-            "Element": "", 
-            "Inflicts": "ATK+5, 3T", 
-            "Power": "5", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSBOOST", 
-        "requirements": {
-            "Attributes": [], 
-            "Class": [
-                "fighter"
-            ], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "2"
-    }, 
-    "gear": {
-        "list": []
-    }, 
-    "glove": {
-        "classes": [
-            "craftsman", 
-            "fighter"
-        ], 
-        "list": [
-            "leather glove", 
-            "workman glove"
-        ], 
-        "range": "1", 
-        "scaling": "MGT3"
-    }, 
-    "golden armor": {
-        "capacity": "50", 
-        "durability": "30", 
-        "kind": "metal", 
-        "spec_mods": [
-            "FIRE-3", 
-            "PHYSDEF+5"
-        ], 
-        "weight": "30"
-    }, 
-    "grand staff": {
-        "base_pwr": "3", 
-        "durability": "20", 
-        "kind": "staff", 
-        "spec_mods": [
-            "DIV+4", 
-            "INT+4"
-        ], 
-        "weight": "5"
-    }, 
-    "grenade": {
-        "category": "class", 
-        "effect": {
-            "AOE": "BOX, 4", 
-            "Description": "Throw a frag grenade that does physical damage", 
-            "Element": "PHYS", 
-            "Inflicts": "BLEED, 12", 
-            "Power": "1d10", 
-            "Range": "4", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYATK", 
-        "requirements": {
-            "Attributes": [
-                "INT8"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "3"
-    }, 
-    "healing potion": {
-        "durability": "1", 
-        "effect": "HP+10", 
-        "kind": "usable", 
-        "special": {}, 
-        "weight": "2"
-    }, 
-    "heavy bow": {
-        "base_pwr": "4", 
-        "durability": "13", 
-        "kind": "bow", 
-        "spec_mods": [
-            "DMG+2"
-        ], 
-        "weight": "10"
-    }, 
-    "heavy spear": {
-        "base_pwr": "5", 
-        "durability": "15", 
-        "kind": "spear", 
-        "spec_mods": [], 
-        "weight": "10"
-    }, 
-    "ice storm": {
-        "category": "class", 
-        "effect": {
-            "AOE": "SQUARE, 9", 
-            "Description": "Creates a localized storm of ice and hail", 
-            "Element": "ICE", 
-            "Inflicts": "FREEZE, 10", 
-            "Power": "1d10", 
-            "Range": "10", 
-            "Time": "2"
-        }, 
-        "flavor": "MAGATK", 
-        "requirements": {
-            "Attributes": [
-                "DIV8"
-            ], 
-            "Class": [], 
-            "Level": "4"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": [
-                "SILENCE", 
-                "BURN"
-            ]
-        }, 
-        "uses": "3"
-    }, 
-    "intuitive strike": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SELF", 
-            "Description": "Attack before being attacked", 
-            "Element": "", 
-            "Inflicts": "EVD+ATK, 18", 
-            "Power": "SCALE", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PASSIVE", 
-        "requirements": {
-            "Attributes": [
-                "DEX20"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "2"
-    }, 
-    "iron armor": {
-        "capacity": "45", 
-        "durability": "20", 
-        "kind": "metal", 
-        "spec_mods": [], 
-        "weight": "20"
-    }, 
-    "jim bob": {
-        "attributes": {
-            "ART": "", 
-            "CON": "", 
-            "DEX": "", 
-            "DIV": "", 
-            "INT": "", 
-            "MGT": ""
-        }, 
-        "carry_weight": "", 
-        "character_class": "", 
-        "equipment": {
-            "armor": "", 
-            "mods": [], 
-            "weapon": ""
-        }, 
-        "inventory": [], 
-        "level": "", 
-        "skills": [], 
-        "stats": {
-            "Accuracy": "", 
-            "Carry Strength": "", 
-            "Casting Speed": "", 
-            "Craft": "", 
-            "Evade": "", 
-            "Hit": "", 
-            "Magical Attack": "", 
-            "Magical Defense": "", 
-            "MaxHP": "", 
-            "Physical Attack": "", 
-            "Physical Defense": "", 
-            "Resistance": "", 
-            "Spell Failure": ""
-        }, 
-        "tag": ""
-    }, 
-    "kind": "sword", 
-    "laser sword": {
-        "base_pwr": "4", 
-        "durability": "10", 
-        "kind": "sword", 
-        "spec_mods": [], 
-        "weight": "3"
-    }, 
-    "leather": {
-        "classes": [
-            "fighter", 
-            "craftsman"
-        ], 
-        "defense": "1d10", 
-        "list": [
-            "leather armor"
-        ]
-    }, 
-    "leather armor": {
-        "capacity": "20", 
-        "durability": "10", 
-        "kind": "leather", 
-        "spec_mods": [], 
-        "weight": "8"
-    }, 
-    "leather glove": {
-        "base_pwr": "2", 
-        "durability": "5", 
-        "kind": "glove", 
-        "spec_mods": [], 
-        "weight": "5"
-    }, 
-    "light clothes": {
-        "capacity": "10", 
-        "durability": "5", 
-        "kind": "cloth", 
-        "spec_mods": [
-            "DEX+1"
-        ], 
-        "weight": "4"
-    }, 
-    "mage": {
-        "1": "DIV1 PLR1", 
-        "10": "DIV1 PLR1", 
-        "2": "DIV1 PLR1", 
-        "3": "ART1 PLR1", 
-        "4": "DIV1 PLR1", 
-        "5": "ART1 PLR1", 
-        "6": "INT1 PLR1", 
-        "7": "DIV1 PLR1", 
-        "8": "INT1 PLR1", 
-        "9": "ART1 PLR1"
-    }, 
-    "mage robes": {
-        "capacity": "15", 
-        "durability": "5", 
-        "kind": "robes", 
-        "spec_mods": [
-            "maxHP+5"
-        ], 
-        "weight": "2"
-    }, 
-    "mage staff": {
-        "base_pwr": "1", 
-        "durability": "3", 
-        "kind": "staff", 
-        "spec_mods": [
-            "DIV+1"
-        ], 
-        "weight": "3"
-    }, 
-    "mage_skills": [
-        "ice storm", 
-        "flame blast"
-    ], 
-    "magic bow": {
-        "base_pwr": "5", 
-        "durability": "10", 
-        "kind": "bow", 
-        "spec_mods": [
-            "DIV+2", 
-            "DEX+1"
-        ], 
-        "weight": "8"
-    }, 
-    "magical beam": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SINGLE", 
-            "Description": "Fire a beam of magical energy", 
-            "Element": "MAG", 
-            "Inflicts": "", 
-            "Power": "SCALE", 
-            "Range": "8", 
-            "Time": "0"
-        }, 
-        "flavor": "MAGATK", 
-        "requirements": {
-            "Attributes": [
-                "DIV10"
-            ], 
-            "Class": [], 
-            "Level": "3"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": [
-                "SILENCE"
-            ]
-        }, 
-        "uses": "3"
-    }, 
-    "metal": {
-        "classes": [
-            "fighter"
-        ], 
-        "defense": "2d8", 
-        "list": [
-            "iron armor", 
-            "steel armor", 
-            "golden armor"
-        ]
-    }, 
-    "ninja suit": {
-        "durability": "8", 
-        "kind": "cloth", 
-        "spec_mods": [
-            "DEX+3", 
-            "MOV+2"
-        ], 
-        "weight": "2"
-    }, 
-    "punish": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SELF", 
-            "Description": "Attack enemy upon successfully evading", 
-            "Element": "", 
-            "Inflicts": "", 
-            "Power": "SCALE", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSATK", 
-        "requirements": {
-            "Attributes": [
-                "ART20"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "2"
-    }, 
-    "quick attack": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "Single", 
-            "Description": "Instant light attack", 
-            "Element": "PHYS", 
-            "Inflicts": "", 
-            "Power": ".5STD", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSATK", 
-        "requirements": {
-            "Attributes": [
-                "DEX5"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "3"
-    }, 
-    "rags": {
-        "capacity": "5", 
-        "durability": "4", 
-        "kind": "cloth", 
-        "spec_mods": [], 
-        "weight": "3"
-    }, 
-    "retry": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SELF", 
-            "Description": "Retry a failed skill attempt", 
-            "Element": "", 
-            "Inflicts": "", 
-            "Power": "", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "BOOST", 
-        "requirements": {
-            "Attributes": [
-                "ART15"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "1"
-    }, 
-    "robes": {
-        "classes": [
-            "mage"
-        ], 
-        "defense": "1d6", 
-        "list": [
-            "mage robes", 
-            "wizard robes"
-        ]
-    }, 
-    "sharp eyes": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "INDIVIDUAL", 
-            "Description": "Increase evade against ranged attacks", 
-            "Element": "", 
-            "Inflicts": "EVD+1", 
-            "Power": "", 
-            "Range": "", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYSDEF", 
-        "requirements": {
-            "Attributes": [
-                "ART5"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "3"
-    }, 
-    "smoke bomb": {
-        "durability": "1", 
-        "effect": "Cloud of smoke", 
-        "kind": "usable", 
-        "special": {}, 
-        "weight": "1"
-    }, 
-    "spec_mods": [], 
-    "spin attack": {
-        "category": "class", 
-        "effect": {
-            "AOE": "SURROUND", 
-            "Description": "360 degree attack on surrounding enemies", 
-            "Element": "PHYS", 
-            "Inflicts": "", 
-            "Power": "SCALE", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PHYATK", 
-        "requirements": {
-            "Attributes": [
-                "MGT8"
-            ], 
-            "Class": [
-                "warrior"
-            ], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [
-                "sword", 
-                "glove"
-            ], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "9999"
-    }, 
-    "staff": {
-        "classes": [
-            "mage", 
-            "craftsman"
-        ], 
-        "list": [
-            "mage staff", 
-            "wooden staff", 
-            "grand staff", 
-            "wizard staff"
-        ], 
-        "range": "2", 
-        "scaling": "DIV5"
-    }, 
-    "steal weapon": {
-        "category": "attribute", 
-        "effect": {
-            "AOE": "SELF", 
-            "Description": "Chance to steal attacking enemy's weapon", 
-            "Element": "", 
-            "Inflicts": "STLWPN, 15", 
-            "Power": "", 
-            "Range": "1", 
-            "Time": "0"
-        }, 
-        "flavor": "PASSIVE", 
-        "requirements": {
-            "Attributes": [
-                "DEX15"
-            ], 
-            "Class": [], 
-            "Level": "0"
-        }, 
-        "restrictions": {
-            "Equipment": [], 
-            "Stats": [], 
-            "Status": []
-        }, 
-        "uses": "2"
-    }, 
-    "steel armor": {
-        "capacity": "35", 
-        "durability": "25", 
-        "kind": "metal", 
-        "spec_mods": [], 
-        "weight": "20"
-    }, 
-    "sword": {
-        "classes": [
-            "fighter"
-        ], 
-        "list": [
-            "wooden sword", 
-            "amazing sword", 
-            "laser sword"
-        ], 
-        "range": "1", 
-        "scaling": "MGT2 DEX2"
-    }, 
-    "test class": {
-        "level_atts": {
-            "1": "PLR1", 
-            "10": "PLR1", 
-            "2": "PLR1", 
-            "3": "PLR1", 
-            "4": "PLR1", 
-            "5": "PLR1", 
-            "6": "PLR1", 
-            "7": "PLR1", 
-            "8": "PLR1", 
-            "9": "PLR1"
-        }
-    }, 
-    "usable": {
-        "list": [
-            "healing potion", 
-            "smoke bomb"
-        ]
-    }, 
-    "weight": "3", 
-    "wizard robes": {
-        "capacity": "15", 
-        "durability": "10", 
-        "kind": "robes", 
-        "spec_mods": [
-            "INT+2"
-        ], 
-        "weight": "5"
-    }, 
-    "wizard staff": {
-        "base_pwr": "3", 
-        "durability": "5", 
-        "kind": "staff", 
-        "spec_mods": [
-            "DIV+2"
-        ], 
-        "weight": "5"
-    }, 
-    "wooden bow": {
-        "base_pwr": "1", 
-        "durability": "3", 
-        "kind": "bow", 
-        "spec_mods": [], 
-        "weight": "4"
-    }, 
-    "wooden staff": {
-        "base_pwr": "1", 
-        "durability": "3", 
-        "kind": "staff", 
-        "spec_mods": [], 
-        "weight": "2"
-    }, 
-    "wooden sword": {
-        "base_pwr": "2", 
-        "durability": "5", 
-        "kind": "sword", 
-        "spec_mods": [], 
-        "weight": "5"
-    }, 
-    "workman glove": {
-        "base_pwr": "3", 
-        "durability": "10", 
-        "kind": "glove", 
-        "spec_mods": [
-            "DEX+1", 
-            "INT+1"
-        ], 
-        "weight": "5"
-    }
+	"EQUIPMENT" : {},
+	"LEVELS" : {
+		"list" : [
+			0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
+				],
+		"0" : { 
+			"base" : [],
+			"class" : {
+				"mage" : [],
+				"fighter" : [],
+				"craftsman" : [],
+				"archer" : []
+			}
+		},
+		"1" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"2" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"3" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"4" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"5" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"6" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"7" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"8" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"9" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"10" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"11" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"12" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"13" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"14" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"15" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"16" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"17" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"18" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"19" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"20" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"21" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"22" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"23" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"24" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		},
+		"25" : {
+			"base" : [ "MaxHP5", "PLR2" ],
+			"class" : {
+				"mage" : [ "DIV1" ],
+				"fighter" : [ "MGT1" ],
+				"craftsman" : [ "INT1" ],
+				"archer" : [ "DEX1" ]
+			}
+		}
+	},
+	"CLASSES" : {},
+	"RACES" : {},
+	"GENDERS" : {},
+	"SKILLS" : {}
 }

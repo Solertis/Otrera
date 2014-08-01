@@ -11,8 +11,8 @@ the_stats = ["Evade","PhyDef","PhyAtk","MagAtk","MagDef",
 			"Craft","MaxHP"]
 
 def apply_level_mods(charac):
-	l = engine["LEVELS"]
-	mod_types = l["modifiers"]
+	l = game["LEVELS"]
+	mod_types = engine["LEVELS"]["modifiers"]
 	mods = []
 	levrange = charac["level"]+1
 	for lev in range(l["list"][0], levrange):
