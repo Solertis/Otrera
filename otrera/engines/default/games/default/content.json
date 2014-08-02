@@ -287,5 +287,18 @@
 	},
 	"RACES" : {},
 	"GENDERS" : {},
-	"SKILLS" : {}
+	"SKILLS" : {
+		"fire blast" : {
+			"name" : "fire blast",
+			"description" : "Create a powerful burst of flame",
+			"power" : "1d6",
+			"scaling" : "DIV-2",
+			"range" : 5,
+			"AOE" : "2",
+			"target" : "enemy",
+			"type" : "spell",
+			"category" : "class",
+			"flavor" : "MAGATK"
+		}
+	}
 }

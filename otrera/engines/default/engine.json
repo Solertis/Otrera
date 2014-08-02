@@ -175,7 +175,19 @@
 			"attMaps" : [ "INT", "ART", "DEX" ]
 		}
 	},
-	"SKILLS" : {},
+	"SKILLS" : {
+		"SKILL" : {
+			"name" : "",
+			"description" : "",
+			"power" : "",
+			"scaling" : "",
+			"range" : 0,
+			"AOE" : "",
+			"target" : "",
+			"type" : "",
+			"category" : "",
+			"flavor" : ""
+	},
 	"CLASSES" : {
 		"list" : ["mage","fighter","craftsman","archer"],
 		"mage" : {
