@@ -249,7 +249,8 @@
 				"effect" : "HP+0",
 				"description" : "Description"
 			}
-		}
+		},
+		"DEPENDENCIES" : [ "CLASSES,class" ]
 	},
 	"CHARACTER" : {
 		"name" : "John Doe",

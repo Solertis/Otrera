@@ -5,7 +5,6 @@
 
 from content import Content
 from engine import *
-from items import *
 from character import Character
 import json
 
@@ -39,9 +38,12 @@ def fully_equipped_character_builder():
 	print "Cool! Lets add some equipment"
 	inventory_list = raw_input("Give me a list of inventory separated by commas: ")
 	inv_list = inventory_list.split(",")
-	full_charac.inventory = get_inventory_from_string_list(inv_list)
-	full_charac.adjust_evade()
-	final_charac = user_sets_equipment(full_charac, full_charac.inventory)
+	fin_list = []
+	for thing in inv_list:
+		thing = thing.lstrip()
+		fin_list.append(thing)
+	full_charac["inventory"] = get_inventory_from_strings(fin_list)
+	final_charac = user_sets_equipment(full_charac, full_charac["inventory"])
 	return final_charac
 
 def complete_character_builder():
@@ -55,13 +57,12 @@ def complete_character_builder():
 def user_sets_equipment(charac, inventory):
 	print "Here is your inventory: "
 	for item in inventory:
-		print item.name
+		print item["name"]
 	print "Name the item you wish to equip"
 	w = raw_input("Select your weapon: ").lower()
 	a = raw_input("Select your armor: ").lower()
-	charac.equip_weapon_from_string(w)
-	charac.equip_armor_from_string(a)
-	charac.get_equipment_mods()
+	equip_from_string(charac, w)
+	equip_from_string(charac, a)
 	return charac
 
 def user_picks_skills(charac, eligible_skills):
@@ -150,7 +151,7 @@ def choose_program():
 	elif user_input == "3":
 		character = fully_equipped_character_builder()
 		publish_character(character)
-		publish_charac_combat_stats(character)
+		#publish_charac_combat_stats(character)
 	elif user_input == "4":
 		charac = complete_character_builder()
 		publish_complete_character(charac)

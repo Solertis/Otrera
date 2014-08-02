@@ -1,5 +1,33 @@
 {
-	"EQUIPMENT" : {},
+	"EQUIPMENT" : {
+		"mage staff" : {
+			"category" : "WEAPONS",
+			"name" : "mage staff",
+			"weight" : 3,
+			"base_dmg" : 2,
+			"spec_mods" : ["DIV2"],
+			"type" : "staff",
+			"durability" : 5,
+			"description" : "A staff used by mages"
+		},
+		"mage robes" : {
+			"category" : "ARMORS",
+			"name" : "mage robes",
+			"weight" : 2,
+			"type" : "cloth",
+			"spec_mods" : [],
+			"durability" : 4,
+			"description" : "Robes worn by mages"
+		},
+		"healing potion" : {
+			"category" : "ITEMS",
+			"name" : "healing potion",
+			"weight" : 1,
+			"type" : "usable",
+			"effect" : "HP+5",
+			"description" : "Small vial of healing liquid"
+		}
+	},
 	"LEVELS" : {
 		"list" : [
 			0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
@@ -239,7 +267,24 @@
 			}
 		}
 	},
-	"CLASSES" : {},
+	"CLASSES" : {
+		"mage" : {
+			"WEAPONS" : [ "staff" ],
+			"ARMORS" : [ "robes" ]
+		},
+		"fighter" : {
+			"WEAPONS" : [ "sword", "glove" ],
+			"ARMORS" : [ "leather", "cloth", "metal" ]
+		},
+		"craftsman" : {
+			"WEAPONS" : [ "glove" ],
+			"ARMORS" : [ "leather", "cloth" ]
+		},
+		"archer" : {
+			"WEAPONS" : [ "bow" ],
+			"ARMORS" : [ "leather" ]
+		}
+	},
 	"RACES" : {},
 	"GENDERS" : {},
 	"SKILLS" : {}

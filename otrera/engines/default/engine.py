@@ -47,7 +47,8 @@ def apply_mods(charac, mods):
 			PLR += int(mod[3:])
 		else:
 			charac = apply_stat_mod(charac, mod)
-	charac = allocate_player_mods(charac, PLR)
+	if PLR > 0:
+		charac = allocate_player_mods(charac, PLR)
 	return charac
 
 def allocate_player_mods(charac, PLR):
@@ -133,7 +134,44 @@ def apply_att_stats(charac):
 def get_inventory_from_strings(string_list):
 	# Need to think about some things with this method
 	inventory = []
-	pass
+	for thing in string_list:
+		thing = thing.lower()
+		itm = game["EQUIPMENT"][thing]
+		inventory.append(itm)
+	return inventory
+
+def adjust_evade(charac):
+	weight = 0
+	for item in charac["inventory"]:
+		weight += item["weight"]
+	charac["encumbrance"] = weight
+	penalty = charac["encumbrance"]/8
+	charac["Evade"] -= penalty
+	return charac
+
+def equip_from_string(charac, string):
+	for thing in charac["inventory"]:
+		if thing["name"] == string:
+			equip(charac, thing)
+	print "lol what????"
+
+def equip(charac, thing):
+	depend = engine["EQUIPMENT"]["DEPENDENCIES"]
+	for string in depend:
+		b = string.split(",")
+		const = b[0]
+		char = b[1]
+		if thing["type"] not in game[const][charac[char]][thing["category"]]:
+			print "You cannot equip this"
+		elif thing["category"] == "WEAPONS":
+			charac["equipment"]["weapon"] = thing
+			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
+			apply_mods(charac, charac["equipment"]["eqp_mods"])
+		elif thing["category"] == "ARMORS":
+			charac["equipment"]["armomr"] = thing
+			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
+		else:
+			print "I don't know how to equip this"
 
 def get_class_skills(charac):
 	# Find the list of class skills in content.json and 
