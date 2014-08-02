@@ -107,6 +107,8 @@ def publish_character(charac):
 	print "Resistance = %s" % str(stats["Resistance"])
 	print "Carry Strength = %s" % str(stats["CarryStrength"])
 	print "Craft = %s" % str(stats["Craft"])
+	print "ATTRIBUTES\n"
+	print charac["attributes"]
 
 def publish_charac_combat_stats(charac):
 	print "Here is your character's combat profile:"

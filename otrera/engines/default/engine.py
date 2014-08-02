@@ -10,6 +10,8 @@ the_stats = ["Evade","PhyDef","PhyAtk","MagAtk","MagDef",
 			"Resistance","CarryStrength","Hit","Accuracy",
 			"Craft","MaxHP"]
 
+MAX_LEVEL = game["LEVELS"]["list"][-1]
+
 def apply_level_mods(charac):
 	l = game["LEVELS"]
 	mod_types = engine["LEVELS"]["modifiers"]
@@ -27,22 +29,24 @@ def apply_level_mods(charac):
 def get_level_mods(levelobj, charac):
 	# Going to need a try/catch here for specific key errors
 	# This method assumes level objects will not nest values more than 2 layers deep
+	mods = []
 	for key in levelobj.keys():
 		if key == "base":
-			return levelobj[key]
+			mods.extend(levelobj[key])
 		elif key in charac.keys():
 			needed = charac[key]
-			return levelobj[key][needed]
+			mods.extend(levelobj[key][needed])
+	return mods
 
 def apply_mods(charac, mods):
 	PLR = 0
 	for mod in mods:
 		if mod[:3] in engine["ATTRIBUTES"]["list"]:
-			apply_att_mod(charac, mod)
+			charac = apply_att_mod(charac, mod)
 		elif mod[:3] == "PLR":
 			PLR += int(mod[3:])
 		else:
-			apply_stat_mod(charac, mod)
+			charac = apply_stat_mod(charac, mod)
 	charac = allocate_player_mods(charac, PLR)
 	return charac
 
@@ -55,19 +59,34 @@ def allocate_player_mods(charac, PLR):
 		if val > PLR:
 			print "You don't have that many points"
 		else:
-			charac["attributes"][key] = charac["attributes"][key] + val
+			charac = apply_att_int_mod(charac, key, val)
 		PLR -= val
 	return charac
 
+def apply_att_int_mod(charac, att, val):
+	total = charac["attributes"][att] + val
+	if total > 25:
+		total = 25
+		charac["attributes"][att] = 25
+		return charac
+	else:
+		charac["attributes"][att] = total
+		return charac
+
 def apply_att_mod(charac, mod):
-	charac["attributes"][mod[:3]] = charac["attributes"][mod[:3]] + int(mod[3:])
+	if charac["attributes"][mod[:3]] >= 25:
+		return charac
+	else: 
+		charac["attributes"][mod[:3]] = charac["attributes"][mod[:3]] + int(mod[3:])
+		return charac
 
 def apply_stat_mod(charac, mod):
 	for stat in engine["STATS"]["list"]:
 		if stat in mod:
 			if engine["STATS"][stat]["type"] == "int":
 				diff = int(mod.replace(stat,""))
-				charac["stats"][stat] = charac["stats"][stat] + diff
+				if (diff != None) and (charac["stats"][stat] != None):
+					charac["stats"][stat] = charac["stats"][stat] + diff
 			else:
 				new = mod.replace(stat,"")
 				charac["stats"][stat] = new
@@ -81,14 +100,20 @@ def get_stat_modifier(charac, statname):
 	if len(attMaps) == 1:
 		return get_att_modifier(attMaps[0], statname, charac)
 	elif "COMB" in attMaps:
+		max_key = key["max"]
 		newmaps = attMaps[1:]
 		for att in newmaps:
 			vals.append(charac["attributes"][att])
 		total = sum(vals)
-		return key['calc'][str(total)]
+		if total > max_key:
+			return key['calc'][str(max_key)]
+		else:
+			return key['calc'][str(total)]
 	else:
 		for att in attMaps:
-			vals.append(get_att_modifier(att, statname, charac))
+			val = get_att_modifier(att, statname, charac)
+			if val != None:
+				vals.append(get_att_modifier(att, statname, charac))
 	return sum(vals)
 
 def get_att_modifier(att, stat, charac):
