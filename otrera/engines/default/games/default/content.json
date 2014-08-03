@@ -14,7 +14,7 @@
 			"category" : "ARMORS",
 			"name" : "mage robes",
 			"weight" : 2,
-			"type" : "cloth",
+			"type" : "robes",
 			"spec_mods" : [],
 			"durability" : 4,
 			"description" : "Robes worn by mages"
@@ -26,6 +26,12 @@
 			"type" : "usable",
 			"effect" : "HP+5",
 			"description" : "Small vial of healing liquid"
+		},
+		"ARMOR_DEF" : {
+			"cloth" : "1d6",
+			"robes" : "1d4",
+			"leather" : "1d10",
+			"metal" : "2d6"
 		}
 	},
 	"LEVELS" : {
@@ -268,6 +274,7 @@
 		}
 	},
 	"CLASSES" : {
+		"list" : ["mage","fighter","craftsman","archer"],
 		"mage" : {
 			"WEAPONS" : [ "staff" ],
 			"ARMORS" : [ "robes" ]
@@ -291,13 +298,19 @@
 		"fire blast" : {
 			"name" : "fire blast",
 			"description" : "Create a powerful burst of flame",
+			"rules" : "",
 			"power" : "1d6",
-			"scaling" : "DIV-2",
+			"scaling" : {},
 			"range" : 5,
-			"AOE" : "2",
+			"AOE" : 3,
 			"target" : "enemy",
 			"type" : "spell",
-			"category" : "class",
+			"requirements" : {
+				"class" : [ "mage" ],
+				"race" : [],
+				"attributes" : [],
+				"gender" : []
+			},
 			"flavor" : "MAGATK"
 		}
 	}

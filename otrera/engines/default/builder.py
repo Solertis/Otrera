@@ -49,9 +49,10 @@ def fully_equipped_character_builder():
 def complete_character_builder():
 	charac = fully_equipped_character_builder()
 	print "Score! Lets complete the character by choosing skills"
-	eligible_skills = get_class_skills(charac)
-	eligible_skills.extend(get_attribute_skills(charac))
-	charac = user_picks_skills(charac, eligible_skills)
+	eligible = get_learnable_skills(charac)
+	#eligible_skills = get_class_skills(charac)
+	#eligible_skills.extend(get_attribute_skills(charac))
+	charac = user_picks_skills(charac, eligible)
 	return charac
 
 def user_sets_equipment(charac, inventory):
@@ -62,14 +63,15 @@ def user_sets_equipment(charac, inventory):
 	w = raw_input("Select your weapon: ").lower()
 	a = raw_input("Select your armor: ").lower()
 	equip_from_string(charac, w)
+	print "Equipping armor...\n"
 	equip_from_string(charac, a)
 	return charac
 
 def user_picks_skills(charac, eligible_skills):
 	print "Here are your eligible skills:"
 	for thing in eligible_skills:
-		print thing.name
-	print "You may select %s skills (character level)\n" % str(charac.level)
+		print thing["name"]
+	print "You may select %s skills (character level)\n" % str(charac["level"])
 	selected = raw_input("Enter a comma-separated list: ")
 	list_names = selected.split(",")
 	skill_names = []
@@ -77,7 +79,8 @@ def user_picks_skills(charac, eligible_skills):
 		item = item.lstrip()
 		skill_names.append(item)
 	for item in eligible_skills:
-		if item.name in skill_names:
+		if item["name"] in skill_names:
+			charac = add_skills(item)
 			charac.add_skill(item)
 	return charac
 
@@ -114,18 +117,18 @@ def publish_character(charac):
 def publish_charac_combat_stats(charac):
 	print "Here is your character's combat profile:"
 	print "-------------------------------------------------\n"
-	print "PWR = %s %s" % (charac.equipment["weapon"].base_pwr, charac.stats["Physical Attack"])
-	print "Armor Durability = %s" % str(charac.equipment["armor"].durability)
-	print "Armor Defense = %s" % charac.equipment["armor"].defense
-	print "Carry Weight = %s" % str(charac.carry_weight)
-	print "Equipment Bonuses = %s" % (charac.equipment["mods"])
+	print "PWR = %s %s" % (charac["equipment"]["weapon"]["base_dmg"], charac["stats"]["PhyAtk"])
+	print "Armor Durability = %s" % str(charac["equipment"]["armor"]["durability"])
+	print "Armor Defense = %s" % charac["equipment"]["defense"]
+	print "Encumbrance = %s" % str(charac["encumbrance"])
+	print "Equipment Bonuses = %s" % (charac["equipment"]["eqp_mods"])
 	print "NOTE: Evade score now accounts for Carry Weight penalty (adjusted for strength)"
 
 def publish_charac_skills(charac):
 	print "--------------------------------------------------\n"
 	print "Here is a list of your character's skills: "
-	for item in charac.skills:
-		print item.name
+	for item in charac["skills"]:
+		print item["name"]
 	return
 
 def publish_complete_character(charac):
@@ -151,7 +154,7 @@ def choose_program():
 	elif user_input == "3":
 		character = fully_equipped_character_builder()
 		publish_character(character)
-		#publish_charac_combat_stats(character)
+		publish_charac_combat_stats(character)
 	elif user_input == "4":
 		charac = complete_character_builder()
 		publish_complete_character(charac)

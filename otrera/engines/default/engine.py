@@ -1,6 +1,5 @@
 # Methods for defining a character's stats and skills
 
-from skills import *
 import json
 from content import Content
 game = Content().data
@@ -151,9 +150,8 @@ def adjust_evade(charac):
 
 def equip_from_string(charac, string):
 	for thing in charac["inventory"]:
-		if thing["name"] == string:
+		if thing["category"] == "WEAPONS" or thing["category"] == "ARMORS":
 			equip(charac, thing)
-	print "lol what????"
 
 def equip(charac, thing):
 	depend = engine["EQUIPMENT"]["DEPENDENCIES"]
@@ -168,10 +166,14 @@ def equip(charac, thing):
 			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
 			apply_mods(charac, charac["equipment"]["eqp_mods"])
 		elif thing["category"] == "ARMORS":
-			charac["equipment"]["armomr"] = thing
+			charac["equipment"]["armor"] = thing
+			charac["equipment"]["defense"] = game["EQUIPMENT"]["ARMOR_DEF"][thing["type"]]
 			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
 		else:
 			print "I don't know how to equip this"
+
+def get_learnable_skills(charac):
+	learnable = []
 
 def get_class_skills(charac):
 	# Find the list of class skills in content.json and 

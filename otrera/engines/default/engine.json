@@ -179,32 +179,20 @@
 		"SKILL" : {
 			"name" : "",
 			"description" : "",
+			"rules" : "",
 			"power" : "",
-			"scaling" : "",
+			"scaling" : {},
 			"range" : 0,
-			"AOE" : "",
+			"AOE" : 0,
 			"target" : "",
 			"type" : "",
+			"requirements" : {},
 			"category" : "",
 			"flavor" : ""
 	},
 	"CLASSES" : {
-		"list" : ["mage","fighter","craftsman","archer"],
-		"mage" : {
-			"weapons" : [ "staff" ],
-			"armors" : [ "robes" ]
-		},
-		"fighter" : {
-			"weapons" : [ "sword", "glove" ],
-			"armors" : [ "leather", "cloth", "metal" ]
-		},
-		"craftsman" : {
-			"weapons" : [ "glove" ],
-			"armors" : [ "leather", "cloth" ]
-		},
-		"archer" : {
-			"weapons" : [ "bow" ],
-			"armors" : [ "leather" ]
+		"CLASS" : {},
+		"DEPENDENCIES" : [ "SKILLS", "EQUIPMENT" ]
 		}
 	},
 	"RACES" : {
@@ -251,6 +239,12 @@
 				"spec_mods" : [],
 				"durability" : 1,
 				"description" : "Description"
+			},
+			"DEF" : {
+				"cloth" : "1d6",
+				"robes" : "1d4",
+				"leather" : "1d10",
+				"metal" : "2d6"
 			}
 		},
 		"ITEMS" : {
@@ -281,7 +275,7 @@
 		},
 		"encumbrance" : 0,
 		"equipment" : {
-			"weapon" : "", "armor" : "", "eqp_mods" : []
+			"weapon" : "", "armor" : "", "defense" : "",  "eqp_mods" : []
 		},
 		"level" : 0
 	},
