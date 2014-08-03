@@ -307,9 +307,7 @@
 			"type" : "spell",
 			"requirements" : {
 				"class" : [ "mage" ],
-				"race" : [],
-				"attributes" : [],
-				"gender" : []
+				"race" : []
 			},
 			"flavor" : "MAGATK"
 		}

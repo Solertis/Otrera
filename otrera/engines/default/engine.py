@@ -174,29 +174,13 @@ def equip(charac, thing):
 
 def get_learnable_skills(charac):
 	learnable = []
-
-def get_class_skills(charac):
-	# Find the list of class skills in content.json and 
-	# make skill objects out of all of them
-	class_skills = e[charac.character_class+"_skills"]
-	skill_object_list = []
-	for thing in class_skills:
-		skill_object = Skill(make=thing)
-		skill_object_list.append(skill_object)
-	return skill_object_list
-
-def get_attribute_skills(charac):
-	# Find the list of skills for each attribute key at each
-	# requirement level and make skill objects from them
-	skill_names = []
-	skill_objects = []
-	atts = charac.attributes.keys()
-	for att in atts:
-		att_dict = e[att]
-		for key in att_dict.keys():
-			if int(key) <= int(charac.attributes[att]):
-				skill_names.extend(att_dict[key])
-	for name in skill_names:
-		obj = Skill(make=name)
-		skill_objects.append(obj)
-	return skill_objects
+	# Should consider a separate abstract skill validation method
+	for string in game["SKILLS"].keys():
+		skill = game["SKILLS"][string]
+		for req in skill["requirements"].keys():
+			if skill["requirements"][req] != []:
+				if charac[req] not in skill["requirements"][req]:
+					print "Cannot learn skill '%s'" % skill
+				else:
+					learnable.append(skill)
+	return learnable

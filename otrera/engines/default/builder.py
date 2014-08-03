@@ -50,8 +50,6 @@ def complete_character_builder():
 	charac = fully_equipped_character_builder()
 	print "Score! Lets complete the character by choosing skills"
 	eligible = get_learnable_skills(charac)
-	#eligible_skills = get_class_skills(charac)
-	#eligible_skills.extend(get_attribute_skills(charac))
 	charac = user_picks_skills(charac, eligible)
 	return charac
 
@@ -80,8 +78,7 @@ def user_picks_skills(charac, eligible_skills):
 		skill_names.append(item)
 	for item in eligible_skills:
 		if item["name"] in skill_names:
-			charac = add_skills(item)
-			charac.add_skill(item)
+			charac["skills"].append(item)
 	return charac
 
 def get_base_attributes(charac):
