@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -rf *.pyc
+rm -rf *.pyc __pycache__
