@@ -1,7 +1,7 @@
 PROJECT MILESTONES
 ==================
 
-1. Game Builder -- GOAL 8/8/2014
+1. Game Builder -- GOAL 8/15/2014
 
 	Users can build a game on top of a given engine. The engine.json file
 	describes the constructs and templates that the addContent and editContent
@@ -14,26 +14,9 @@ PROJECT MILESTONES
 	specific instances - specific classes / races etc. These engine.json files can
 	be used to create games (content.json).
 
-SHORT-TERM PRIORITIES
-=====================
-	
-TODO
-
-1. Convert engine Python modules to JSON
-
-2. Create modules for Game Builder
-
-3. Make Otrera into a standard Python CLI program.
-
-4. Add CSV upload ability.
 
 LONG-TERM PRIORITIES
 ====================
 
 1. Engine Builder
 
-2. Improve documentation
-
-3. Clean up code
-
-4. Testing testing testing
