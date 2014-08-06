@@ -26,10 +26,13 @@ def custom_level_naked_character_builder():
 		charac = level_zero_character_builder()
 		charac["level"] = int(raw_input("What is the character's level?: "))
 		charac["class"] = raw_input("What is the character's class?: ").lower().strip()
-		char_lev = charac["level"]+1
-		charac = apply_level_mods(charac)
-		charac = apply_att_stats(charac)
-		return charac
+		ans = raw_input("Do you want to randomly apply level bonuses? y/n: ")
+		if ans == "y":
+			final_charac = apply_level_mods(charac, rand=True)
+		else:
+			final_charac = apply_level_mods(charac)
+		custom_charac = apply_att_stats(final_charac)
+		return custom_charac
 	else:
 		print "Engine has no concept of 'levels"
 

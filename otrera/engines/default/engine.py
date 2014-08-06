@@ -2,6 +2,8 @@
 
 import json
 from content import Content
+import random
+
 game = Content().data
 engine = Content().engine
 
@@ -11,7 +13,7 @@ the_stats = ["Evade","PhyDef","PhyAtk","MagAtk","MagDef",
 
 MAX_LEVEL = game["LEVELS"]["list"][-1]
 
-def apply_level_mods(charac):
+def apply_level_mods(charac, rand=False):
 	l = game["LEVELS"]
 	mod_types = engine["LEVELS"]["modifiers"]
 	mods = []
@@ -22,7 +24,7 @@ def apply_level_mods(charac):
 	# Take in a character object who has a certain level attribute
 	# Iterate over level objects from zero to character level
 	# Add to a master list of mods at each level, add mods to character
-	charac = apply_mods(charac, mods)
+	charac = apply_mods(charac, mods, rand)
 	return charac
 
 def get_level_mods(levelobj, charac):
@@ -37,7 +39,7 @@ def get_level_mods(levelobj, charac):
 			mods.extend(levelobj[key][needed])
 	return mods
 
-def apply_mods(charac, mods):
+def apply_mods(charac, mods, rand):
 	PLR = 0
 	for mod in mods:
 		if mod[:3] in engine["ATTRIBUTES"]["list"]:
@@ -47,10 +49,16 @@ def apply_mods(charac, mods):
 		else:
 			charac = apply_stat_mod(charac, mod)
 	if PLR > 0:
-		charac = allocate_player_mods(charac, PLR)
+		charac = allocate_player_mods(charac, PLR, rand)
 	return charac
 
-def allocate_player_mods(charac, PLR):
+def allocate_player_mods(charac, PLR, rand):
+	if rand:
+		random_mods = {"DEX":0,"MGT":0,"ART":0,"DIV":0,"INT":0,"CON":0}
+		for num in range(0,PLR):
+			key = random.choice(random_mods.keys())
+			charac["attributes"][key] += 1
+		return charac
 	print "Lets allocate points to attributes!\n"
 	print "You have %s points to spend" % str(PLR)
 	print "Assign desired number of points to attribute, then press 'enter'"
@@ -125,7 +133,10 @@ def apply_att_stats(charac):
 	for stat in the_stats:
 		mod = get_stat_modifier(charac, stat)
 		if isinstance(mod,int):
-			charac["stats"][stat] = charac["stats"][stat]+mod
+			if stat == "MaxHP":
+				charac["stats"][stat] = charac["stats"][stat]+mod
+			else:
+				charac["stats"][stat] = mod
 		else:
 			charac["stats"][stat] = mod
 	return charac
