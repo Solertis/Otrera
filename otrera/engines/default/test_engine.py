@@ -7,17 +7,20 @@ from engine import *
 engine = Content().engine
 import pytest
 
+def check_stats(charac,hp,evd,hit,acc,df,atk,mdf,mtk,res,cst,crf):
+	assert charac["stats"]["MaxHP"] == hp
+	assert charac["stats"]["Evade"] == evd
+	assert charac["stats"]["Hit"] == hit
+	assert charac["stats"]["Accuracy"] == acc
+	assert charac["stats"]["PhyDef"] == df
+	assert charac["stats"]["PhyAtk"] == atk
+	assert charac["stats"]["MagDef"] == mdf
+	assert charac["stats"]["MagAtk"] == mtk
+	assert charac["stats"]["Resistance"] == res 
+	assert charac["stats"]["CarryStrength"] == cst
+	assert charac["stats"]["Craft"] == crf
+
 def test_att_stats():
-	char = engine["CHARACTER"]
-	char = apply_att_stats(char)
-	assert char["stats"]["MaxHP"] == 10
-	assert char["stats"]["Evade"] == -4
-	assert char["stats"]["Hit"] == -4
-	assert char["stats"]["Accuracy"] == -4
-	assert char["stats"]["PhyDef"] == "1d4"
-	assert char["stats"]["PhyAtk"] == "1d2"
-	assert char["stats"]["MagDef"] == -4
-	assert char["stats"]["MagAtk"] == "1d2"
-	assert char["stats"]["Resistance"] == -2
-	assert char["stats"]["CarryStrength"] == -2
-	assert char["stats"]["Craft"] == -6
+	charac = engine["CHARACTER"]
+	charac = apply_att_stats(charac)
+	check_stats(charac, 10,-4,-4,-4,"1d4","1d2",-4,"1d2",-2,-2,-6)
