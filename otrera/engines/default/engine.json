@@ -211,61 +211,73 @@
 		},
 		"DEPENDENCIES" : [ "SKILLS" ]
 	},
-	"GENDER" : {
+	"SEX" : {
 		"list" : [ "male", "female" ],
 		"male" : {
 			"init" : [ "MGT2" ]
 		},
 		"female" : {
 			"init" : [ "ART2" ]
-		}
+		},
+		"DICTATES" : [ "ARMOR", "ITEMS" ]
 	},
 	"LEVELS" : {
 		"modifiers" : [ "base", "class" ]
 	},
-	"EQUIPMENT" : {
-		"WEAPONS" : {
-			"WEAPON" : {
-				"category" : "WEAPONS",
-				"weight" : 1,
-				"base_dmg" : 1,
-				"spec_mods" : [],
-				"type" : "sword",
-				"durability" : 1,
-				"description" : "Description"
+	"WEAPONS" : {
+		"WEAPON" : {
+			"category" : "WEAPONS",
+			"name" : "WEAPON NAME",
+			"weight" : 1,
+			"base_dmg" : 1,
+			"spec_mods" : [],
+			"type" : "sword",
+			"durability" : 1,
+			"description" : "Description",
+			"requirements" : {
+				"class" : []
 			}
-		},
-		"ARMORS" : {
-			"ARMOR" : {
-				"category" : "ARMORS",
-				"weight" : 1,
-				"type" : "cloth",
-				"spec_mods" : [],
-				"durability" : 1,
-				"description" : "Description"
+		}
+	},
+	"ARMORS" : {
+		"ARMOR" : {
+			"category" : "ARMORS",
+			"name" : "ARMOR NAME",
+			"weight" : 1,
+			"type" : "cloth",
+			"spec_mods" : [],
+			"durability" : 1,
+			"description" : "Description",
+			"requirements" : {
+				"sex" : "type"
 			},
-			"DEF" : {
-				"cloth" : "1d6",
-				"robes" : "1d4",
-				"leather" : "1d10",
-				"metal" : "2d6"
+			"defense" : "type"
+		},
+		"TYPES" : {
+			"TYPE" :  {
+				"defense" : "diceroll",
+				"sex" : []
 			}
 		},
-		"ITEMS" : {
-			"ITEM" : {
-				"category" : "ITEMS",
-				"weight" : 1,
-				"type" : "usable",
-				"effect" : "HP+0",
-				"description" : "Description"
+		"DEPENDENCIES" : [ "SEX" ]
+	},
+	"ITEMS" : {
+		"ITEM" : {
+			"category" : "ITEMS",
+			"name" : "ITEM NAME",
+			"weight" : 1,
+			"type" : "usable",
+			"effect" : "HP+0",
+			"description" : "Description",
+			"requirements" : {
+				"sex" : []
 			}
-		},
-		"DEPENDENCIES" : [ "CLASSES,class" ]
+		}
 	},
 	"CHARACTER" : {
 		"name" : "John Doe",
 		"class" : "fighter",
-		"gender" : "male",
+		"sex" : "male",
 		"race" : "human",
 		"tag" : "player",
 		"skills" : [],

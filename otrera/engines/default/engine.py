@@ -146,8 +146,13 @@ def get_inventory_from_strings(string_list):
 	inventory = []
 	for thing in string_list:
 		thing = thing.lower()
-		itm = game["EQUIPMENT"][thing]
-		inventory.append(itm)
+		itms = game["ITEMS"]
+		wpns = game["WEAPONS"]
+		amrs = game["ARMORS"]
+		things = [wpns, amrs, itms]
+		for a in things:
+			if thing in a.keys():
+				inventory.append(a[thing])
 	return inventory
 
 def adjust_evade(charac):
@@ -161,15 +166,50 @@ def adjust_evade(charac):
 
 def equip_from_string(charac, string):
 	for thing in charac["inventory"]:
-		if thing["category"] == "WEAPONS" or thing["category"] == "ARMORS":
-			equip(charac, thing)
+		if string == thing["name"]:
+			if thing["category"] == "WEAPONS" or thing["category"] == "ARMORS":
+				equip(charac, thing)
+
+def meet_requirements(charac, thing):
+	# Returns true if charac meets requirements to equip something
+	for key, val in thing["requirements"].iteritems():
+		if val == "type":
+			check = game[thing["category"]]["TYPES"][thing["type"]][key]
+			if check == []:
+				return True
+			elif charac[key] not in check:
+				return False
+			else:
+				return True
+		elif key not in charac.keys():
+			print "I don't know what attribute of the character to check"
+			return False
+		elif charac[key] not in val:
+			return False
+	return True
 
 def equip(charac, thing):
-	depend = engine["EQUIPMENT"]["DEPENDENCIES"]
+	if thing.has_key("requirements"):
+		if meet_requirements(charac, thing):
+			charac["equipment"][thing["category"][:-1].lower()] = thing
+			if thing.has_key("spec_mods"):
+				charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
+				apply_mods(charac, charac["equipment"]["eqp_mods"], False)
+		else:
+			print "You do not meet the requirements to equip this"
+	else:
+		charac["equipment"][thing["category"][:-1].lower()] = thing
+		if thing.has_key("spec_mods"):
+			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
+			apply_mods(charac, charac["equipment"]["eqp_mods"], False)
+
+def equipz(charac, thing):
+	depend = engine[thing["category"]]["DEPENDENCIES"]
 	for string in depend:
-		b = string.split(",")
-		const = b[0]
-		char = b[1]
+		char_field = string.lower()
+		check = charac[char_field]
+		if check not in game[thing["category"]]["TYPES"][thing["type"]][char_field]:
+			print "You cannot equip this."
 		if thing["type"] not in game[const][charac[char]][thing["category"]]:
 			print "You cannot equip this"
 		elif thing["category"] == "WEAPONS":

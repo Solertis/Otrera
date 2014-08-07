@@ -1,5 +1,5 @@
 {
-	"EQUIPMENT" : {
+	"WEAPONS" : {
 		"mage staff" : {
 			"category" : "WEAPONS",
 			"name" : "mage staff",
@@ -9,7 +9,9 @@
 			"type" : "staff",
 			"durability" : 5,
 			"description" : "A staff used by mages"
-		},
+		}
+	},
+	"ARMORS" : {
 		"mage robes" : {
 			"category" : "ARMORS",
 			"name" : "mage robes",
@@ -17,21 +19,42 @@
 			"type" : "robes",
 			"spec_mods" : [],
 			"durability" : 4,
-			"description" : "Robes worn by mages"
+			"description" : "Robes worn by mages",
+			"requirements" : {
+				"sex" : "type"
+			},
+			"defense" : "type"
 		},
+		"TYPES" : {
+			"cloth" : {
+				"defense" : "1d6",
+				"sex" : []
+			},
+			"robes" : {
+				"defense" : "1d4",
+				"sex" : [ "female" ]
+			},
+			"leather" : {
+				"defense" : "1d10",
+				"sex" : []
+			},
+			"metal" : {
+				"defense" : "2d6",
+				"sex" : [ "male" ]
+			}
+		}
+	},
+	"ITEMS" : {
 		"healing potion" : {
 			"category" : "ITEMS",
 			"name" : "healing potion",
 			"weight" : 1,
 			"type" : "usable",
 			"effect" : "HP+5",
-			"description" : "Small vial of healing liquid"
-		},
-		"ARMOR_DEF" : {
-			"cloth" : "1d6",
-			"robes" : "1d4",
-			"leather" : "1d10",
-			"metal" : "2d6"
+			"description" : "Small vial of healing liquid",
+			"requirements" : {
+				"sex" : []
+			}
 		}
 	},
 	"LEVELS" : {
@@ -293,7 +316,7 @@
 		}
 	},
 	"RACES" : {},
-	"GENDERS" : {},
+	"SEXES" : {},
 	"SKILLS" : {
 		"fire blast" : {
 			"name" : "fire blast",

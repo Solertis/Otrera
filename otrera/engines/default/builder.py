@@ -64,7 +64,6 @@ def user_sets_equipment(charac, inventory):
 	w = raw_input("Select your weapon: ").lower()
 	a = raw_input("Select your armor: ").lower()
 	equip_from_string(charac, w)
-	print "Equipping armor...\n"
 	equip_from_string(charac, a)
 	return charac
 
@@ -88,6 +87,7 @@ def get_base_attributes(charac):
 
 	try:
 		charac["name"] = raw_input("Name your character: ")
+		charac["sex"] = raw_input("What is your sex?: ")
 		DEX = int(raw_input("Dexterity: "))
 		ART = int(raw_input("Artistry: "))
 		MGT = int(raw_input("Might: "))
@@ -125,7 +125,7 @@ def publish_charac_combat_stats(charac):
 	print "-------------------------------------------------\n"
 	print "PWR = %s %s" % (charac["equipment"]["weapon"]["base_dmg"], charac["stats"]["PhyAtk"])
 	print "Armor Durability = %s" % str(charac["equipment"]["armor"]["durability"])
-	print "Armor Defense = %s" % charac["equipment"]["defense"]
+	print "Armor Defense = %s" % charac["equipment"]["armor"]["defense"]
 	print "Encumbrance = %s" % str(charac["encumbrance"])
 	print "Equipment Bonuses = %s" % (charac["equipment"]["eqp_mods"])
 	print "NOTE: Evade score now accounts for Carry Weight penalty (adjusted for strength)"
