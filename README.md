@@ -1,4 +1,4 @@
-![alt tag](https://raw.github.com/AgathaTheWitch/Otrera/master/otrera-smaller.jpg)
+![alt tag](https://raw.github.com/AgathaTheWitch/Otrera/master/logo.png)
 
 Otrera is an open source role-playing game development system. 
 With Otrera, you can design original table top game engines
