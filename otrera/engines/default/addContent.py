@@ -4,7 +4,10 @@ import json
 from templates import *
 from content import Content
 
-path = Content().path
+c = Content()
+path = c.path
+engine = c.engine
+game = c.data
 
 def pick_content_type():
 	"""
@@ -15,12 +18,14 @@ def pick_content_type():
 	Returns:
 	  (str) content type
 	"""
-	types = ["skill","weapon","armor","item","character","class"]
+	types = game.keys()
 	print "Hi there fella. What sorta content would you like to make?\n"
-	content_type = raw_input("Enter 'skill', 'weapon', 'armor', class, character, or 'item': ")
+	for item in types:
+		print item
+	content_type = raw_input("Enter one of the values above: ")
 	if content_type not in types:
-		#User is making up content types. Mayb re-prompt?
-		return "Are you funnin' me son?"
+		print "LOL WTF"
+		exit(1)
 	else:
 		return content_type
 
@@ -35,7 +40,10 @@ def get_update(content_type, thing_name):
 	Returns:
 	  (dict) update_data: The update to apply to the JSON
 	"""
-	template = templates[content_type]
+	CONSTR = engine[content_type]
+	for key in CONSTR.keys():
+		if key in content_type:
+			template = CONSTR[key]
 	template[thing_name] = template.pop(template.keys()[0])
 	update_data = get_content_info(template)
 	return update_data
@@ -97,8 +105,8 @@ def make_content(content_type, update, thing_name):
 	"""
 	with open(path) as f:
 		data = json.load(f)
-	data.update(update)
-	data = update_lists(content_type, data, update, thing_name)
+	data[content_type].update(update)
+	#data = update_lists(content_type, data, update, thing_name)
 	with open(path,"w") as f:
 		json.dump(data, f, sort_keys=True, indent=4, ensure_ascii=False)
 

@@ -195,21 +195,16 @@
 	},
 	"CLASSES" : {
 		"CLASS" : {},
-		"DEPENDENCIES" : [ "SKILLS", "EQUIPMENT" ]
+		"DICTATES" : [ "SKILLS", "WEAPONS" ]
 		}
 	},
 	"RACES" : {
 		"list" : [ "human", "lizard", "wolf" ],
-		"human" : {
-			"init" : [ "INT1" ]
+
+		"RACE" : {
+			"init" : []
 		},
-		"lizard" : {
-			"init" : [ "CON1" ]
-		},
-		"wolf" : {
-			"init" : [ "MGT1" ]
-		},
-		"DEPENDENCIES" : [ "SKILLS" ]
+		"DICTATES" : [ "SKILLS" ]
 	},
 	"SEX" : {
 		"list" : [ "male", "female" ],
