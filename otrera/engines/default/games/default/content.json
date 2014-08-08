@@ -634,14 +634,24 @@
         ]
     }, 
     "RACES": {
-        "gamma": [
-            "DIV1"
-        ], 
+        "fairy": {
+            "init": [
+                "ART1"
+            ]
+        }, 
+        "gamma": {
+            "init": [
+                "DEX1"
+            ]
+        }, 
         "human": {
             "init": [
                 "INT1"
             ]
         }, 
+        "init": [
+            "DEX1"
+        ], 
         "lizard": {
             "init": [
                 "CON1"

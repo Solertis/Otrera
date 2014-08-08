@@ -2,23 +2,10 @@
 
 import json
 from content import Content
-from addContent import get_list
+from addContent import get_list, pick_content_type
 path = Content().path
 e = Content().data
-
-def pick_function():
-	print "Welcome to the Otrera Content Editor!\n"
-	print "Press '1' to edit a specific content item"
-	# Will add search / list functions later
-	response = raw_input("What would you like to do?: ")
-	if response == '1':
-		content_item = raw_input("What piece of content do you want to edit?: ")
-		arg = content_item.lower()
-		cont = e[arg]
-		update = edit_item(cont)
-		update_json(update)
-	else:
-		print "I am twelve years old and what is this"
+engine = Content().engine
 
 def print_content(cont):
 	for k,v in cont.iteritems():
@@ -27,7 +14,16 @@ def print_content(cont):
 		else:
 			print k + " = " + str(v)
 
-def edit_item(cont):
+def get_content(content_type):
+	LIST = e[content_type]
+	print "Here is list of the content of that type"
+	for item in LIST.keys():
+		print item
+	selected = raw_input("Which would you like to edit? ")
+	final = LIST[selected]
+	return final
+
+def edit_item(cont, content_type):
 	print_content(cont)
 	key = raw_input("What would you like to change? (top level key): ")
 	if isinstance(cont[key], dict):
@@ -35,12 +31,12 @@ def edit_item(cont):
 	elif isinstance(cont[key], list):
 		new_val = get_list(key)
 		cont[key] = new_val
-		e.update(cont)
+		e[content_type].update(cont)
 		return e
 	else:
 		new_val = raw_input("What is your desired new value?: ")
 		cont[key] = new_val
-		e.update(cont)
+		e[content_type].update(cont)
 		return e
 
 def update_json(data):
@@ -48,4 +44,7 @@ def update_json(data):
 		json.dump(data, f, sort_keys=True, indent=4, ensure_ascii=False)
 
 if __name__=="__main__":
-	pick_function()
+	content_type = pick_content_type()
+	thing = get_content(content_type)
+	complete = edit_item(thing, content_type)
+	update_json(complete)

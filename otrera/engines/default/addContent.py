@@ -19,7 +19,7 @@ def pick_content_type():
 	  (str) content type
 	"""
 	types = game.keys()
-	print "Hi there fella. What sorta content would you like to make?\n"
+	print "Hi there fella. What type of content are we working with?\n"
 	for item in types:
 		print item
 	content_type = raw_input("Enter one of the values above: ")
@@ -42,8 +42,9 @@ def get_update(content_type, thing_name):
 	"""
 	CONSTR = engine[content_type]
 	for key in CONSTR.keys():
-		if key in content_type:
-			template = CONSTR[key]
+		if key not in content_type:
+			del CONSTR[key]
+	template = CONSTR
 	template[thing_name] = template.pop(template.keys()[0])
 	update_data = get_content_info(template)
 	return update_data
