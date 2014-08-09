@@ -7,7 +7,7 @@ Otrera API Doc
 
 Otrera is an open source Python library for making table top games. It is optimized around traditional pen & paper role-playing game systems, but can be used to described almost any sort of game system.
 
-Otrera describes games in a single JSON file. This engine.json file has a set of root keys known as Constructs. The only Construct that exists by default is that of CHARACTER. The user starts by describing the things that define a character - race, level, class, stats, attributes, etc. Each of these in turn become constructs that the user can describe with fields, number values, and dependency relationships.
+Otrera describes games in a single JSON file. This engine.json file has a set of root keys known as Constructs. The only Construct that exists by default is that of CHARACTER. The user starts by selecting which constructs apply to their engine - things like inherent characteristics (race, sex) elective categories (class, job, affiliation), progression (levels, karma, skill points), equipment (weapons, armor, gold), and abilities (skills, spells, knowledge). An engine need not employ all of these constructs, and can have multiple instances of constructs of the same type.
 
 The engine.py file then parses the engine.json file and creates characters based on the rules laid out in the game engine. Users can then use the content editing modules to add content (specific skills, characters, classes, etc.) and use the builder module to create characters.
 
