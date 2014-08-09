@@ -35,3 +35,15 @@ def test_leveled_character():
 	charac = apply_level_mods(charac, rand=True)
 	charac = apply_att_stats(charac)
 	assert charac["stats"]["MaxHP"] > (base_hp+45)
+
+def test_equipped_character():
+	charac = engine["CHARACTER"]
+	charac["class"] = "mage"
+	charac["sex"] = "female"
+	gear = ["mage staff", "mage robes"]
+	charac["inventory"] = get_inventory_from_strings(gear)
+	equip_from_string(charac, "mage staff")
+	equip_from_string(charac, "mage robes")
+	assert charac["equipment"]["weapon"]["name"] == "mage staff"
+	assert charac["equipment"]["armor"]["name"] == "mage robes"
+	assert charac["equipment"]["eqp_mods"] == [ "DIV2" ]

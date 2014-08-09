@@ -169,6 +169,11 @@ def equip_from_string(charac, string):
 		if string == thing["name"]:
 			if thing["category"] == "WEAPONS" or thing["category"] == "ARMORS":
 				equip(charac, thing)
+			else:
+				print "I cannot equip this."
+				return
+		else:
+			continue
 
 def meet_requirements(charac, thing):
 	# Returns true if charac meets requirements to equip something
