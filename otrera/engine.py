@@ -15,7 +15,7 @@ MAX_LEVEL = game["LEVELS"]["list"][-1]
 
 def apply_level_mods(charac, rand=False):
 	l = game["LEVELS"]
-	mod_types = engine["LEVELS"]["modifiers"]
+	mod_types = engine["Progression"]["Level"]["modifiers"]
 	mods = []
 	levrange = charac["level"]+1
 	for lev in range(l["list"][0], levrange):
@@ -42,7 +42,7 @@ def get_level_mods(levelobj, charac):
 def apply_mods(charac, mods, rand):
 	PLR = 0
 	for mod in mods:
-		if mod[:3] in engine["ATTRIBUTES"]["list"]:
+		if mod[:3] in engine["Performance"]["Attribute"].keys():
 			charac = apply_att_mod(charac, mod)
 		elif mod[:3] == "PLR":
 			PLR += int(mod[3:])
@@ -62,7 +62,7 @@ def allocate_player_mods(charac, PLR, rand):
 	print "Lets allocate points to attributes!\n"
 	print "You have %s points to spend" % str(PLR)
 	print "Assign desired number of points to attribute, then press 'enter'"
-	for key in engine["ATTRIBUTES"]["list"]:
+	for key in engine["Performance"]["Attribute"]["list"]:
 		val = int(raw_input(key+": "))
 		if val > PLR:
 			print "You don't have that many points"
@@ -89,9 +89,9 @@ def apply_att_mod(charac, mod):
 		return charac
 
 def apply_stat_mod(charac, mod):
-	for stat in engine["STATS"]["list"]:
+	for stat in engine["Performance"]["Stat"]["list"]:
 		if stat in mod:
-			if engine["STATS"][stat]["type"] == "int":
+			if engine["Performance"]["Stat"][stat]["type"] == "int":
 				diff = int(mod.replace(stat,""))
 				if (diff != None) and (charac["stats"][stat] != None):
 					charac["stats"][stat] = charac["stats"][stat] + diff
@@ -102,7 +102,7 @@ def apply_stat_mod(charac, mod):
 
 def get_stat_modifier(charac, statname):
 	# General method for determining a stat modifier given an attribute va;ie
-	key = engine["STATS"][statname]
+	key = engine["Performance"]["Stat"][statname]
 	attMaps = key["attMaps"]
 	vals = []
 	if len(attMaps) == 1:
@@ -126,7 +126,7 @@ def get_stat_modifier(charac, statname):
 
 def get_att_modifier(att, stat, charac):
 	# Return the modifier mapped to a given attribute value
-	return engine["ATTRIBUTES"][att]["StatMaps"][stat][str(charac["attributes"][att])]
+	return engine["Performance"]["Attribute"][att]["Maps"][stat][str(charac["attributes"][att])]
 
 def apply_att_stats(charac):
 	# Apply all of the attribute-derived stat modifiers to the character

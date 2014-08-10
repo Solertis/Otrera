@@ -11,7 +11,7 @@ import json
 engine = Content().engine
 
 def level_zero_character_builder():
-	zero_character = engine["CHARACTER"]
+	zero_character = engine["Character"]["Player"]
 	print "Give me some stats, bro\n"
 	base_character = get_base_attributes(zero_character)
 	print "\nOK! Let's get those stats!\n"
@@ -20,8 +20,8 @@ def level_zero_character_builder():
 	return level_zero_character
 
 def custom_level_naked_character_builder():
-	if engine.has_key("LEVELS"):
-		l = engine["LEVELS"]
+	if engine.has_key("Progression"):
+		l = engine["Progression"]["Level"]
 		mods = []
 		charac = level_zero_character_builder()
 		charac["level"] = int(raw_input("What is the character's level?: "))
