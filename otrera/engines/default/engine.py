@@ -208,26 +208,6 @@ def equip(charac, thing):
 			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
 			apply_mods(charac, charac["equipment"]["eqp_mods"], False)
 
-def equipz(charac, thing):
-	depend = engine[thing["category"]]["DEPENDENCIES"]
-	for string in depend:
-		char_field = string.lower()
-		check = charac[char_field]
-		if check not in game[thing["category"]]["TYPES"][thing["type"]][char_field]:
-			print "You cannot equip this."
-		if thing["type"] not in game[const][charac[char]][thing["category"]]:
-			print "You cannot equip this"
-		elif thing["category"] == "WEAPONS":
-			charac["equipment"]["weapon"] = thing
-			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
-			apply_mods(charac, charac["equipment"]["eqp_mods"])
-		elif thing["category"] == "ARMORS":
-			charac["equipment"]["armor"] = thing
-			charac["equipment"]["defense"] = game["EQUIPMENT"]["ARMOR_DEF"][thing["type"]]
-			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
-		else:
-			print "I don't know how to equip this"
-
 def get_learnable_skills(charac):
 	learnable = []
 	# Should consider a separate abstract skill validation method

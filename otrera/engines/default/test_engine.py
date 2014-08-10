@@ -47,3 +47,14 @@ def test_equipped_character():
 	assert charac["equipment"]["weapon"]["name"] == "mage staff"
 	assert charac["equipment"]["armor"]["name"] == "mage robes"
 	assert charac["equipment"]["eqp_mods"] == [ "DIV2" ]
+
+def test_skilled_character():
+	charac = engine["CHARACTER"]
+	charac["class"] = "mage"
+	learnable = get_learnable_skills(charac)
+	charac["skills"].append(learnable[0])
+	skill = charac["skills"][0]
+	assert skill["name"] == "fire blast"
+	assert skill["AOE"] == 3
+	assert skill["power"] == "1d6"
+	assert "mage" in skill["requirements"]["class"]
