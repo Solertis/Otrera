@@ -13,13 +13,13 @@ Otrera describes games in a single JSON file. This engine.json file has a set of
 
 Constructs and Schemes serve as the templates for game content. Game content lives in a separate content.json file in a subdirectory of an engine. Games depend upon engines to work. 'Content' can be thought of as an instantiation of a Scheme. Thus the full hierarchy is as follows:
 
-Construct --> Scheme --> Content
+Construct -> Scheme -> Content
 
 Some examples:
 
-Ability --> Magic --> Fire Bolt
-Character --> NPC --> Inquisitor Larry
-Performance --> Attribute --> Dexterity
+Ability -> Magic -> Fire Bolt +
+Character -> NPC -> Inquisitor Larry +
+Performance -> Attribute -> Dexterity +
 
 The engine.json file does not only contain Constructs it Schemes, it also defines relationships between these systems with special keywords. Users can have character attributes depend upon class, usable weapons depend on race, level progression depend on skills, etc. etc.
 
@@ -29,9 +29,9 @@ An engine is a set of rules and relationships. A game is defined by its content.
 
 It is also possible to build new games on top of old games. Users can allow others to edit the content in a content.json file or add new pieces and rename others. This allows for multiple levels of game development complexity and scope based on what the user wishes to do. A basic hierarchy of the complexity:
 
-Most: Creating a new engine from scratch with at least one game
-Moderate: Creating an original game on top of an existing engine.
-Lowest: Altering the content of an existing game and renaming it as a new game or campaign.
+Most: Creating a new engine from scratch with at least one game +
+Moderate: Creating an original game on top of an existing engine. +
+Lowest: Altering the content of an existing game and renaming it as a new game or campaign. +
 
 This is a very rough hierarchy in that the difficulty in creating a game is a function of the volume of content and complexity of the game engine. In theory, a person might be able to create a new engine in a matter of minutes, while devising all of the spells, equipment, classes, and characters for a new game (or addon campaign) may take weeks.
 
