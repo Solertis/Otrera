@@ -41,10 +41,7 @@ def fully_equipped_character_builder():
 	print "Cool! Lets add some equipment"
 	inventory_list = raw_input("Give me a list of inventory separated by commas: ")
 	inv_list = inventory_list.split(",")
-	fin_list = []
-	for thing in inv_list:
-		thing = thing.lstrip()
-		fin_list.append(thing)
+	fin_list = [ line.lstrip() for line in inv_list ]
 	full_charac["inventory"] = get_inventory_from_strings(fin_list)
 	final_charac = user_sets_equipment(full_charac, full_charac["inventory"])
 	return final_charac
@@ -74,10 +71,7 @@ def user_picks_skills(charac, eligible_skills):
 	print "You may select %s skills (character level)\n" % str(charac["level"])
 	selected = raw_input("Enter a comma-separated list: ")
 	list_names = selected.split(",")
-	skill_names = []
-	for item in list_names:
-		item = item.lstrip()
-		skill_names.append(item)
+	skill_names = [ item.lstrip() for item in list_names ]
 	for item in eligible_skills:
 		if item["name"] in skill_names:
 			charac["skills"].append(item)

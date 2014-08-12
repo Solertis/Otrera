@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import mock
-from builder import *
+from player import *
 from content import Content
 from engine import *
 engine = Content().engine
