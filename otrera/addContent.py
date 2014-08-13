@@ -1,15 +1,9 @@
 #!/usr/bin/env python
 
 import json
-from templates import *
 from content import Content
 
-c = Content()
-path = c.path
-engine = c.engine
-game = c.data
-
-def pick_content_type():
+def pick_content_type(game_name=None):
 	"""
 	Method for getting the user to pick what type of 
 	content they wish to make
@@ -18,6 +12,13 @@ def pick_content_type():
 	Returns:
 	  (str) content type
 	"""
+	c = Content(game=game_name)
+	global engine
+	global game
+	global path
+	engine = c.engine
+	game = c.data
+	path = c.game
 	types = game.keys()
 	print "Hi there fella. What type of content are we working with?\n"
 	for item in types:
@@ -144,7 +145,7 @@ def update_lists(content_type, data, update, thing_name):
 	return data
 
 if __name__=="__main__":
-	content_type = pick_content_type()
+	content_type = pick_content_type(game_name)
 	thing_name = raw_input("Name your %s (lower case only): ")
 	update = get_update(content_type, thing_name)
 	make_content(content_type, update, thing_name)

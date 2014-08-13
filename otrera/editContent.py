@@ -3,7 +3,6 @@
 import json
 from content import Content
 from addContent import get_list, pick_content_type
-path = Content().path
 e = Content().data
 engine = Content().engine
 
