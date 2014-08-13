@@ -1,8 +1,8 @@
 import json
 import os
 
-constructs = ["Progression","Performance","Equipment",
-				"Ability","Elective","Inherent"]
+constructs = ["Progression","Performance","Equipment", "Story",
+				"Ability","Elective","Inherent", "Setting"]
 
 def make_engine(name):
 	if os.path.exists(name):
