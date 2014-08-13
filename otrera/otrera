@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import argparse
+import game_builder
+
+def parse_args():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('--create-game', help="Calls Game Builder")
+	args = parser.parse_args()
+	return args
+
+def main():
+	args = parse_args()
+	if args.create_game is not None:
+		game_builder.make_game(args.create_game)
+
+if __name__ == "__main__":
+	main()
