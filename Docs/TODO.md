@@ -7,7 +7,7 @@ Comment here on github or e-mail TheWitchAgatha@gmail.com if you want to take a 
 
 2. Add docstrings / comments
 
-3. General code refactor. Current approach is a mix of "proof of concept" hacks.
+3. Improve CLI (help text, configurability with yaml, packaging)
 
 4. Improve engine.py
 	- This one is pretty complex. Contact me if you are up for a challenge.
@@ -16,8 +16,4 @@ Comment here on github or e-mail TheWitchAgatha@gmail.com if you want to take a 
 	- The addContent and editContent modules should be the starting point
 	- Ideally the program will tell users the right column/row format based on the engine
 
-6. Make Otrera into a proper Python library with a setup.py.
-	-There are currently no external dependencies.
-
-
-This TODO does not cover 'Engine Builder' goals. Those will be added here once the above six priorities are complete.
+This TODO does not cover 'Engine Builder' goals. Those will be added here once the above five priorities are complete.
