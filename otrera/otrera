@@ -2,11 +2,14 @@
 
 import argparse
 import game_builder
+import engine_builder
 
 def parse_args():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--create-game', help="Calls Game Builder")
-	parser.add_argument('--edit-game', help="Calls add/editContent")
+	parser.add_argument('--create-game', help="Make a new game directory and file")
+	parser.add_argument('--edit-game', help="Change content in an existing game file")
+	parser.add_argument('--create-engine', help="Make a new engine directory and file")
+	parser.add_argument('--edit-engine', help="Change an existing engine file")
 	args = parser.parse_args()
 	return args
 
@@ -16,6 +19,10 @@ def main():
 		game_builder.make_game(args.create_game)
 	if args.edit_game is not None:
 		game_builder.edit_game(args.edit_game)
+	if args.create_engine is not None:
+		engine_builder.make_engine(args.create_engine)
+	if args.edit_engine is not None:
+		engine_builder.edit_engine(args.edit_engine)
 
 if __name__ == "__main__":
 	main()
