@@ -63,6 +63,10 @@ def edit_game(gamename):
 			make_content(content_type, update, thing_name)
 		elif choice == '2':
 			print "Calling editContent module..."
+			content_type = pick_content_type(game_name=gamename)
+			thing = get_content(content_type, gamename)
+			complete = edit_item(thing, content_type)
+			update_json(complete)
 		else:
 			print "Come on now, son."
 			exit(1)

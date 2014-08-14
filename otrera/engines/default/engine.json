@@ -207,6 +207,9 @@
 		"DICTATES" : [ "SKILLS" ]
 	},
 	"SEX" : {
+		"SEX" : {
+			"init" : []
+		},
 		"list" : [ "male", "female" ],
 		"male" : {
 			"init" : [ "MGT2" ]

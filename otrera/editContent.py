@@ -3,8 +3,7 @@
 import json
 from content import Content
 from addContent import get_list, pick_content_type
-e = Content().data
-engine = Content().engine
+from content import Content
 
 def print_content(cont):
 	for k,v in cont.iteritems():
@@ -13,8 +12,13 @@ def print_content(cont):
 		else:
 			print k + " = " + str(v)
 
-def get_content(content_type):
-	LIST = e[content_type]
+def get_content(content_type, game_name):
+	global game
+	global path
+	c = Content(game=game_name)
+	game = c.data
+	path = c.game
+	LIST = game[content_type]
 	print "Here is list of the content of that type"
 	for item in LIST.keys():
 		print item
@@ -30,20 +34,13 @@ def edit_item(cont, content_type):
 	elif isinstance(cont[key], list):
 		new_val = get_list(key)
 		cont[key] = new_val
-		e[content_type].update(cont)
-		return e
+		return game
 	else:
 		new_val = raw_input("What is your desired new value?: ")
 		cont[key] = new_val
-		e[content_type].update(cont)
-		return e
+		game[content_type].update(cont)
+		return game
 
 def update_json(data):
 	with open(path,"w") as f:
 		json.dump(data, f, sort_keys=True, indent=4, ensure_ascii=False)
-
-if __name__=="__main__":
-	content_type = pick_content_type()
-	thing = get_content(content_type)
-	complete = edit_item(thing, content_type)
-	update_json(complete)
