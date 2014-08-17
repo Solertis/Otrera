@@ -16,4 +16,13 @@ Comment here on github or e-mail TheWitchAgatha@gmail.com if you want to take a 
 	- The addContent and editContent modules should be the starting point
 	- Ideally the program will tell users the right column/row format based on the engine
 
-This TODO does not cover 'Engine Builder' goals. Those will be added here once the above five priorities are complete.
+6. Add batch operations
+	- Changes to a game engine should propegate in the game content
+	- Ex. Removing 'durability' from weapons template
+	- All weapons should then be updated and have that field removed
+
+7. Flask App
+	- This will live in another repo, however I may do a proof of concept on a branch here
+	- Any contributors with Flask experience can take this ticket or contact me about it.
+
+This TODO does not cover 'Engine Builder' goals. Those will be added here once the above priorities are complete.
