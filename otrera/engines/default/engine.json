@@ -298,5 +298,11 @@
 			},
 			"Dictates" : [ "Armor", "Items", "Attributes" ]
 		}
+	},
+	"Rules" : {
+	},
+	"Setting" : {
+	},
+	"Story" : {
 	}
 }

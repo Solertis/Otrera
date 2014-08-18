@@ -11,8 +11,6 @@ the_stats = ["Evade","PhyDef","PhyAtk","MagAtk","MagDef",
 			"Resistance","CarryStrength","Hit","Accuracy",
 			"Craft","MaxHP"]
 
-MAX_LEVEL = game["LEVELS"]["list"][-1]
-
 def apply_level_mods(charac, rand=False):
 	l = game["LEVELS"]
 	mod_types = engine["Progression"]["Level"]["modifiers"]
