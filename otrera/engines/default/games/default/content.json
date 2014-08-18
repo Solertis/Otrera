@@ -1,6 +1,6 @@
 {
 	"TYPES": {
-		"ARMORS" : {
+		"Armor" : {
 			"cloth": {
 				"defense": "1d6", 
 				"sex": []
@@ -28,8 +28,7 @@
 		"Armor" : ["mage robes"],
 		"Item" : ["healing potion"],
 		"Skill" : ["fire blast"],
-		"Level" : ["1","2","3","3","5","6","7","8","9","10","11","12","13","14","15",
-					"16","17","18","19","20","21","22","23","24","25"],
+		"Level" : [1,2,3,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
 		"Race" : ["human","wolf","gamma","fairy","robot"],
 		"Sex" : ["male","female"]
 	},
@@ -680,7 +679,6 @@
 	"mage staff": {
 		"scheme" : "Weapon",
 		"base_dmg": 2, 
-		"category": "WEAPONS", 
 		"description": "A staff used by mages", 
 		"durability": 5, 
 		"name": "mage staff", 

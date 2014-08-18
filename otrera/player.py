@@ -117,9 +117,9 @@ def publish_character(charac):
 def publish_charac_combat_stats(charac):
 	print "Here is your character's combat profile:"
 	print "-------------------------------------------------\n"
-	print "PWR = %s %s" % (charac["equipment"]["weapon"]["base_dmg"], charac["stats"]["PhyAtk"])
-	print "Armor Durability = %s" % str(charac["equipment"]["armor"]["durability"])
-	print "Armor Defense = %s" % charac["equipment"]["armor"]["defense"]
+	print "PWR = %s %s" % (charac["equipment"]["Weapon"]["base_dmg"], charac["stats"]["PhyAtk"])
+	print "Armor Durability = %s" % str(charac["equipment"]["Armor"]["durability"])
+	print "Armor Defense = %s" % charac["equipment"]["Armor"]["defense"]
 	print "Encumbrance = %s" % str(charac["encumbrance"])
 	print "Equipment Bonuses = %s" % (charac["equipment"]["eqp_mods"])
 	print "NOTE: Evade score now accounts for Carry Weight penalty (adjusted for strength)"

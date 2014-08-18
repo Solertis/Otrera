@@ -11,13 +11,15 @@ the_stats = ["Evade","PhyDef","PhyAtk","MagAtk","MagDef",
 			"Resistance","CarryStrength","Hit","Accuracy",
 			"Craft","MaxHP"]
 
+CONSTRUCTS = engine.keys()
+
 def apply_level_mods(charac, rand=False):
-	l = game["LEVELS"]
+	l = game["LISTS"]["Level"]
 	mod_types = engine["Progression"]["Level"]["modifiers"]
 	mods = []
 	levrange = charac["level"]+1
-	for lev in range(l["list"][0], levrange):
-		levobj = l[str(lev)]
+	for lev in range(l[0], levrange):
+		levobj = game[str(lev)]
 		mods.extend(get_level_mods(levobj, charac))
 	# Take in a character object who has a certain level attribute
 	# Iterate over level objects from zero to character level
@@ -144,13 +146,13 @@ def get_inventory_from_strings(string_list):
 	inventory = []
 	for thing in string_list:
 		thing = thing.lower()
-		itms = game["ITEMS"]
-		wpns = game["WEAPONS"]
-		amrs = game["ARMORS"]
+		itms = game["LISTS"]["Item"]
+		wpns = game["LISTS"]["Weapon"]
+		amrs = game["LISTS"]["Armor"]
 		things = [wpns, amrs, itms]
 		for a in things:
-			if thing in a.keys():
-				inventory.append(a[thing])
+			if thing in a:
+				inventory.append(game[thing])
 	return inventory
 
 def adjust_evade(charac):
@@ -165,7 +167,7 @@ def adjust_evade(charac):
 def equip_from_string(charac, string):
 	for thing in charac["inventory"]:
 		if string == thing["name"]:
-			if thing["category"] == "WEAPONS" or thing["category"] == "ARMORS":
+			if thing["scheme"] == "Weapon" or thing["scheme"] == "Armor":
 				equip(charac, thing)
 			else:
 				print "I cannot equip this."
@@ -177,7 +179,7 @@ def meet_requirements(charac, thing):
 	# Returns true if charac meets requirements to equip something
 	for key, val in thing["requirements"].iteritems():
 		if val == "type":
-			check = game[thing["category"]]["TYPES"][thing["type"]][key]
+			check = game["TYPES"][thing["scheme"]][thing["type"]][key]
 			if check == []:
 				return True
 			elif charac[key] not in check:
@@ -192,16 +194,19 @@ def meet_requirements(charac, thing):
 	return True
 
 def equip(charac, thing):
+	print "Equipping %s" % thing["name"]
 	if thing.has_key("requirements"):
 		if meet_requirements(charac, thing):
-			charac["equipment"][thing["category"][:-1].lower()] = thing
+			print "Congrats on meeting the requirements, bruh"
+			print thing
+			charac["equipment"][thing["scheme"]] = thing
 			if thing.has_key("spec_mods"):
 				charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
 				apply_mods(charac, charac["equipment"]["eqp_mods"], False)
 		else:
 			print "You do not meet the requirements to equip this"
 	else:
-		charac["equipment"][thing["category"][:-1].lower()] = thing
+		charac["equipment"][thing["scheme"]] = thing
 		if thing.has_key("spec_mods"):
 			charac["equipment"]["eqp_mods"].extend(thing["spec_mods"])
 			apply_mods(charac, charac["equipment"]["eqp_mods"], False)
@@ -209,8 +214,8 @@ def equip(charac, thing):
 def get_learnable_skills(charac):
 	learnable = []
 	# Should consider a separate abstract skill validation method
-	for string in game["SKILLS"].keys():
-		skill = game["SKILLS"][string]
+	for string in game["LISTS"]["Skill"]:
+		skill = game[string]
 		for req in skill["requirements"].keys():
 			if skill["requirements"][req] != []:
 				if charac[req] not in skill["requirements"][req]:

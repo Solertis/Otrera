@@ -44,8 +44,8 @@ def test_equipped_character():
 	charac["inventory"] = get_inventory_from_strings(gear)
 	equip_from_string(charac, "mage staff")
 	equip_from_string(charac, "mage robes")
-	assert charac["equipment"]["weapon"]["name"] == "mage staff"
-	assert charac["equipment"]["armor"]["name"] == "mage robes"
+	assert charac["equipment"]["Weapon"]["name"] == "mage staff"
+	assert charac["equipment"]["Armor"]["name"] == "mage robes"
 	assert charac["equipment"]["eqp_mods"] == [ "DIV2" ]
 
 def test_skilled_character():
