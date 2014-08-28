@@ -179,7 +179,7 @@ def meet_requirements(charac, thing):
 	# Returns true if charac meets requirements to equip something
 	for key, val in thing["requirements"].iteritems():
 		if val == "type":
-			check = game["TYPES"][thing["scheme"]][thing["type"]][key]
+			check = game[thing["type"]]["restricts"][key]
 			if check == []:
 				return True
 			elif charac[key] not in check:

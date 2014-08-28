@@ -1,28 +1,4 @@
 {
-	"TYPES": {
-		"Armor" : {
-			"cloth": {
-				"defense": "1d6", 
-				"sex": []
-			}, 
-			"leather": {
-				"defense": "1d10", 
-				"sex": []
-			}, 
-			"metal": {
-				"defense": "2d6",
-				"sex": [
-					"male"
-				]
-			}, 
-			"robes": {
-				"defense": "1d4", 
-				"sex": [
-					"female"
-				]
-			}
-		}
-	},
 	"LISTS" : {
 		"Weapon" : ["mage staff"],
 		"Armor" : ["mage robes"],
@@ -30,7 +6,80 @@
 		"Skill" : ["fire blast"],
 		"Level" : [1,2,3,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
 		"Race" : ["human","wolf","gamma","fairy","robot"],
-		"Sex" : ["male","female"]
+		"Sex" : ["male","female"],
+		"Types" : ["leather","metal","cloth","robes","sword","glove","bow","staff"]
+	},
+	"sword" : {
+		"construct" : "type",
+		"scheme" : "Weapon",
+		"restricts" : {
+			"class" : [ "fighter", "archer" ]
+		},
+		"defines" : {}
+	},
+	"glove" : {
+		"construct" : "type",
+		"scheme" : "Weapon",
+		"restricts" : {
+			"class" : [ "fighter", "crafstman" ]
+		},
+		"defines" : {}
+	},
+	"bow" : {
+		"construct" : "type",
+		"scheme" : "Weapon",
+		"restricts" : {
+			"class" : [ "archer" ]
+		},
+		"defines" : {}
+	},
+	"staff" : {
+		"construct" : "type",
+		"scheme" : "Weapon",
+		"restricts" : {
+			"class" : [ "mage" ]
+		},
+		"defines" : {}
+	},
+	"robes" : {
+		"construct" : "type",
+		"scheme" : "Armor",
+		"restricts" : {
+			"sex" : [ "female" ]
+		},
+		"defines" : {
+			"defense" : "1d4"
+		}
+	},
+	"metal" : {
+		"construct" : "type",
+		"scheme" : "Armor",
+		"restricts" : {
+			"sex" : "male"
+		},
+		"defines" : {
+			"defense" : "2d6"
+		}
+	},
+	"leather" : {
+		"construct" : "type",
+		"scheme" : "armor",
+		"restricts" : {
+			"sex" : []
+		},
+		"defines" : {
+			"defense" : "1d10"
+		}
+	},
+	"cloth" : {
+		"construct" : "type",
+		"scheme" : "Armor",
+		"restricts" : {
+			"sex" : []
+		},
+		"defines" : {
+			"defense" : "1d6"
+		}
 	},
 	"mage robes": {
 		"scheme" : "Armor",

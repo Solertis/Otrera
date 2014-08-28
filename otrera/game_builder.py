@@ -30,21 +30,25 @@ def add_schemes(gamepath):
 	# This is made of jank and fail. It works but I don't like it.
 	# Basically it makes a placeholder content.json file with the
 	# needed engine.json keys in place with valid json.
-	lines = ["{"]
-	keys = engine.keys()
-	proper_keys = []
-	for key in keys:
-		proper = "\""+key+"\": {},"
-		proper_keys.append(proper)
-	lines.extend(proper_keys)
-	lines[-1] = lines[-1][:-1]
-	lines.append("}")
-	k = open(gamepath+"/content.json","w")
-	for line in lines:
-		k.writelines(line+"\n")
-	k.close()
-	b = open(gamepath+"/content.json","r").read()
-	a = json.loads(b)
+	scheme_keys = []
+	for key in engine.keys():
+		if len(key.keys()) > 0:
+			scheme_keys.extend(key.keys())
+	#lines = ["{"]
+	#keys = engine.keys()
+	#proper_keys = []
+	#for key in keys:
+	#	proper = "\""+key+"\": {},"
+	#	proper_keys.append(proper)
+	#lines.extend(proper_keys)
+	#lines[-1] = lines[-1][:-1]
+	#lines.append("}")
+	#k = open(gamepath+"/content.json","w")
+	#for line in lines:
+#		k.writelines(line+"\n")
+#	k.close()
+#	b = open(gamepath+"/content.json","r").read()
+#	a = json.loads(b)
 
 def edit_game(gamename):
 	gamepath = "engines/default/games/"+gamename+"/content.json"

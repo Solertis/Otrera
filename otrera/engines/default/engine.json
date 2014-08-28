@@ -201,8 +201,8 @@
 		}
 	},
 	"Ability" : {
-		"SKILLS" : {
-			"SKILL" : {
+		"Skill" : {
+			"template" : {
 				"name" : "",
 				"description" : "",
 				"rules" : "",
@@ -263,8 +263,8 @@
 				},
 				"defense" : "type"
 			},
-			"TYPES" : {
-				"TYPE" :  {
+			"Types" : {
+				"Type" :  {
 					"defense" : "diceroll",
 					"sex" : []
 				}
@@ -282,6 +282,24 @@
 				"requirements" : {
 					"sex" : []
 				}
+			}
+		}
+	},
+	"Types" : {
+		"Armor" : { 
+			"template" : {
+				"construct" : "type",
+				"scheme" : "",
+				"restricts" : {},
+				"defines" : {}
+			}
+		},
+		"Weapon" : {
+			"template" : {
+				"construct" : "type",
+				"scheme" : "",
+				"restricts" : {},
+				"defines" : {}
 			}
 		}
 	},
