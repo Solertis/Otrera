@@ -19,16 +19,30 @@ def pick_content_type(game_name=None):
 	engine = c.engine
 	game = c.data
 	path = c.game
-	types = game.keys()
+	schemes = get_schemes()
 	print "Hi there fella. What type of content are we working with?\n"
-	for item in types:
+	for item in schemes:
 		print item
 	content_type = raw_input("Enter one of the values above: ")
-	if content_type not in types:
+	if content_type not in schemes:
 		print "LOL WTF"
 		exit(1)
 	else:
 		return content_type
+
+def get_schemes():
+	schemes = []
+	for key in engine.keys():
+		if len(engine[key]) > 0:
+			schemes.extend(engine[key])
+	return schemes
+
+def get_scheme(scheme_name):
+	for key in engine.keys():
+		if len(engine[key]) > 0:
+			if scheme_name in engine[key].keys():
+				scheme = engine[key][scheme_name]
+	return scheme
 
 def get_update(content_type, thing_name):
 	"""
@@ -41,13 +55,13 @@ def get_update(content_type, thing_name):
 	Returns:
 	  (dict) update_data: The update to apply to the JSON
 	"""
-	CONSTR = engine[content_type]
-	for key in CONSTR.keys():
-		if key not in content_type:
-			del CONSTR[key]
-	template = CONSTR
-	template[thing_name] = template.pop(template.keys()[0])
-	update_data = get_content_info(template)
+	#CONSTR = engine[content_type]
+	#for key in CONSTR.keys():
+	#	if key not in content_type:
+	#		del CONSTR[key]
+	scheme = get_scheme(content_type)
+	scheme[thing_name] = scheme.pop(scheme.keys()[0])
+	update_data = get_content_info(scheme)
 	return update_data
 
 def get_list(key):
@@ -85,12 +99,23 @@ def get_content_info(data_dict):
 	"""
 	for k, v in data_dict.iteritems():
 		if isinstance(v, dict):
-			get_content_info(v)
+			if v == {}:
+				data_dict[k] = get_dict(k)
+			else:
+				get_content_info(v)
 		elif isinstance(v, list):
 			data_dict[k] = get_list(k)
 		else:
 			data_dict[k] = raw_input(k+": ")
 	return data_dict
+
+def get_dict(name):
+	a = {}
+	keys = get_list(name)
+	for key in keys:
+		value = get_list(key)
+		a[key] = value
+	return a
 
 def make_content(content_type, update, thing_name):
 	"""
@@ -107,7 +132,7 @@ def make_content(content_type, update, thing_name):
 	"""
 	with open(path) as f:
 		data = json.load(f)
-	data[content_type].update(update)
+	data.update(update)
 	#data = update_lists(content_type, data, update, thing_name)
 	with open(path,"w") as f:
 		json.dump(data, f, sort_keys=True, indent=4, ensure_ascii=False)

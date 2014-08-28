@@ -245,7 +245,7 @@
 				"durability" : 1,
 				"description" : "Description",
 				"requirements" : {
-					"class" : []
+					"class" : "type"
 				}
 			}
 		},
@@ -262,14 +262,7 @@
 					"sex" : "type"
 				},
 				"defense" : "type"
-			},
-			"Types" : {
-				"Type" :  {
-					"defense" : "diceroll",
-					"sex" : []
-				}
-			},
-			"DEPENDENCIES" : [ "SEX" ]
+			}
 		},
 		"Item" : {
 			"template" : {
@@ -286,15 +279,7 @@
 		}
 	},
 	"Types" : {
-		"Armor" : { 
-			"template" : {
-				"construct" : "type",
-				"scheme" : "",
-				"restricts" : {},
-				"defines" : {}
-			}
-		},
-		"Weapon" : {
+		"Type" : {
 			"template" : {
 				"construct" : "type",
 				"scheme" : "",

@@ -1,740 +1,815 @@
 {
-	"LISTS" : {
-		"Weapon" : ["mage staff"],
-		"Armor" : ["mage robes"],
-		"Item" : ["healing potion"],
-		"Skill" : ["fire blast"],
-		"Level" : [1,2,3,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
-		"Race" : ["human","wolf","gamma","fairy","robot"],
-		"Sex" : ["male","female"],
-		"Types" : ["leather","metal","cloth","robes","sword","glove","bow","staff"]
-	},
-	"sword" : {
-		"construct" : "type",
-		"scheme" : "Weapon",
-		"restricts" : {
-			"class" : [ "fighter", "archer" ]
-		},
-		"defines" : {}
-	},
-	"glove" : {
-		"construct" : "type",
-		"scheme" : "Weapon",
-		"restricts" : {
-			"class" : [ "fighter", "crafstman" ]
-		},
-		"defines" : {}
-	},
-	"bow" : {
-		"construct" : "type",
-		"scheme" : "Weapon",
-		"restricts" : {
-			"class" : [ "archer" ]
-		},
-		"defines" : {}
-	},
-	"staff" : {
-		"construct" : "type",
-		"scheme" : "Weapon",
-		"restricts" : {
-			"class" : [ "mage" ]
-		},
-		"defines" : {}
-	},
-	"robes" : {
-		"construct" : "type",
-		"scheme" : "Armor",
-		"restricts" : {
-			"sex" : [ "female" ]
-		},
-		"defines" : {
-			"defense" : "1d4"
-		}
-	},
-	"metal" : {
-		"construct" : "type",
-		"scheme" : "Armor",
-		"restricts" : {
-			"sex" : "male"
-		},
-		"defines" : {
-			"defense" : "2d6"
-		}
-	},
-	"leather" : {
-		"construct" : "type",
-		"scheme" : "armor",
-		"restricts" : {
-			"sex" : []
-		},
-		"defines" : {
-			"defense" : "1d10"
-		}
-	},
-	"cloth" : {
-		"construct" : "type",
-		"scheme" : "Armor",
-		"restricts" : {
-			"sex" : []
-		},
-		"defines" : {
-			"defense" : "1d6"
-		}
-	},
-	"mage robes": {
-		"scheme" : "Armor",
-		"defense": "type", 
-		"description": "Robes worn by mages", 
-		"durability": 4, 
-		"name": "mage robes", 
-		"requirements": {
-			"sex": "type"
-		}, 
-		"spec_mods": [], 
-		"type": "robes", 
-		"weight": 2
-	},
-	"archer": {
-		"Armor": [
-			"leather"
-		], 
-		"Weapon": [
-			"bow"
-		]
-	}, 
-	"craftsman": {
-		"Armor": [
-			"leather", 
-			"cloth"
-		], 
-		"Weapon": [
-			"glove"
-		]
-	}, 
-	"fighter": {
-		"Armor": [
-			"leather", 
-			"cloth", 
-			"metal"
-			], 
-			"Weapon": [
-				"sword", 
-				"glove"
-			]
-		}, 
-	"mage": {
-		"Armor": [
-			"robes"
-		], 
-		"Weapon": [
-			"staff"
-		]
-	}, 
-	"healing potion": {
-		"scheme" : "Item",
-		"description": "Small vial of healing liquid", 
-		"effect": "HP+5", 
-		"name": "healing potion", 
-		"requirements": {
-			"sex": []
-		}, 
-		"type": "usable", 
-		"weight": 1
-	},
-	"0": {
-		"scheme" : "Level",
-		"base": [], 
-		"class": {
-			"archer": [], 
-			"craftsman": [], 
-			"fighter": [], 
-			"mage": []
-		}
-	}, 
-	"1": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"10": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"11": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"12": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"13": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"14": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"15": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"16": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"17": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"18": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"19": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"2": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"20": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"21": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"22": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"23": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"24": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"25": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"3": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"4": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"5": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"6": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"7": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"8": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"9": {
-		"scheme" : "Level",
-		"base": [
-			"MaxHP5", 
-			"PLR2"
-		], 
-		"class": {
-			"archer": [
-				"DEX1"
-			], 
-			"craftsman": [
-				"INT1"
-			], 
-			"fighter": [
-				"MGT1"
-			], 
-			"mage": [
-				"DIV1"
-			]
-		}
-	}, 
-	"fairy": {
-		"scheme" : "Race",
-		"init": [
-			"ART1"
-		]
-	}, 
-	"gamma": {
-		"scheme" : "Race",
-		"init": [
-			"DEX1"
-		]
-	}, 
-	"human": {
-		"scheme" : "Race",
-		"init": [
-			"INT1"
-		]
-	}, 
-	"lizard": {
-		"scheme" : "Race",
-		"init": [
-			"CON1"
-		]
-	}, 
-	"wolf": {
-		"scheme" : "Race",
-		"init": [
-			"MGT1"
-		]
-	},
-	"fire blast": {
-		"scheme" : "Skill",
-		"AOE": 3, 
-		"description": "Create a powerful burst of flame", 
-		"flavor": "MAGATK", 
-		"name": "fire blast", 
-		"power": "1d6", 
-		"range": 5, 
-		"requirements": {
-			"class": [
-				"mage"
-			], 
-			"race": []
-		}, 
-		"rules": "", 
-		"scaling": {}, 
-		"target": "enemy", 
-		"type": "spell"
-	},
-	"mage staff": {
-		"scheme" : "Weapon",
-		"base_dmg": 2, 
-		"description": "A staff used by mages", 
-		"durability": 5, 
-		"name": "mage staff", 
-		"spec_mods": [
-			"DIV2"
-		], 
-		"type": "staff", 
-		"weight": 3
-	}
+    "0": {
+        "base": [], 
+        "class": {
+            "archer": [], 
+            "craftsman": [], 
+            "fighter": [], 
+            "mage": []
+        }, 
+        "scheme": "Level"
+    }, 
+    "1": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "10": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "11": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "12": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "13": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "14": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "15": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "16": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "17": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "18": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "19": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "2": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "20": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "21": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "22": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "23": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "24": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "25": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "3": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "4": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "5": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "6": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "7": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "8": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "9": {
+        "base": [
+            "MaxHP5", 
+            "PLR2"
+        ], 
+        "class": {
+            "archer": [
+                "DEX1"
+            ], 
+            "craftsman": [
+                "INT1"
+            ], 
+            "fighter": [
+                "MGT1"
+            ], 
+            "mage": [
+                "DIV1"
+            ]
+        }, 
+        "scheme": "Level"
+    }, 
+    "LISTS": {
+        "Armor": [
+            "mage robes"
+        ], 
+        "Item": [
+            "healing potion"
+        ], 
+        "Level": [
+            1, 
+            2, 
+            3, 
+            3, 
+            5, 
+            6, 
+            7, 
+            8, 
+            9, 
+            10, 
+            11, 
+            12, 
+            13, 
+            14, 
+            15, 
+            16, 
+            17, 
+            18, 
+            19, 
+            20, 
+            21, 
+            22, 
+            23, 
+            24, 
+            25
+        ], 
+        "Race": [
+            "human", 
+            "wolf", 
+            "gamma", 
+            "fairy", 
+            "robot"
+        ], 
+        "Sex": [
+            "male", 
+            "female"
+        ], 
+        "Skill": [
+            "fire blast"
+        ], 
+        "Types": [
+            "leather", 
+            "metal", 
+            "cloth", 
+            "robes", 
+            "sword", 
+            "glove", 
+            "bow", 
+            "staff",
+			"laser"
+        ], 
+        "Weapon": [
+            "mage staff"
+        ]
+    }, 
+    "archer": {
+        "Armor": [
+            "leather"
+        ], 
+        "Weapon": [
+            "bow"
+        ]
+    }, 
+    "bow": {
+        "construct": "type", 
+        "defines": {}, 
+        "restricts": {
+            "class": [
+                "archer"
+            ]
+        }, 
+        "scheme": "Weapon"
+    }, 
+    "cloth": {
+        "construct": "type", 
+        "defines": {
+            "defense": "1d6"
+        }, 
+        "restricts": {
+            "sex": []
+        }, 
+        "scheme": "Armor"
+    }, 
+    "craftsman": {
+        "Armor": [
+            "leather", 
+            "cloth"
+        ], 
+        "Weapon": [
+            "glove"
+        ]
+    }, 
+    "fairy": {
+        "init": [
+            "ART1"
+        ], 
+        "scheme": "Race"
+    }, 
+    "fighter": {
+        "Armor": [
+            "leather", 
+            "cloth", 
+            "metal"
+        ], 
+        "Weapon": [
+            "sword", 
+            "glove"
+        ]
+    }, 
+    "fire blast": {
+        "AOE": 3, 
+        "description": "Create a powerful burst of flame", 
+        "flavor": "MAGATK", 
+        "name": "fire blast", 
+        "power": "1d6", 
+        "range": 5, 
+        "requirements": {
+            "class": [
+                "mage"
+            ], 
+            "race": []
+        }, 
+        "rules": "", 
+        "scaling": {}, 
+        "scheme": "Skill", 
+        "target": "enemy", 
+        "type": "spell"
+    }, 
+    "gamma": {
+        "init": [
+            "DEX1"
+        ], 
+        "scheme": "Race"
+    }, 
+    "glove": {
+        "construct": "type", 
+        "defines": {}, 
+        "restricts": {
+            "class": [
+                "fighter", 
+                "crafstman"
+            ]
+        }, 
+        "scheme": "Weapon"
+    }, 
+    "healing potion": {
+        "description": "Small vial of healing liquid", 
+        "effect": "HP+5", 
+        "name": "healing potion", 
+        "requirements": {
+            "sex": []
+        }, 
+        "scheme": "Item", 
+        "type": "usable", 
+        "weight": 1
+    }, 
+    "human": {
+        "init": [
+            "INT1"
+        ], 
+        "scheme": "Race"
+    }, 
+    "laser": {
+        "construct": "type", 
+        "defines": {}, 
+        "restricts": {
+            "race": [
+                "robot"
+            ]
+        }, 
+        "scheme": "Weapon"
+    }, 
+    "leather": {
+        "construct": "type", 
+        "defines": {
+            "defense": "1d10"
+        }, 
+        "restricts": {
+            "sex": []
+        }, 
+        "scheme": "armor"
+    }, 
+    "lizard": {
+        "init": [
+            "CON1"
+        ], 
+        "scheme": "Race"
+    }, 
+    "mage": {
+        "Armor": [
+            "robes"
+        ], 
+        "Weapon": [
+            "staff"
+        ]
+    }, 
+    "mage robes": {
+        "defense": "type", 
+        "description": "Robes worn by mages", 
+        "durability": 4, 
+        "name": "mage robes", 
+        "requirements": {
+            "sex": "type"
+        }, 
+        "scheme": "Armor", 
+        "spec_mods": [], 
+        "type": "robes", 
+        "weight": 2
+    }, 
+    "mage staff": {
+        "base_dmg": 2, 
+        "description": "A staff used by mages", 
+        "durability": 5, 
+        "name": "mage staff", 
+        "scheme": "Weapon", 
+        "spec_mods": [
+            "DIV2"
+        ], 
+        "type": "staff", 
+        "weight": 3
+    }, 
+    "metal": {
+        "construct": "type", 
+        "defines": {
+            "defense": "2d6"
+        }, 
+        "restricts": {
+            "sex": "male"
+        }, 
+        "scheme": "Armor"
+    }, 
+    "robes": {
+        "construct": "type", 
+        "defines": {
+            "defense": "1d4"
+        }, 
+        "restricts": {
+            "sex": [
+                "female"
+            ]
+        }, 
+        "scheme": "Armor"
+    }, 
+    "staff": {
+        "construct": "type", 
+        "defines": {}, 
+        "restricts": {
+            "class": [
+                "mage"
+            ]
+        }, 
+        "scheme": "Weapon"
+    }, 
+    "sword": {
+        "construct": "type", 
+        "defines": {}, 
+        "restricts": {
+            "class": [
+                "fighter", 
+                "archer"
+            ]
+        }, 
+        "scheme": "Weapon"
+    }, 
+    "wolf": {
+        "init": [
+            "MGT1"
+        ], 
+        "scheme": "Race"
+    }
 }
