@@ -590,8 +590,8 @@
             "sword", 
             "glove", 
             "bow", 
-            "staff",
-			"laser"
+            "staff", 
+            "laser"
         ], 
         "Weapon": [
             "mage staff"
@@ -605,6 +605,7 @@
             "bow"
         ]
     }, 
+    "base_dmg": "2", 
     "bow": {
         "construct": "type", 
         "defines": {}, 
@@ -634,6 +635,9 @@
             "glove"
         ]
     }, 
+    "defense": "type", 
+    "description": "Robes worn by mages", 
+    "durability": 4, 
     "fairy": {
         "init": [
             "ART1"
@@ -741,7 +745,7 @@
     "mage robes": {
         "defense": "type", 
         "description": "Robes worn by mages", 
-        "durability": 4, 
+        "durability": "3", 
         "name": "mage robes", 
         "requirements": {
             "sex": "type"
@@ -752,7 +756,7 @@
         "weight": 2
     }, 
     "mage staff": {
-        "base_dmg": 2, 
+        "base_dmg": "2", 
         "description": "A staff used by mages", 
         "durability": 5, 
         "name": "mage staff", 
@@ -773,6 +777,9 @@
         }, 
         "scheme": "Armor"
     }, 
+    "requirements": {
+        "sex": "type"
+    }, 
     "robes": {
         "construct": "type", 
         "defines": {
@@ -785,6 +792,8 @@
         }, 
         "scheme": "Armor"
     }, 
+    "scheme": "Armor", 
+    "spec_mods": [], 
     "staff": {
         "construct": "type", 
         "defines": {}, 
@@ -806,6 +815,8 @@
         }, 
         "scheme": "Weapon"
     }, 
+    "type": "cheese", 
+    "weight": 2, 
     "wolf": {
         "init": [
             "MGT1"

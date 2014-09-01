@@ -24,7 +24,6 @@ def create_game_directory_and_file(game_name):
 		gamefile = open(gamepath+"/content.json","w+")
 		print game_name + " has been created!"
 		gamefile.close()
-		add_schemes(gamepath)
 
 def edit_game(gamename):
 	gamepath = "engines/default/games/"+gamename+"/content.json"
