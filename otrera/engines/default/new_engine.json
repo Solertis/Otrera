@@ -17,16 +17,16 @@
 			},
 			"encumbrance" : 0,
 			"equipment" : {
-				"weapon" : "", "armor" : "", "ArmDef" : "", "WpnAtk" : "", "eqp_mods" : []
+				"weapon" : "", "armor" : "", "defense" : "",  "eqp_mods" : []
 			},
 			"level" : 0
 		}
 	},
 	"Performance" : {
-		"Attribute" : {
-			"MAPS" : [ "Stats" ],
+		"Attributes" : {
+			"list" : [ "DEX","ART","CON","MGT","DIV","INT" ],
 			"MGT" : {
-				"Maps" : {
+				"StatMaps" : {
 					"PhyAtk" : {
 						"0":"1d2","1":"1d2","3":"1d2","4":"1d2",
 						"5":"1d4","6":"1d4","7":"1d4","8":"1d4",
@@ -43,7 +43,7 @@
 				}
 			},
 			"DEX" : {
-				"Maps" : {
+				"StatMaps" : {
 					"Evade" : {
 						"0":-2,"1":-2,"2":-2,"3":-2,"4":-1,"5":-1,"6":-1,"7":0,"8":0,
 						"9":0,"10":0,"11":1,"12":1,"13":1,"14":2,"15":2,"16":2,"17":3,
@@ -67,7 +67,7 @@
 				}
 			},
 			"CON" : {
-				"Maps" : {
+				"StatMaps" : {
 					"Resistance" : {
 						"0":-2,"1":-2,"2":-2,"3":-1,"4":-1,"5":-1,"6":0,"7":0,"8":0,
 						"9":0,"10":1,"11":1,"12":2,"13":2,"14":3,"15":3,"16":4,"17":4,
@@ -81,7 +81,7 @@
 				}
 			},
 			"ART" : {
-				"Maps" : {
+				"StatMaps" : {
 					"Craft" : {
 						"0":-2,"1":-2,"2":-2,"3":-2,"4":-1,"5":-1,"6":-1,"7":0,"8":0,
 						"9":0,"10":0,"11":0,"12":0,"13":1,"14":1,"15":1,"16":1,"17":2,
@@ -105,7 +105,7 @@
 				}
 			},
 			"DIV" : {
-				"Maps" : {
+				"StatMaps" : {
 					"MagAtk" : {
 						"0":"1d2","1":"1d2","3":"1d2","4":"1d2",
 						"5":"1d4","6":"1d4","7":"1d4","8":"1d4",
@@ -122,7 +122,7 @@
 				}
 			},
 			"INT" : {
-				"Maps" : {
+				"StatMaps" : {
 					"Craft" : {
 						"0":-2,"1":-2,"2":-2,"3":-2,"4":-1,"5":-1,"6":-1,"7":0,"8":0,
 						"9":0,"10":0,"11":1,"12":1,"13":1,"14":2,"15":2,"16":2,"17":3,
@@ -136,7 +136,7 @@
 				}
 			}
 		},
-		"Stat" : {
+		"STATS" : {
 			"list" : [
 					"MaxHP","Evade","Hit","Accuracy","CarryStrength",
 					"Craft","Resistance","MagAtk","MagDef","PhyAtk","PhyDef"
@@ -201,8 +201,8 @@
 		}
 	},
 	"Ability" : {
-		"Skill" : {
-			"template" : {
+		"SKILLS" : {
+			"SKILL" : {
 				"name" : "",
 				"description" : "",
 				"rules" : "",
@@ -245,7 +245,7 @@
 				"durability" : 1,
 				"description" : "Description",
 				"requirements" : {
-					"class" : "type"
+					"class" : []
 				}
 			}
 		},
@@ -262,7 +262,14 @@
 					"sex" : "type"
 				},
 				"defense" : "type"
-			}
+			},
+			"TYPES" : {
+				"TYPE" :  {
+					"defense" : "diceroll",
+					"sex" : []
+				}
+			},
+			"DEPENDENCIES" : [ "SEX" ]
 		},
 		"Item" : {
 			"template" : {
@@ -275,16 +282,6 @@
 				"requirements" : {
 					"sex" : []
 				}
-			}
-		}
-	},
-	"Types" : {
-		"Type" : {
-			"template" : {
-				"construct" : "type",
-				"scheme" : "",
-				"restricts" : {},
-				"defines" : {}
 			}
 		}
 	},
@@ -301,11 +298,5 @@
 			},
 			"Dictates" : [ "Armor", "Items", "Attributes" ]
 		}
-	},
-	"Rules" : {
-	},
-	"Setting" : {
-	},
-	"Story" : {
 	}
 }

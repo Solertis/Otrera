@@ -18,12 +18,13 @@ def get_content(content_type, game_name):
 	c = Content(game=game_name)
 	game = c.data
 	path = c.game
-	LIST = game[content_type]
+	LISTS = game["LISTS"]
+	LIST = LISTS[content_type]
 	print "Here is list of the content of that type"
-	for item in LIST.keys():
+	for item in LIST:
 		print item
 	selected = raw_input("Which would you like to edit? ")
-	final = LIST[selected]
+	final = game[selected]
 	return final
 
 def edit_item(cont, content_type):
@@ -38,7 +39,7 @@ def edit_item(cont, content_type):
 	else:
 		new_val = raw_input("What is your desired new value?: ")
 		cont[key] = new_val
-		game[content_type].update(cont)
+		game[cont["name"]] = cont
 		return game
 
 def update_json(data):
