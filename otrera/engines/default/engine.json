@@ -216,6 +216,7 @@
 					"class" : [],
 					"race" : []
 				},
+				"scheme" : "",
 				"category" : "",
 				"flavor" : ""
 			}
@@ -236,7 +237,7 @@
 	"Equipment" : {
 		"Weapon" : {
 			"template" : {
-				"category" : "Weapon",
+				"scheme" : "Weapon",
 				"name" : "WEAPON NAME",
 				"weight" : 1,
 				"base_dmg" : 1,
@@ -251,7 +252,7 @@
 		},
 		"Armor" : {
 			"template" : {
-				"category" : "Armor",
+				"scheme" : "Armor",
 				"name" : "ARMOR NAME",
 				"weight" : 1,
 				"type" : "cloth",
@@ -266,7 +267,7 @@
 		},
 		"Item" : {
 			"template" : {
-				"category" : "Item",
+				"scheme" : "Item",
 				"name" : "ITEM NAME",
 				"weight" : 1,
 				"type" : "usable",
@@ -297,9 +298,9 @@
 		},
 		"Sex" : {
 			"template" : {
+				"scheme" : "Sex",
 				"init" : []
-			},
-			"Dictates" : [ "Armor", "Items", "Attributes" ]
+			}
 		}
 	},
 	"Rules" : {

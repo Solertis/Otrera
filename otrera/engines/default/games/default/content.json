@@ -644,6 +644,12 @@
         ], 
         "scheme": "Race"
     }, 
+    "female": {
+        "init": [
+            "DIV1"
+        ], 
+        "scheme": "Sex"
+    }, 
     "fighter": {
         "Armor": [
             "leather", 
@@ -767,6 +773,12 @@
         "type": "staff", 
         "weight": 3
     }, 
+    "male": {
+        "init": [
+            "MGT1"
+        ], 
+        "scheme": "Sex"
+    }, 
     "metal": {
         "construct": "type", 
         "defines": {
@@ -815,8 +827,6 @@
         }, 
         "scheme": "Weapon"
     }, 
-    "type": "cheese", 
-    "weight": 2, 
     "wolf": {
         "init": [
             "MGT1"

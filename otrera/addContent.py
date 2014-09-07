@@ -117,6 +117,20 @@ def get_dict(name):
 		a[key] = value
 	return a
 
+def update_LISTS(content_type, data, thing_name):
+	if data.has_key("LISTS"):
+		if data["LISTS"].has_key(content_type):
+			data["LISTS"][content_type].append(thing_name)
+			return data
+		else:
+			c = { content_type : thing_name }
+			data["LISTS"].update(c)
+			return data
+	else:
+		b = { "LISTS" : { content_type : thing_name } }
+		data.update(b)
+		return data
+
 def make_content(content_type, update, thing_name):
 	"""
 	Method for actually writing to content.json.
@@ -133,6 +147,6 @@ def make_content(content_type, update, thing_name):
 	with open(path) as f:
 		data = json.load(f)
 	data.update(update)
-	#data = update_lists(content_type, data, update, thing_name)
+	data = update_LISTS(content_type, data, thing_name)
 	with open(path,"w") as f:
 		json.dump(data, f, sort_keys=True, indent=4, ensure_ascii=False)
