@@ -10,19 +10,25 @@ def parse_args():
 	parser.add_argument('--edit-game', help="Change content in an existing game file")
 	parser.add_argument('--create-engine', help="Make a new engine directory and file")
 	parser.add_argument('--edit-engine', help="Change an existing engine file")
+	parser.add_argument('--clone-game', help="Clone an existing game to make a custom version")
+	parser.add_argument('--engine', help="The engine to use for the Game Builder methods")
 	args = parser.parse_args()
 	return args
 
 def main():
 	args = parse_args()
+	if args.engine == None:
+		args.engine = "default"
 	if args.create_game is not None:
-		game_builder.make_game(args.create_game)
+		game_builder.make_game(args.engine, args.create_game)
 	if args.edit_game is not None:
-		game_builder.edit_game(args.edit_game)
+		game_builder.edit_game(args.engine, args.edit_game)
 	if args.create_engine is not None:
 		engine_builder.make_engine(args.create_engine)
 	if args.edit_engine is not None:
 		engine_builder.edit_engine(args.edit_engine)
+	if args.clone_game is not None:
+		game_builder.clone_game(args.engine, args.clone_game)
 
 if __name__ == "__main__":
 	main()

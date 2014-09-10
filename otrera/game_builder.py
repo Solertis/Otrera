@@ -6,6 +6,7 @@ from engine import *
 from character import Character
 import json
 import os
+import shutil
 from addContent import *
 from editContent import *
 
@@ -14,8 +15,8 @@ engine = Content().engine
 def get_input(prompt):
 	return raw_input(prompt)
 
-def create_game_directory_and_file(game_name):
-	gamepath = "engines/default/games/"+game_name
+def create_game_directory_and_file(engine_name, game_name):
+	gamepath = "engines/"+engine_name+"/games/"+game_name
 	if os.path.exists(gamepath):
 		print "A game with this name already exists for this engine!!!"
 		exit(1)
@@ -25,8 +26,20 @@ def create_game_directory_and_file(game_name):
 		print game_name + " has been created!"
 		gamefile.close()
 
-def edit_game(gamename):
-	gamepath = "engines/default/games/"+gamename+"/content.json"
+def clone_game(enginename, gamename):
+	gamepath = "engines/"+enginename+"/games/"+gamename+"/content.json"
+	if not os.path.exists(gamepath):
+		print "This game does not exist"
+		exit(1)
+	else:
+		print "Creating a clone of %s" % gamename
+		choice = get_input("Tell me the name of your custom version: ")
+		newgamepath = "engines/"+enginename+"/games/"+choice+"/content.json"
+		create_game_directory_and_file(enginename, choice)
+		shutil.copy(gamepath, newgamepath)
+
+def edit_game(engine_name, gamename):
+	gamepath = "engines/"+engine_name+"/games/"+gamename+"/content.json"
 	if not os.path.exists(gamepath):
 		print "This game does not exist."
 		exit(1)
@@ -50,13 +63,13 @@ def edit_game(gamename):
 			print "Come on now, son."
 			exit(1)
 
-def make_game(game_name):
+def make_game(engine_name, game_name):
 	"""
 	Top level method in game builder
 	module for creating new games
 	from scratch.
 	"""
-	create_game_directory_and_file(game_name)
+	create_game_directory_and_file(engine_name, game_name)
 
 def interactive():
 	print "Welcome to Otrera Game Builder"
