@@ -1,0 +1,44 @@
+{
+	"Dwarf" : {
+		"scheme" : "Race",
+		"name" : "Dwarf",
+		"Weapon Familiarity" : [ "Battleaxe", "Warhammer" ],
+		"Racial Feats" : [ "Dark Vision", "No Encumbrance" ],
+		"Movement" : 20,
+		"Bonuses" : {
+			"Attack Roll" : [ "Goblin+1", "Orc+1" ],
+			"Saving Throws" : [ "Poison+2", "Spell+2" ]
+		}
+	},
+	"Cleric" : {
+		"scheme" : "class",
+		"name" : "Cleric",
+		"Hit Points" : 8,
+		"Attack Bonus" : 0,
+		"Skill Ranks" : 2,
+		"Fortitude Save" : 2,
+		"Reflex Save" : 0,
+		"Will Save" : 2,
+		"Skills" : [ "Diplomacy", "Heal", "Knowledge Arcana",
+					"Knowledge History", "Knowledge Religion",
+					"Sense Motive", "Spellcraft"
+						],
+		"Special" : {
+			"God" : ""
+		}
+	},
+	"Detect Magic" : {
+		"scheme" : "Spell",
+		"name" : "Detect Magic",
+		"Level" : 0,
+		"Range" : "touch",
+		"Duration" : "10min cleric level",
+		"Text" : "Spell Description: Detect Magic"
+	},
+	"Desna" : {
+		"scheme" : "God",
+		"name" : "Desna",
+		"God Powers" : [ "Agile Feet", "Bit of Luck" ],
+		"Holy Weapon" : "Starknife"
+	}
+}

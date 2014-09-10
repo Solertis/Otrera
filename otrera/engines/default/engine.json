@@ -274,7 +274,7 @@
 				"effect" : "HP+0",
 				"description" : "Description",
 				"requirements" : {
-					"sex" : []
+					"Sex" : []
 				}
 			}
 		}
@@ -303,10 +303,8 @@
 			}
 		}
 	},
-	"Rules" : {
+	"Text" : {
 	},
 	"Setting" : {
-	},
-	"Story" : {
 	}
 }
