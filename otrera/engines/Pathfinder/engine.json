@@ -1,21 +1,26 @@
 {
 	"Character" : {
 		"Player" : {
-			"name" : "John Doe",
-			"class" : "fighter",
-			"sex" : "male",
-			"race" : "human",
+			"Name" : "John Doe",
+			"Class" : "Fighter",
+			"Sex" : "Male",
+			"Race" : "Human",
+			"Special" : {},
 			"Ability Scores" : {
 			},
+			"Weapon Familiarity" : [],
 			"Inventory" : [],
 			"Equipment" : {
+				"Weapon" : [], "Armor" : [], "Special" : {}
 			},
-			"Skills" : {
-			},
-			"Spells" : []
+			"Skills" : [],
+			"Spells" : [],
+			"Feats" : []
+		},
+		"Enemy" : {
 		},
 		"NPC" : {
-		},
+		}
 	},
 	"Performance" : {
 		"Ability Score" : {
@@ -75,11 +80,77 @@
 			}
 		},
 	},
-	"Ability" : {},
-	"Equipment" : {},
+	"Ability" : {
+		"Skill" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Skill",
+				"Text" : "Skill Description",
+				"Requirements" : {},
+				"Type" : ""
+			}
+		},
+		"Spell" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Spell",
+				"Range" : "",
+				"Duration" : "",
+				"Type" : "",
+				"Requirements" : {},
+				"Text" : "Spell Description"
+			}
+		},
+		"Feat" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Feat",
+				"Bonus" : [],
+				"Requirements" : {},
+				"Text" : "Feat Description",
+			}
+		}
+	},
+	"Equipment" : {
+		"Weapon" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Weapon",
+				"Type" : "Simple",
+				"Category" : "Piercing",
+				"Price" : "",
+				"Damage" : "",
+				"Crit" : "",
+				"Range Increment" : "Melee",
+				"Text" : "Weapon Description",
+				"Hands" : "Light"
+			}
+		},
+		"Armor" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Armor",
+				"Price" : "",
+				"Type" : "Light",
+				"Text" : "Armor Description"
+			}
+		},
+		"Item" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Item",
+				"Price" : "",
+				"Text" : "Item Description"
+			}
+		},
+		"God" : {
+		}
+	},
 	"Elective" : {
 		"Class" : {
 			"template" : {
+				"Name" : "",
+				"Scheme" : "Class"
 				"Hit Points" : 0,
 				"Attack Bonus" : 0,
 				"Skill Ranks" : 0,
@@ -107,6 +178,8 @@
 	"Progression" : {},
 	"Text" : {
 		"Rules" : {
+			"Playing The Game" : "playingthegame.txt",
+			"Glossary" : "glossary.txt"
 		},
 		"Places" : {
 		},
