@@ -97,7 +97,16 @@ def get_base_attributes(charac):
 			}
 	return charac
 
+def save_character(charac):
+	path = Content().game_path + "player_characters/"
+	filename = charac["name"].lower().replace(" ", "")+".txt"
+	print "Saving %s" % path+filename
+	with open(path+filename, "w") as f:
+		json.dump(charac, f, sort_keys=True, indent=4, ensure_ascii=False)
+		f.close()
+
 def publish_character(charac):
+	save_character(charac)
 	stats = charac["stats"]
 	print "Character Name: %s" % charac["name"]
 	print "MaxHP = %s" % str(stats["MaxHP"])
