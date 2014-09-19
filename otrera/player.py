@@ -3,12 +3,13 @@
 # For now it just prints character info to the console
 # We need to give this script the ability to save characters as JSON blobs.
 
+import os
 from content import Content
 from engine import *
 from character import Character
 import json
 
-engine = Content().engine
+#engine = Content().engine
 
 def level_zero_character_builder():
 	zero_character = engine["Character"]["Player"]
@@ -145,6 +146,20 @@ def publish_complete_character(charac):
 	publish_charac_combat_stats(charac)
 	publish_charac_skills(charac)
 
+def choose_game():
+	engines = os.listdir("./engines")
+	print "The available engines are: "
+	for thing in engines:
+		print thing
+	choice = raw_input("Choose an engine: ")
+	games = os.listdir("engines/"+choice+"/games")
+	print "The available games for the %s engine are: " % choice
+	for thing in games:
+		print thing
+	chosen = raw_input("Choose a game: ")
+	engine = Content(engine=choice, game=chosen).engine
+	return engine
+
 def choose_program():
 	print "Welcome to the Mythology Character Builder!\n"
 	print "---------------------------------------------------"
@@ -171,6 +186,8 @@ def choose_program():
 		return
 
 def main():
+	global engine
+	engine = choose_game()
 	choose_program()
 
 if __name__=="__main__":

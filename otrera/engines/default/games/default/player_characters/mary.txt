@@ -1,0 +1,112 @@
+{
+    "attributes": {
+        "ART": 11, 
+        "CON": 11, 
+        "DEX": 12, 
+        "DIV": 26, 
+        "INT": 10, 
+        "MGT": 12
+    }, 
+    "class": "mage", 
+    "encumbrance": 0, 
+    "equipment": {
+        "ArmDef": "", 
+        "Armor": {
+            "defense": "type", 
+            "description": "Robes worn by mages", 
+            "durability": "3", 
+            "name": "mage robes", 
+            "requirements": {
+                "sex": "type"
+            }, 
+            "scheme": "Armor", 
+            "spec_mods": [], 
+            "type": "robes", 
+            "weight": 2
+        }, 
+        "Weapon": {
+            "base_dmg": "2", 
+            "description": "A staff used by mages", 
+            "durability": 5, 
+            "name": "mage staff", 
+            "scheme": "Weapon", 
+            "spec_mods": [
+                "DIV2"
+            ], 
+            "type": "staff", 
+            "weight": 3
+        }, 
+        "WpnAtk": "", 
+        "armor": "", 
+        "eqp_mods": [
+            "DIV2"
+        ], 
+        "weapon": ""
+    }, 
+    "inventory": [
+        {
+            "base_dmg": "2", 
+            "description": "A staff used by mages", 
+            "durability": 5, 
+            "name": "mage staff", 
+            "scheme": "Weapon", 
+            "spec_mods": [
+                "DIV2"
+            ], 
+            "type": "staff", 
+            "weight": 3
+        }, 
+        {
+            "defense": "type", 
+            "description": "Robes worn by mages", 
+            "durability": "3", 
+            "name": "mage robes", 
+            "requirements": {
+                "sex": "type"
+            }, 
+            "scheme": "Armor", 
+            "spec_mods": [], 
+            "type": "robes", 
+            "weight": 2
+        }
+    ], 
+    "level": 10, 
+    "name": "Mary", 
+    "race": "human", 
+    "sex": "female", 
+    "skills": [
+        {
+            "AOE": 3, 
+            "description": "Create a powerful burst of flame", 
+            "flavor": "MAGATK", 
+            "name": "fire blast", 
+            "power": "1d6", 
+            "range": 5, 
+            "requirements": {
+                "class": [
+                    "mage"
+                ], 
+                "race": []
+            }, 
+            "rules": "", 
+            "scaling": {}, 
+            "scheme": "Skill", 
+            "target": "enemy", 
+            "type": "spell"
+        }
+    ], 
+    "stats": {
+        "Accuracy": 1, 
+        "CarryStrength": 1, 
+        "Craft": 0, 
+        "Evade": 1, 
+        "Hit": 1, 
+        "MagAtk": "3d6", 
+        "MagDef": 7, 
+        "MaxHP": 66, 
+        "PhyAtk": "1d8", 
+        "PhyDef": "1d8", 
+        "Resistance": 1
+    }, 
+    "tag": "player"
+}

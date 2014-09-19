@@ -17,7 +17,7 @@ class Content(object):
 			self.engine=json.loads(r)
 			self.engine_path = default_engine_path
 		else:
-			engine_path = "engines"+engine+"/"
+			engine_path = "engines/"+engine+"/"
 			engine = engine_path+"engine.json"
 			r = open(engine,"r").read()
 			self.engine=json.loads(r)
