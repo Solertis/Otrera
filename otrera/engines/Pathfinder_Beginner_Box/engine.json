@@ -1,0 +1,197 @@
+{
+	"Character" : {
+		"Player" : {
+			"Name" : "John Doe",
+			"Class" : "Fighter",
+			"Sex" : "Male",
+			"Race" : "Human",
+			"Spell Level" : 0,
+			"Special" : {},
+			"Ability Scores" : {//Does this need its own object?
+			},
+			"Weapon Familiarity" : [],
+			"Inventory" : [],
+			"Equipment" : {
+				"Weapon" : [], "Armor" : [], "Special" : {}
+			},
+			"Skills" : [],
+			"Spells" : [],
+			"Feats" : []
+		},
+		"Enemy" : {
+		},
+		"NPC" : {
+		}
+	},
+	"Performance" : {
+		"Ability Score" : {
+			"Strength" : {
+				"Maps" : {
+					"Mod" : {
+						"1":-5,"2":-4,"3":-4,"4":-3,"5":-3,"6":-2,"7":-2,
+						"8":-1,"9":-1,"10":0,"11":0,"12":1,"13":1,"14":2,
+						"15":2,"16":3,"17":3,"18":4,"19":4,"20":5
+					}
+				}
+			},
+			"Dexterity" : {
+				"Maps" : {
+					"Mod" : {
+						"1":-5,"2":-4,"3":-4,"4":-3,"5":-3,"6":-2,"7":-2,
+						"8":-1,"9":-1,"10":0,"11":0,"12":1,"13":1,"14":2,
+						"15":2,"16":3,"17":3,"18":4,"19":4,"20":5
+					}
+				}
+			},
+			"Constitution" : {
+				"Maps" : {
+					"Mod" : {
+						"1":-5,"2":-4,"3":-4,"4":-3,"5":-3,"6":-2,"7":-2,
+						"8":-1,"9":-1,"10":0,"11":0,"12":1,"13":1,"14":2,
+						"15":2,"16":3,"17":3,"18":4,"19":4,"20":5
+					}
+				}
+			},
+			"Intelligence" : {
+				"Maps" : {
+					"Mod" : {
+						"1":-5,"2":-4,"3":-4,"4":-3,"5":-3,"6":-2,"7":-2,
+						"8":-1,"9":-1,"10":0,"11":0,"12":1,"13":1,"14":2,
+						"15":2,"16":3,"17":3,"18":4,"19":4,"20":5
+					}
+				}
+			},
+			"Wisdom" : {
+				"Maps" : {
+					"Mod" : {
+						"1":-5,"2":-4,"3":-4,"4":-3,"5":-3,"6":-2,"7":-2,
+						"8":-1,"9":-1,"10":0,"11":0,"12":1,"13":1,"14":2,
+						"15":2,"16":3,"17":3,"18":4,"19":4,"20":5
+					}
+				}
+			},
+			"Charisma" : {
+				"Maps" : {
+					"Mod" : {
+						"1":-5,"2":-4,"3":-4,"4":-3,"5":-3,"6":-2,"7":-2,
+						"8":-1,"9":-1,"10":0,"11":0,"12":1,"13":1,"14":2,
+						"15":2,"16":3,"17":3,"18":4,"19":4,"20":5
+					}
+				}
+			}
+		},
+	},
+	"Ability" : {
+		"Skill" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Skill",
+				"Text" : "Skill Description",
+				"Requirements" : {},
+				"Type" : ""
+			}
+		},
+		"Spell" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Spell",
+				"Range" : "",
+				"Duration" : "",
+				"Type" : "",
+				"Requirements" : {},
+				"Text" : "Spell Description"
+			}
+		},
+		"Feat" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Feat",
+				"Bonus" : [],
+				"Requirements" : {},
+				"Text" : "Feat Description",
+			}
+		}
+	},
+	"Equipment" : {
+		"Weapon" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Weapon",
+				"Type" : "Simple",
+				"Category" : "Piercing",
+				"Price" : "",
+				"Damage" : "",
+				"Crit" : "",
+				"Range Increment" : "Melee",
+				"Text" : "Weapon Description",
+				"Hands" : "Light"
+			}
+		},
+		"Armor" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Armor",
+				"Price" : "",
+				"Type" : "Light",
+				"Text" : "Armor Description"
+			}
+		},
+		"Item" : {
+			"Template" : {
+				"Name" : "",
+				"Scheme" : "Item",
+				"Price" : "",
+				"Text" : "Item Description"
+			}
+		},
+		"God" : {
+		}
+	},
+	"Elective" : {
+		"Class" : {
+			"template" : {
+				"Name" : "",
+				"Scheme" : "Class"
+				"Hit Points" : 0,
+				"Attack Bonus" : 0,
+				"Skill Ranks" : 0,
+				"Fortitude Save" : 0,
+				"Reflex Save" : 0,
+				"Will Save" : 0,
+				"Skills" : [],
+				"Special" : {
+				}
+			}
+		}
+	},
+	"Inherent" : {
+		"Race" : {
+			"template" : {
+				"Weapon Familiarity" : [],
+				"Racial Feats" : [],
+				"Movement" : 20,
+				"Bonuses" : {
+				}
+			}
+		}
+	},
+	"Types" : {},
+	"Progression" : {},
+	"Text" : {
+		"Rules" : {
+			"Playing The Game" : "playingthegame.txt",
+			"Glossary" : "glossary.txt"
+		},
+		"Places" : {
+		},
+		"Character Bios" : {
+		},
+		"God Descriptions" : {
+		},
+		"Item Descriptions" : {
+		},
+		"Spell Descriptions" : {
+		}
+	},
+	"Setting" : {}
+}
