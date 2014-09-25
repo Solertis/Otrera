@@ -3,6 +3,7 @@
 import argparse
 import game_builder
 import engine_builder
+import player
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -12,6 +13,7 @@ def parse_args():
 	parser.add_argument('--edit-engine', help="Change an existing engine file")
 	parser.add_argument('--clone-game', help="Clone an existing game to make a custom version")
 	parser.add_argument('--engine', help="The engine to use for the Game Builder methods")
+	parser.add_argument('--build-character', help="Create a character for a game", action="store_true")
 	args = parser.parse_args()
 	return args
 
@@ -29,6 +31,8 @@ def main():
 		engine_builder.edit_engine(args.edit_engine)
 	if args.clone_game is not None:
 		game_builder.clone_game(args.engine, args.clone_game)
+	if args.build_character:
+		player.main()
 
 if __name__ == "__main__":
 	main()
